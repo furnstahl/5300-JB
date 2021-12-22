@@ -1,0 +1,34 @@
+name: 5300-env
+channels:
+- conda-forge
+dependencies:
+- python=3.9
+- nb_conda_kernels
+- numpy
+- scipy
+- matplotlib
+- pandas
+- seaborn
+- jupyter
+- ipywidgets
+- nbdime
+- emcee
+- ptemcee
+- zeus-mcmc
+- corner
+- mkl-service
+- jupyter_nbextensions_configurator
+- scikit-learn
+- scikit-image
+- pydoe
+- jupyter-book
+- sphinx
+- ghp-import
+- qt=5.9
+- pip
+- pip:
+  - gpy
+  - gpyopt  
+  - pymultinest
+  - pymc3
+  - arviz
