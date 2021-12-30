@@ -86,10 +86,11 @@ sphinx:
   config                    :   # key-value pairs to directly over-ride the Sphinx configuration
     bibtex_reference_style: label
     bibtex_default_style: 'alpha' 
-    mathjax_config:
-      TeX:
-        Macros:
+    mathjax3_config:
+      tex:
+        macros:
           "N": "\\mathbb{N}"
+          "avec": ["\\boldsymbol{a}"]          
           "floor": ["\\lfloor#1\\rfloor", 1]
           "bmat" : ["\\left[\\begin{array}"]
           "emat" : ["\\end{array}\\right]"]       
