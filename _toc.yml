@@ -12,7 +12,7 @@ parts:
     - file: content/Reference/installing_anaconda.md
     - file: content/Reference/python_jupyter.md
       sections:
-      - file: notebooks/Jupyter_Python_intro/5300_Jupyter_Python_intro_01.ipynb
+      #- file: notebooks/Jupyter_Python_intro/5300_Jupyter_Python_intro_01.ipynb
       - file: notebooks/Reference/Jupyter_Python_intro_01.ipynb
     - title: "Advanced topics"
       file: content/Reference/advanced.md
