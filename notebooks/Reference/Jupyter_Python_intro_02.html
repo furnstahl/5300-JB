@@ -287,6 +287,11 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-linear-algebra">
+   Numpy linear algebra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aside-list-comprehensions">
    Aside: List comprehensions
   </a>
@@ -309,8 +314,137 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="python-and-jupyter-notebooks-part-02">
 <h1>Python and Jupyter notebooks: part 02<a class="headerlink" href="#python-and-jupyter-notebooks-part-02" title="Permalink to this headline">¶</a></h1>
-<p>Last revised: 13-Aug-2019 by Dick Furnstahl [furnstahl.1&#64;osu.edu]</p>
-<p>In this notebook we continue the tour of Python and Jupyter notebooks started in <code class="docutils literal notranslate"><span class="pre">TALENT_Jupyter_Python_intro_01.ipynb</span></code>.</p>
+<p>Last revised: 31-Dec-2021 by Dick Furnstahl [furnstahl.1&#64;osu.edu]</p>
+<p>In this notebook we continue the tour of Python and Jupyter notebooks started in <code class="docutils literal notranslate"><span class="pre">Jupyter_Python_intro_01.ipynb</span></code>.</p>
+<div class="section" id="numpy-linear-algebra">
+<h2>Numpy linear algebra<a class="headerlink" href="#numpy-linear-algebra" title="Permalink to this headline">¶</a></h2>
+<p>Having used numpy arrrays to describe vectors, we are now ready to try out matrices. We can define a <span class="math notranslate nohighlight">\(3 \times 3 \)</span> real matrix <strong>A</strong> as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span> <span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we use the <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute we would get <span class="math notranslate nohighlight">\((3, 3)\)</span> as output, that is verifying that our matrix is a <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can slice the matrix and print for example the first column (Python organized matrix elements in a row-major order, see below) as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span> <span class="p">]))</span>
+<span class="c1"># print the first column, row-major order and elements start with 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can continue this was by printing out other columns or rows. The example here prints out the second column</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span> <span class="p">]))</span>
+<span class="c1"># print the first column, row-major order and elements start with 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Numpy contains many other functionalities that allow us to slice, subdivide etc etc arrays. We strongly recommend that you look up the <a class="reference external" href="http://www.numpy.org/">Numpy website for more details</a>. Useful functions when defining a matrix are the <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code> function which declares a matrix of a given dimension and sets all elements to zero</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="c1"># define a matrix of dimension 10 x 10 and set all elements to zero</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="c1"># define a matrix of dimension 10 x 10 and set all elements to one</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>or as uniformly distributed random numbers on <span class="math notranslate nohighlight">\([0,1]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1"># define a matrix of dimension 10 x 10 and set all elements to random numbers with x \in [0, 1]</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The transpose of this matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The dot product of two matrices can be computed with the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator (which is preferred to the <code class="docutils literal notranslate"><span class="pre">numpy.dot</span></code> function). Note that it is not the same as the arithmetic <span class="math notranslate nohighlight">\(*\)</span> operation that performs elementwise multiplication.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">9.</span><span class="p">]</span> <span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;matrix A:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">The dot product of A with A:&#39;</span><span class="p">)</span>  <span class="c1"># \n here inserts a blank line (&#39;newline&#39;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Element-wise product of A with A:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The inverse of this matrix <span class="math notranslate nohighlight">\(A^{-1}\)</span> can be computed using the <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code> module</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1"># define a matrix of dimension 10 x 10 and set all elements to random numbers with x \in [0, 1]</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="n">Ainv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Ainv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The dot product of a matrix by its inverse returns the identity matrix (with small floating-point errors; note their size). Verify that this is true:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">Ainv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How would you check <span class="math notranslate nohighlight">\(A^{-1} A\)</span>?</strong></p>
+<p>The eigenvalues and eigenvectors of a matrix can be computed with the <code class="docutils literal notranslate"><span class="pre">eig</span></code> function (note that <code class="docutils literal notranslate"><span class="pre">j</span></code> is the notation for <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The eigenvalues are:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">eigenvalues</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">The eigenvectors are:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">eigenvectors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="aside-list-comprehensions">
 <h2>Aside: List comprehensions<a class="headerlink" href="#aside-list-comprehensions" title="Permalink to this headline">¶</a></h2>
 <p>In the plotting examples in the next section we use for loops to iterate through parameters or plots because it is familiar to anyone who has done programming.  In Python, however, it is often preferred to use a different construction called a list comprehension.  Here is a quick comparison of using for loop and using a list comprehension, followed by some representative further examples of list comprehensions. You can find much more information and other examples in the online Python documentation and other sources. (The examples here are from [<a class="reference external" href="https://hackernoon.com/list-comprehension-in-python-8895a785550b">https://hackernoon.com/list-comprehension-in-python-8895a785550b</a>].)</p>
