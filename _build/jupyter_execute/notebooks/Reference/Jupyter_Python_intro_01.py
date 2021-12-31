@@ -6,16 +6,18 @@
 # Last revised: 31-Dec-2021 by Dick Furnstahl [furnstahl.1@osu.edu]
 
 # **You can find valuable documentation under the Jupyter notebook Help menu. The "User Interface Tour" and "Keyboard Shortcuts" are useful places to start, but there are also many other links to documentation there.** 
+# 
+# *Select "User Interface Tour" and use the arrow keys to step through the tour.*
 
-# This is a whirlwind tour of just the minimum we need to know about Python and Jupyter notebooks to get started doing statistics problems.  We'll add more features and details as we proceed.
+# This is a whirlwind tour of just the minimum we need to know about Python and Jupyter notebooks to get started doing mechanics problems.  We'll explore additional features and details as we proceed.
 # 
-# A Jupyter notebook is displayed on a web browser on a computer, tablet (e.g., IPad), or even your smartphone.  The notebook is divided into *cells*, of which two types are relevant for us:
-# * Markdown cells: These have headings, text, and mathematical formulas in $\LaTeX$ using a simple form of HTML called markdown.
-# * Code cells: These have Python code (or other languages, but we'll stick to Python).
+# A Jupyter notebook is displayed on a web browser running on a computer, tablet (e.g., IPad), or even your smartphone.  The notebook is divided into *cells*, of which two types are relevant for us:
+# * **Markdown cells:** These have headings, text, and mathematical formulas in $\LaTeX$ using a simple form of HTML called *markdown*.
+# * **Code cells:** These have Python code (or other languages, but we'll stick to Python).
 # 
-# Either type of cell can be selected with your cursor and will be highlighted in color on the left when active.  You evaluate an active cell with shift-return (as with Mathematica) or by pressing `Run` on the toolbar.  Some notes:
-# * When a new cell is inserted, by default it is a Code cell and will have `In []:` in front.  You can type Python expressions or entire programs in a cell.  How you break up code between cells is your choice and you can always put Markdown cells in between.  When you evaluate a cell it gets the next number, e.g., `In [5]:`.
-# * On the menu bar is a pulldown menu that lets you change back and forth between Code and Markdown cells.  Once you evaluate a Markdown cell, it gets formatted (and has a blue border).  To edit the Markdown cell, double click in it. 
+# Either type of cell can be selected with your cursor and will be highlighted in color on the left when active.  You evaluate an active cell with shift-return (as with Mathematica) or by pressing `Run` on the notebook toolbar.  Some notes:
+# * When a new cell is inserted, by default it is a Code cell and will have `In []:` to the left.  You can type Python expressions or entire programs in a cell.  How you break up code between cells is your choice and you can always put Markdown cells in between.  When you evaluate a cell it advances to the next number, e.g., `In [5]:`.
+# * On the notebook menu bar is a pulldown menu that lets you change back and forth between Code and Markdown cells.  Once you evaluate a Markdown cell, it gets formatted (and has a blue border).  To edit the Markdown cell, double click in it. 
 # 
 # **Try double-clicking on this cell and then shift-return.**  You will see that a bullet list is created just with an asterisk and a space at the beginning of lines (without the space you get *italics* and with two asterisks you get **bold**).  **Double click on the title header above and you'll see it starts with a single #.**  Headings of subsections are made using ## or ###.  See this [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for a quick tour of the Markdown language (including how to add links!).
 # 
@@ -27,7 +29,7 @@
 
 
 
-# The menus enable you to rename your notebook file (always ending in `.ipynb`) or `Save and Checkpoint` to save the changes to your notebook.  You can insert and delete cells (use the up and down arrows in the toolbar to easily move cells).  You will often use the `Kernel` menu to `Restart` the notebook (and possibly clear output).
+# The notebook menus enable you to rename your notebook file (always ending in `.ipynb`) or `Save and Checkpoint` to save the changes to your notebook.  You can insert and delete cells (use the up and down arrows in the toolbar to easily move cells).  You will often use the `Kernel` menu to `Restart` the notebook (and possibly clear output).
 
 # As you get more proficient working with notebooks, you will probably start using the shortcut keys from the command mode of cells. A cell that is marked in blue implies that you are in command mode. You can start editing the cell by hitting `Enter` (or by clicking inside it). You can exit from edit mode into command mode by hitting `Esc`. A list of shortcut keys can be seen when opening the command palette by clicking on the keyboard button.
 
@@ -45,10 +47,11 @@
 # In[ ]:
 
 
+# Try other examples here. The spaces are optional but help with readability.
 3.2 * 4.713
 
 
-# Note that if we want a floating point number (which will be the same as a `double` in C++), we *always* include a decimal point (even when we don't have to) while a number without a decimal point is an integer.
+# Note that if we want a floating point number, which will be the same precision as a `double` in C++, we *usually* include a decimal point (even when we don't have to) while a number without a decimal point is an integer. (Note: there is no problem with 1/2 being evaluated as zero, as in C++.)
 
 # In[ ]:
 
@@ -63,7 +66,7 @@
 
 x = 5.
 print(x)
-x   # If the last line of a cell returns a value, it is printed.
+x   # If the last line of a cell returns a value, it is printed with Out[#].
 
 
 # In[ ]:
@@ -73,7 +76,7 @@ y = 3.*x**2 - 2.*x + 7.
 print('y = ', y)           # Strings delimited by ' 's
 
 
-# There are several ways to print strings that includes variables from your code. We recommend using the relatively newly added `fstring`. See, e.g., this [blog](https://cito.github.io/blog/f-strings/) for examples. 
+# There are several ways to print strings that includes variables from your code. We recommend using `fstring`. See, e.g., this [blog](https://cito.github.io/blog/f-strings/) for examples. Can you deduce what `.0f` and `.2f` mean in the following examples? 
 
 # In[ ]:
 
@@ -82,7 +85,7 @@ print(f'y = {y:.0f}')      # Just a preview: more on format later
 print(f'y = {y:.2f}')      #  (note that this uses the "new" fstring)
 
 
-# We will most use `fstring` in this course, but you might also encounter older formatting syntax:
+# We will mostly use `fstring` in this course, but you might also encounter older formatting syntax:
 
 # In[ ]:
 
@@ -92,6 +95,8 @@ print('x = {0:.2f}  y = {1:.2f}'.format(x, y))
 # compare to the fstring version
 print(f'x = {x:.2f}  y = {y:.2f}')
 
+
+# **Change the following to print your own name.**
 
 # In[ ]:
 
@@ -104,7 +109,7 @@ print(full_name)
 print(f'{first_name} {last_name}')
 
 
-# Ok, how about square roots and trigonometric functions and ... 
+# Ok, what about square roots and trigonometric functions and ... 
 # 
 # *(Note: the next cells will give error messages --- keep reading to see how to fix them.)*
 
@@ -120,7 +125,7 @@ sqrt(2)
 sin(pi)
 
 
-# We need to `import` these functions through the numpy library. There are other choices, but numpy works with the arrays we will use.  Note: *Never* use `from numpy import *` instead of `import numpy as np`.  Here `np` is just a abbreviation for numpy (which we can choose to be anything, but `np` is conventional).
+# We need to `import` these functions through the numpy library. There are other choices, but numpy works with the arrays we will use.  **Note:** *Never* use `from numpy import *` instead of `import numpy as np`.  Here `np` is just a abbreviation for numpy (which we can choose to be anything, but `np` is conventional).
 
 # In[ ]:
 
@@ -134,7 +139,7 @@ import numpy as np
 print(np.cos(0.))
 
 
-# Now functions and constants like `np.sqrt` and `np.pi` will work.  Go back and fix the square root and sine.
+# Now functions and constants like `np.sqrt` and `np.pi` will work.  **Go back and fix the square root and sine.**
 
 # ### Debugging aside . . .
 # 
@@ -146,13 +151,13 @@ print(np.cos(0.))
 import numpie
 
 
-# When you get a `ModuleNotFoundError`, the first thing to check is whether you have misspelled the name. Try using Google, e.g., search for "python numpie". In this case (and in most others), Google will suggest the correct name (here it is numpy).  If the name does exist, check whether it sounds like the package you wanted.
+# When you get a `ModuleNotFoundError`, the first thing to check is whether you have misspelled the name. **Try using Google, e.g., search for "python numpie".** In this case (and in most others), Google will suggest the correct name (here it is numpy).  If the name does exist, check whether it sounds like the package you wanted.
 # 
 # If you have the correct spelling, check whether you have installed the relevant package.  If you installed Python with Anaconda (which we will assume you did -- if not, do it!), then use `conda list`, e.g., `conda list numpy` in a Terminal window (on a Mac or Linux box) or in an Anaconda Prompt window (on a Windows PC).
 
 # ### numpy arrays
 # 
-# We will often use numpy arrays so we'll start with those.  They are *like* lists delimited by square brackets, i.e., `[]`s, and we will construct them with `np.arange(min, max, step)` to get an array from `min` to `max` in steps of `step`. Examples:
+# We will often use numpy arrays so we'll start with those.  They are *like* lists delimited by square brackets, i.e., `[]`s. To construct an array from `min` to `max` in steps of `step` we can use `np.arange(min, max, step)`.  Examples (**try your own**):
 
 # In[ ]:
 
@@ -172,7 +177,7 @@ print(x**2)
 print(np.sqrt(x))
 
 
-# We can pick out elements of the list.  Why does the last one fail? 
+# We can pick out elements of the list (note the square brackets).  **Why does the last one fail?** 
 
 # In[ ]:
 
@@ -181,6 +186,17 @@ print(x[0])
 print(x[3])
 print(x[4])
 
+
+# An alternative to `np.arange` is `np.linspace(min, max, number)` to get an array from `min` to `max` with `number` elements.  Example: 
+
+# In[ ]:
+
+
+u_pts = np.linspace(0., 10., 10)
+u_pts
+
+
+# **Change the last statement for `u_pts` to get an array from 0 to 10 spaced by 1.**
 
 # ## Getting help
 # 
