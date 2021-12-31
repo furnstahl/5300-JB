@@ -22,6 +22,19 @@ parts:
       - title: "Widgets in Jupyter"
         file: notebooks/Reference/Simple_widgets_v1.ipynb
 
+  - caption: Taylor chapters 1-4
+    chapters:
+    - file: notebooks/Taylor_problems/Taylor_problem_1.39.ipynb
+    - file: notebooks/Taylor_problems/Taylor_problem_1.50.ipynb
+    - file: notebooks/Taylor_problems/Taylor_problem_1.50_supplement1.ipynb
+    - file: notebooks/Taylor_problems/Taylor_problem_2.20_template.ipynb
+    - file: notebooks/Taylor_problems/Taylor_problem_2.40_template.ipynb
+    - file: notebooks/Taylor_problems/Taylor_problem_2.43_template.ipynb
+    - file: notebooks/Taylor_problems/Taylor_problem_3.23.ipynb
+    - file: notebooks/Taylor_problems/Taylor_problem_4.29_template.ipynb
+    - file: notebooks/Taylor_problems/Taylor_problem_4.37_template.ipynb
+    - file: notebooks/Sandboxes/Pendulum_widget_visualization_v02.ipynb
+
   - caption: Reference material
     #numbered: True
     chapters:
