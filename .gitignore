@@ -1,6 +1,10 @@
 .DS_Store
 **/.DS_Store
 
+_images/favicon/favicon_io_background.zip
+_images/favicon/favicon_io_background/
+environment_orig.yml
+
 notebooks/*/*Copy*
 
 
