@@ -9,11 +9,11 @@
 # 
 # The equations are:
 # 
-# $
+# $$
 # \begin{align}
 #   \ddot\phi = -\frac{g}{R}\sin\phi \qquad\mbox{and}\qquad \ddot\phi = -\frac{g}{R}\phi
 # \end{align}
-# $
+# $$
 # 
 # The potential energies associated with the small angle case is (with $g = R = 1$) given by $U(\phi)=\phi^2/2$.  For the full
 # case, with the same zero of potential energy, $U(x) = 1 - \cos\phi$.  Note that these agree when $\phi$ is sufficiently small.
