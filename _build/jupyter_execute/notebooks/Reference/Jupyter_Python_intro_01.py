@@ -204,19 +204,19 @@ u_pts
 
 # ## Functions
 # 
-# There are many Python language features that we will use eventually, but in the short term what we need first are functions.  Here we first see the role of *indentation* in Python in place of {}s or ()s in other languages.  We'll always indent four spaces (never tabs!).  We know a function definition is complete when the indentation stops. 
+# There are many Python language features that we will use eventually, but in the short term what we need first are *functions*.  Here we first see the role of *indentation* in Python in place of {}s or ()s in other languages.  We'll always indent four spaces (never tabs!).  We know a function definition is complete when the indentation stops. 
 # 
-# To find out about a Python function or one you define, put your cursor on the function name and hit shift+Tab+Tab. **Go back and try it on `np.arange`.**  
+# To find out about a Python function or one you define, put your cursor on the function name and hit `shift+Tab+Tab`. **Go back and try it on `np.arange`.**  
 
 # In[ ]:
 
 
 # Use "def" to create new functions.  
-#  Note the colon and indentation (4 spaces).
+#  Note the colon in the def line and indentation after that line (4 spaces).
 def my_function(x):
     """This function squares the input.  Always include a brief description
         at the top between three starting and three ending quotes.  We will
-        talk more about proper documentation later.
+        talk more about proper documentation later ("docstrings").
         Try shift+Tab+Tab after you have evaluated this function.
     """
     return x**2
@@ -231,7 +231,7 @@ print(my_function(x_pts))
 # In[ ]:
 
 
-# Two variables, with a default for the second
+# Two variables, with a *default* for the second variable
 def add(x, y=4.):
     """Add two numbers."""
     print(f"x is {x} and y is {y}")
@@ -244,7 +244,7 @@ print('The sum is ', add(5, 6))  # prints "x is 5 and y is 6" and returns 11
 add(y=6, x=5)  # Keyword arguments can arrive in any order.
 
 
-# How do you explain the following result?
+# **How do you explain the following result?**
 
 # In[ ]:
 
@@ -254,7 +254,7 @@ add(2)
 
 # ### Debugging aside . . .
 # 
-# There are two bugs in the following function.  **Note the line where an error is first reported and fix the bugs sequentially (so you see the different error messages). You can turn on line numbers with "Toggle Line Numbers" under the View menu.**
+# There are *two* bugs in the following function.  **Note the line where an error is first reported and fix the bugs sequentially (so you see the different error messages). You can turn on line numbers with "Toggle Line Numbers" under the View menu.**
 
 # In[ ]:
 
@@ -267,7 +267,7 @@ def hello_function()
 
 # ## Plotting with Matplotlib
 # 
-# Matplotlib is the plotting library we'll use, at least at first.  We'll follow convention and abbreviate the module we need as `plt`.  The `%matplotlib inline` line tells the Jupyter notebook to make inline plots (we'll see other possibilities later).
+# Matplotlib is the plotting library we'll use, at least at first.  We'll follow convention and abbreviate the module we need as `plt`.  The `%matplotlib inline` line tells the Jupyter notebook to make inline plots (note: this is now loaded by default, so we don't need to include that line; we'll see other possibilities later).
 
 # In[ ]:
 
@@ -278,7 +278,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# Procedure we'll use to make the skeleton plot:
+# Procedure we'll use to make a basic plot:
 # 
 # 0. Generate some data to plot in the form of arrays.
 # 1. Create a figure;
@@ -289,8 +289,8 @@ import matplotlib.pyplot as plt
 
 
 t_pts = np.arange(0., 10., .1)     # step 0.
-x_pts = np.sin(t_pts)  # More often this would be from a function 
-                       #  *we* write.
+x_pts = np.sin(t_pts)              # More often this would be from a function 
+                                   #  *we* write ourselves.
 
 my_fig = plt.figure()              # step 1.
 my_ax = my_fig.add_subplot(1,1,1)  # step 2: rows=1, cols=1, 1st subplot
@@ -306,6 +306,7 @@ my_ax.plot(t_pts, x_pts)           # step 3: plot x vs. t
 
 my_fig = plt.figure()
 my_ax = my_fig.add_subplot(1,1,1)  # nrows=1, ncols=1, first plot
+# Add color, a line style, and a label to the plot.
 my_ax.plot(t_pts, x_pts, color='blue', linestyle='--', label='sine')
 
 my_ax.set_xlabel('t')
@@ -315,7 +316,8 @@ my_ax.set_title('Sine wave')
 # here we'll put the function in the call to plot!
 my_ax.plot(t_pts, np.cos(t_pts), label='cosine')  # just label the plot
 
-my_ax.legend();  # turn on legend
+my_ax.legend();  # turn on legend (labels don't show up until you do this)
+                 # try removing the semicolon to see what changes
 
 
 # Now make two subplots:
@@ -335,13 +337,17 @@ ax1.legend()
 
 ax2 = fig.add_subplot(1,2,2)  # one row, two columns, second plot
 ax2.plot(t_pts, np.exp(t_pts), label='exponential')  
-ax2.legend();
+ax2.legend()
 
+fig.tight_layout()   # We usually do this to improve the layout of plots
+
+
+# **Use Google (or whatever) to find how to add x and y labels and try it.**
 
 # ### Saving a figure
-# Saving a figure to disk is as simple as calling [`savefig`](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.savefig) with the name of the file (or a file object). The available image formats depend on the graphics backend you use.
+# Saving a figure to disk is as simple as calling [`savefig`](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.savefig) with the name of the file (or a file object). The available image formats depend on the graphics backend you use, but we can always use `png` (which is preferred).
 
-# Let us save the figure (named 'fig') from the previous cell (look at the files produced in your browser; if you are using Binder, use `Open...` under the Jupyter notebook `File` menu)
+# Let us save the figure (named 'fig') from the previous cell. **Look at the files produced in your browser; if you are using Binder, use `Open...` under the Jupyter notebook `File` menu.**
 
 # In[ ]:
 
@@ -351,9 +357,203 @@ fig.savefig("sine_and_exp.png")
 fig.savefig("sine_and_exp_transparent.png", transparent=True)
 
 
+# ## Solving ordinary differential equations (ODEs)
+# 
+# Newton's 2nd Law for one particle:
+# 
+# $$\begin{align}
+#   \mathbf{F} = m\mathbf{a} = m\frac{d\mathbf{v}}{dt} = m\frac{d^2\mathbf{x}}{dt^2}
+# \end{align}$$ 
+# 
+# is a first-order differential equation in the velocity vector and a second-order differential equation in the position vector. Here we assume that $\mathbf{F} = \mathbf{F}(\mathbf{x}, \mathbf{v}, t)$ does not have higher derivatives. So we need to know how to solve such differential equations, usually with initial conditions (as opposed to boundary conditions). 
+# 
+# Here is how to do it with the Scipy function `odeint`.  (Note that `solve_ivp` is now preferred to `odeint`; we'll switch to that later but it is easier to get started with `odeint`.)
+
+# ### First-order ODE
+
+# In[ ]:
+
+
+# Import the required modules
+import numpy as np
+import matplotlib.pyplot as plt
+
+from scipy.integrate import odeint  # Get only odeint from scipy.integrate
+# for the future:
+from scipy.integrate import solve_ivp   # Generally preferred to odeint
+
+
+# Let's try a one-dimensional first-order ODE, say:
+# 
+# $$\begin{align}
+# \quad 
+# \frac{dv}{dt} = -g, \quad \mbox{with} \quad v(0) = 10
+# \end{align}$$
+# 
+# in some appropriate units (we'll use MKS units by default).  This ODE can be separated and directly integrated:
+# 
+# $$\begin{align}
+#   \int_{v_0=10}^{v} dv' = - g \int_{0}^{t} dt'
+#   \quad\Longrightarrow\quad
+#     v - v_0 = - g (t - 0)
+#   \quad\Longrightarrow\quad
+#    v(t) = 10 - gt
+# \end{align}$$
+# 
+# 
+
+# In[ ]:
+
+
+# Define a function which calculates the derivative
+def dv_dt(v, t, g=9.8):
+    """Returns the right side of a simple first-order ODE with default g."""
+    return -g   
+
+t_pts = np.linspace(0., 10., 101)     # 101 points from t=0 and t=10.
+v_0 = 10.0  # the initial condition
+v_pts = odeint(dv_dt, v_0, t_pts)  # odeint( function for rhs, 
+                                   #         initial value of v(t),
+                                   #         array of t values )
+
+
+# In[ ]:
+
+
+
+
+
+# Let's check the output $v(t)$.  **Does it make sense?**
+
+# In[ ]:
+
+
+print(v_pts[0:10])
+v_pts.shape  # This outputs the "shape" of the array: It is two-dimensional!
+
+
+# Now plot $v(t)$ twice: the numerical calculation and the analytic solution:
+
+# In[ ]:
+
+
+g = 9.8
+v_pts_exact = v_0 - g*t_pts
+
+fig = plt.figure(figsize=(8,4))
+
+ax = fig.add_subplot(1,2,1)
+ax.plot(t_pts, v_pts, label='numerical', color='blue', lw=4)
+ax.plot(t_pts, v_pts_exact, label='exact', color='red')
+ax.set_xlabel('t [sec]')
+ax.set_ylabel('v(t) [meters/sec]')
+ax.legend();
+
+diff = v_pts_exact - v_pts.flatten()
+ax2 = fig.add_subplot(1,2,2)
+ax2.semilogy(t_pts, diff, label='difference', color='red')
+ax2.set_xlabel('t [sec]')
+ax2.set_ylabel('v(t) [meters/sec]')
+ax2.legend();
+
+fig.tight_layout()
+
+
+# We adjusted the colors and linewidths so you could see that the lines are on top of each other. **Why are the differences around $10^{-15}$?**
+
+# **Try solving instead:**
+# 
+# $$\begin{align}
+# \quad 
+# \frac{dx}{dt} = -x \quad \mbox{with} \quad x(0) = 1
+# \end{align}$$
+# 
+# **both analytically and numerically.**
+
+# ### Second-order ODE
+
+# Suppose we have a second-order ODE such as:
+# 
+# $$
+# \quad y'' + 2 y' + 2 y = \cos(2x), \quad \quad y(0) = 0, \; y'(0) = 0
+# $$
+# 
+# We can turn this into two first-order equations by defining a new dependent variable equal to $y'$ (we'll call it $z$):
+# 
+# $$
+# \quad z \equiv y' \quad \Rightarrow \quad z' + 2 z + 2y = \cos(2x) 
+#   \quad\mbox{or}\quad z' = -2z -2y + \cos(2x), \quad\mbox{with}
+# \quad z(0)=y(0) = 0.
+# $$
+# 
+# Now introduce the vector 
+# 
+# $$
+#   \mathbf{U}(x) = \left(\begin{array}{c}
+#                          y(x) \\
+#                          z(x)
+#                         \end{array}
+#                   \right)
+#         \quad\Longrightarrow\quad
+#     \frac{d\mathbf{U}}{dx} = 
+#                              \left(\begin{array}{c}
+#                                     y' \\
+#                                     z'
+#                                    \end{array}
+#                              \right) 
+#                            =  
+#                              \left(\begin{array}{c}
+#                                     z \\
+#                                     -2 y' - 2 y + \cos(2x)
+#                                    \end{array}
+#                              \right)
+#               \quad\mbox{with}\quad
+#     \mathbf{U}(0) = \left(\begin{array}{c}
+#                          0 \\
+#                          0
+#                         \end{array}
+#                   \right)
+# $$
+# 
+# We can solve this system of ODEs using `odeint` with lists, as follows:
+
+# In[ ]:
+
+
+# Define a function for the right side
+def dU_dx(U, x):
+    """Right side of the differential equation to be solved.
+    U is a two-component vector with y=U[0] and z=U[1]. 
+    Thus this function should return [y', z']
+    """
+    return [U[1], -2*U[1] - 2*U[0] + np.cos(2*x)]
+
+# initial condition U_0 = [y(0)=0, z(0)=y'(0)=0]
+U_0 = [0., 0.]
+
+x_pts = np.linspace(0, 15, 200)  # Set up the mesh of x points
+U_pts = odeint(dU_dx, U_0, x_pts)  # U_pts is a 2-dimensional array
+y_pts = U_pts[:, 0]   # Ok, this is tricky.  For each x, U_pts has two 
+                      #  components.  We want the upper component for all
+                      #  x, which is y(x).  The : means all of the first 
+                      #  index, which is x, and the 0 means the first
+                      #  component in the other dimension.
+                      # What is U_pts[:, 1]? (Try plotting it.)
+
+
+# In[ ]:
+
+
+fig = plt.figure()
+ax = fig.add_subplot(1,1,1)
+ax.plot(x_pts, y_pts)
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+
+
 # ## Widgets!
 # 
-# A widget is an object such as a slider or a check box or a pulldown menu.  We can use them to make it easy to explore different parameter values in a problem we're solving, which is invaluable for building intuition.  They act on the argument of a function.  We'll look at a simple case here but plan to explore this much more as we proceed.
+# A widget is an object such as a slider or a check box or a pulldown menu.  We can use them to make it easy to explore different parameter values in a problem we're solving, which is invaluable for building intuition.  They act on the argument of a function.  We'll look at a simple case here but plan to explore this more as we proceed.
 # 
 # The set of widgets we'll use here (there are others!) is from `ipywidgets`; we'll conventionally import the module as `import ipywidgets as widgets` and we'll also often use `display` from `Ipython.display`.
 
@@ -423,142 +623,8 @@ def plot_it(freq=1., color='blue', lw=2, grid=True, xlabel='x',
 widgets.interact(plot_it, 
                  freq=(0.1, 2.), color=['blue', 'red', 'green'], 
                  lw=(1, 10), xlabel=['x', 't', 'dog'],
-                 function=['sin', 'cos', 'tan'])
+                 function=['sin', 'cos', 'tan']);
     
-
-
-# ## Numpy linear algebra
-# 
-# Having used numpy arrrays to describe vectors, we are now ready to try out matrices. We can define a $3 \times 3 $ real matrix **A** as
-
-# In[ ]:
-
-
-import numpy as np
-A = np.log(np.array([ [4.0, 7.0, 8.0], [3.0, 10.0, 11.0], [4.0, 5.0, 7.0] ]))
-print(A)
-
-
-# If we use the `shape` attribute we would get $(3, 3)$ as output, that is verifying that our matrix is a $3\times 3$ matrix. 
-
-# In[ ]:
-
-
-A.shape
-
-
-# We can slice the matrix and print for example the first column (Python organized matrix elements in a row-major order, see below) as
-
-# In[ ]:
-
-
-A = np.log(np.array([ [4.0, 7.0, 8.0], [3.0, 10.0, 11.0], [4.0, 5.0, 7.0] ]))
-# print the first column, row-major order and elements start with 0
-print(A[:,0])
-
-
-# We can continue this was by printing out other columns or rows. The example here prints out the second column
-
-# In[ ]:
-
-
-A = np.log(np.array([ [4.0, 7.0, 8.0], [3.0, 10.0, 11.0], [4.0, 5.0, 7.0] ]))
-# print the first column, row-major order and elements start with 0
-print(A[1,:])
-
-
-# Numpy contains many other functionalities that allow us to slice, subdivide etc etc arrays. We strongly recommend that you look up the [Numpy website for more details](http://www.numpy.org/). Useful functions when defining a matrix are the `np.zeros` function which declares a matrix of a given dimension and sets all elements to zero
-
-# In[ ]:
-
-
-n = 5
-# define a matrix of dimension 10 x 10 and set all elements to zero
-A = np.zeros( (n, n) )
-print(A)
-
-
-# In[ ]:
-
-
-n = 5
-# define a matrix of dimension 10 x 10 and set all elements to one
-A = np.ones( (n, n) )
-print(A)
-
-
-# or as uniformly distributed random numbers on $[0,1]$
-
-# In[ ]:
-
-
-n = 4
-# define a matrix of dimension 10 x 10 and set all elements to random numbers with x \in [0, 1]
-A = np.random.rand(n, n)
-print(A)
-
-
-# The transpose of this matrix
-
-# In[ ]:
-
-
-A.T
-
-
-# The dot product of two matrices can be computed with the `@` operator (which is preferred to the `numpy.dot` function). Note that it is not the same as the arithmetic $*$ operation that performs elementwise multiplication.
-
-# In[ ]:
-
-
-A = np.array([ [1., 2., 3.], [4., 5., 6.], [7., 8., 9.] ])
-print('matrix A:')
-print(A)
-
-print('\nThe dot product of A with A:')  # \n here inserts a blank line ('newline')
-print(A @ A)
-
-print('\nElement-wise product of A with A:')
-print(A * A)
-
-
-# The inverse of this matrix $A^{-1}$ can be computed using the `numpy.linalg` module
-
-# In[ ]:
-
-
-n = 4
-# define a matrix of dimension 10 x 10 and set all elements to random numbers with x \in [0, 1]
-A = np.random.rand(n, n)
-
-Ainv = np.linalg.inv(A)
-print(Ainv)
-
-
-# The dot product of a matrix by its inverse returns the identity matrix (with small floating-point errors; note their size). Verify that this is true:
-
-# In[ ]:
-
-
-print(A @ Ainv)
-
-
-# **How would you check $A^{-1} A$?**
-
-# In[ ]:
-
-
-
-
-
-# The eigenvalues and eigenvectors of a matrix can be computed with the `eig` function (note that `j` is the notation for $\sqrt{-1}$)
-
-# In[ ]:
-
-
-eigenvalues, eigenvectors = np.linalg.eig(A)
-print('The eigenvalues are:\n',eigenvalues)
-print('\nThe eigenvectors are:\n',eigenvectors)
 
 
 # ### Further examples with numpy
