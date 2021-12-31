@@ -3,7 +3,7 @@
 
 # # Python and Jupyter notebooks: part 01
 # 
-# Last revised: 15-Aug-2021 by Dick Furnstahl [furnstahl.1@osu.edu]
+# Last revised: 31-Dec-2021 by Dick Furnstahl [furnstahl.1@osu.edu]
 
 # **You can find valuable documentation under the Jupyter notebook Help menu. The "User Interface Tour" and "Keyboard Shortcuts" are useful places to start, but there are also many other links to documentation there.** 
 
