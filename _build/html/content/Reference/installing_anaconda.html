@@ -347,11 +347,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#changing-to-the-physics-5300-env-kernel-when-running-a-jupyter-notebook">
+    <a class="reference internal nav-link" href="#changing-to-the-5300-env-env-kernel-when-running-a-jupyter-notebook">
      Changing to the
      <code class="docutils literal notranslate">
       <span class="pre">
-       Physics-5300
+       5300-env
       </span>
      </code>
      env kernel when running a Jupyter notebook
@@ -393,14 +393,14 @@
 </div>
 <div class="section" id="anaconda-and-github">
 <h2>Anaconda and github<a class="headerlink" href="#anaconda-and-github" title="Permalink to this headline">¶</a></h2>
-<p><strong>Installation of the Physics-5300 notes and Jupyter notebooks from GitHub by command line</strong></p>
-<p>Go to the location where you want the notebook files.</p>
-<p>Download the 5300 repository from GitHub and enter the directory <code class="docutils literal notranslate"><span class="pre">Physics-5300</span></code> which should have been created on your computer with the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">furnstahl</span><span class="o">/</span><span class="n">Physics</span><span class="o">-</span><span class="mf">5300.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">Physics</span><span class="o">-</span><span class="mi">5300</span>
+<p><strong>Installation of the Physics 5300 notes and Jupyter notebooks from GitHub by command line</strong></p>
+<p>Go to the location on your computer where you want the notebook files.</p>
+<p>Download the 5300 repository from GitHub <a class="reference external" href="https://github.com/furnstahl/5300-JB">https://github.com/furnstahl/5300-JB</a> and enter the directory <code class="docutils literal notranslate"><span class="pre">5300-JB</span></code> which should have been created on your computer with the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">furnstahl</span><span class="o">/</span><span class="mi">5300</span><span class="o">-</span><span class="n">JB</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="mi">5300</span><span class="o">-</span><span class="n">JB</span>
 </pre></div>
 </div>
-<p>The notebooks that we will be using depend on several scientific python modules (see the list in environment.yml) and require a python3.x installation based on Anaconda. This is best done within a conda environment, as described in the next section.</p>
+<p>The notebooks that we will be using depend on several scientific python modules (see the list in environment.yml) and require a python3.9 installation based on Anaconda. This is best done within a conda environment, as described in the next section.</p>
 </div>
 <div class="section" id="anaconda-environments">
 <h2>Anaconda environments<a class="headerlink" href="#anaconda-environments" title="Permalink to this headline">¶</a></h2>
@@ -411,7 +411,7 @@ a virtual environment:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda env create
 </pre></div>
 </div>
-<p>which reads the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file in your current directory (in this case the one in Physics-5300). [Note: if you are using Windows, you should do this in an Anaconda Prompt window.]</p>
+<p>which reads the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file in your current directory (in this case the one in 5300-JB). [Note: if you are using Windows, you should do this in an Anaconda Prompt window.]</p>
 <p>To use a different file name such as <code class="docutils literal notranslate"><span class="pre">other_environment.yml</span></code>: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">other_environment.yml</span></code></p>
 <p>It will take a while to generate the new environment; be patient!  You will see a listing being generated like:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   Downloading and Extracting Packages
@@ -460,7 +460,7 @@ jupyter notebook Anaconda_Bayes_test.ipynb
 </div>
 <div class="section" id="updating-your-conda-environment-for-5300">
 <h3>Updating your conda environment for 5300<a class="headerlink" href="#updating-your-conda-environment-for-5300" title="Permalink to this headline">¶</a></h3>
-<p>Go to the <code class="docutils literal notranslate"><span class="pre">Physics-5300</span></code> directory you created by cloning the class repository from GitHub.  This is where the relevant <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file is stored.  This file defines the environment and will be occasionally updated to add additional modules.<br />
+<p>Go to the <code class="docutils literal notranslate"><span class="pre">5300-JB</span></code> directory you created by cloning the class repository from GitHub.  This is where the relevant <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file is stored.  This file defines the environment and will be occasionally updated to add additional modules.<br />
 You can update to the new environment with:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda deactivate
 conda env update 
@@ -472,13 +472,13 @@ conda env update
 </div>
 <p>you will have access to the new packages.</p>
 </div>
-<div class="section" id="changing-to-the-physics-5300-env-kernel-when-running-a-jupyter-notebook">
-<h3>Changing to the <code class="docutils literal notranslate"><span class="pre">Physics-5300</span></code> env kernel when running a Jupyter notebook<a class="headerlink" href="#changing-to-the-physics-5300-env-kernel-when-running-a-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="changing-to-the-5300-env-env-kernel-when-running-a-jupyter-notebook">
+<h3>Changing to the <code class="docutils literal notranslate"><span class="pre">5300-env</span></code> env kernel when running a Jupyter notebook<a class="headerlink" href="#changing-to-the-5300-env-env-kernel-when-running-a-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
 <p>If you are running the <code class="docutils literal notranslate"><span class="pre">5300-env</span></code> kernel, you should see</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python [conda env:5300-env] *
 </pre></div>
 </div>
-<p>in the upper right-hand corner of the Jupyter notebook you are running.  If it just says something like <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span></code> then you are not running the <code class="docutils literal notranslate"><span class="pre">Physics-5300</span></code> kernel.  In that case, look under the <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> menu to <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">kernel</span></code> and select <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">[conda</span> <span class="pre">env:5300-env]</span></code>.  The kernel should restart and indicate the new kernel in the upper corner.</p>
+<p>in the upper right-hand corner of the Jupyter notebook you are running.  If it just says something like <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span></code> then you are not running the <code class="docutils literal notranslate"><span class="pre">5300-env</span></code> kernel.  In that case, look under the <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> menu to <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">kernel</span></code> and select <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">[conda</span> <span class="pre">env:5300-env]</span></code>.  The kernel should restart and indicate the new kernel in the upper corner.</p>
 </div>
 </div>
 </div>
