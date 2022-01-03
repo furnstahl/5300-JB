@@ -12,7 +12,7 @@ You may already have Python on your computer, but it may not be the version we n
 
 Step-by-step instructions for downloading and installing Anaconda are available for [Windows](http://docs.anaconda.com/anaconda/install/windows/), [Mac OSX](http://docs.anaconda.com/anaconda/install/mac-os/), or [Linux](http://docs.anaconda.com/anaconda/install/linux/). Here we&#39;ll step through the relevant options for us (based on following the graphical installer, which is what you will get by default for Windows and Macs; for Linux it is assumed you can follow the [instructions for Linux](http://docs.anaconda.com/anaconda/install/linux/)).
 
-1. Go to [https://www.anaconda.com/products/individual - Downloads](https://www.anaconda.com/products/individual#Downloads) and click on the **Download** button for Python 3.8 for your type of computer (use the 64-bit installer).
+1. Go to [https://www.anaconda.com/products/individual - Downloads](https://www.anaconda.com/products/individual#Downloads) and click on the **Download** button for Python 3.9 for your type of computer (use the 64-bit installer).
 2. An installation program will be downloaded. Start it up (e.g., by double clicking).
 3. Accept the license agreement.
 4. Install for All Users (this assumes you have admin privileges; it avoids later problems if you can do this). Allow the installation if your virus protection software asks you.
