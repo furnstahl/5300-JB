@@ -24,18 +24,18 @@ Step-by-step instructions for downloading and installing Anaconda are available 
 
 ## Anaconda and github
 
-**Installation of the Physics-5300 notes and Jupyter notebooks from GitHub by command line**
+**Installation of the Physics 5300 notes and Jupyter notebooks from GitHub by command line**
 
-Go to the location where you want the notebook files. 
+Go to the location on your computer where you want the notebook files. 
 
-Download the 5300 repository from GitHub and enter the directory `Physics-5300` which should have been created on your computer with the following:
+Download the 5300 repository from GitHub [https://github.com/furnstahl/5300-JB](https://github.com/furnstahl/5300-JB) and enter the directory `5300-JB` which should have been created on your computer with the following:
 
 ```
-git clone https://github.com/furnstahl/Physics-5300.git
-cd Physics-5300
+git clone https://github.com/furnstahl/5300-JB.git
+cd 5300-JB
 ```
 
-The notebooks that we will be using depend on several scientific python modules (see the list in environment.yml) and require a python3.x installation based on Anaconda. This is best done within a conda environment, as described in the next section.
+The notebooks that we will be using depend on several scientific python modules (see the list in environment.yml) and require a python3.9 installation based on Anaconda. This is best done within a conda environment, as described in the next section.
 
 
 ## Anaconda environments
@@ -47,7 +47,7 @@ a virtual environment:
 
 	conda env create
 
-which reads the `environment.yml` file in your current directory (in this case the one in Physics-5300). [Note: if you are using Windows, you should do this in an Anaconda Prompt window.]
+which reads the `environment.yml` file in your current directory (in this case the one in 5300-JB). [Note: if you are using Windows, you should do this in an Anaconda Prompt window.]
 
 To use a different file name such as `other_environment.yml`: `conda env create -f other_environment.yml`
 
@@ -99,7 +99,7 @@ Other notebooks can be found in the subdirectories of the notebooks directory.
 
 ### Updating your conda environment for 5300
 
-Go to the `Physics-5300` directory you created by cloning the class repository from GitHub.  This is where the relevant `environment.yml` file is stored.  This file defines the environment and will be occasionally updated to add additional modules.  
+Go to the `5300-JB` directory you created by cloning the class repository from GitHub.  This is where the relevant `environment.yml` file is stored.  This file defines the environment and will be occasionally updated to add additional modules.  
 You can update to the new environment with:
 
     conda deactivate
@@ -111,10 +111,10 @@ Now if you activate the environment again:
 
 you will have access to the new packages.
 
-### Changing to the `Physics-5300` env kernel when running a Jupyter notebook
+### Changing to the `5300-env` env kernel when running a Jupyter notebook
 
 If you are running the `5300-env` kernel, you should see
 
     Python [conda env:5300-env] *
 
-in the upper right-hand corner of the Jupyter notebook you are running.  If it just says something like `Python 3` then you are not running the `Physics-5300` kernel.  In that case, look under the `Kernel` menu to `Change kernel` and select `Python [conda env:5300-env]`.  The kernel should restart and indicate the new kernel in the upper corner.
+in the upper right-hand corner of the Jupyter notebook you are running.  If it just says something like `Python 3` then you are not running the `5300-env` kernel.  In that case, look under the `Kernel` menu to `Change kernel` and select `Python [conda env:5300-env]`.  The kernel should restart and indicate the new kernel in the upper corner.
