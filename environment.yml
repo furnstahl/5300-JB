@@ -34,8 +34,8 @@ dependencies:
   - colorama=0.4.4
   - corner=2.2.1
   - cryptography=36.0.1
-  - curl=7.80.0=
-  - cycler=0.11.0=
+  - curl=7.80.0
+  - cycler=0.11.0
   - dataclasses=0.8
   - dbus=1.13.6
   - debugpy=1.5.1
