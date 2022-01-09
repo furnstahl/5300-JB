@@ -1,4 +1,4 @@
-# Ohio State University Physics 5300
+# Ohio State University Physics 5300 (Spring 2022)
 ## "Theoretical and Computational Mechanics"
 
 ### Objectives
