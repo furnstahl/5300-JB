@@ -10,7 +10,7 @@ dependencies:
 - pandas
 - seaborn
 - jupyter
-- ipywidgets
+- ipywidgets=7.6.5
 - nbdime
 - emcee
 - zeus-mcmc
