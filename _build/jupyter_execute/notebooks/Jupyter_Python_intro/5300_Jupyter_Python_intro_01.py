@@ -506,7 +506,7 @@ ax.set_ylabel('y')
 # 
 # The set of widgets we'll use here (there are others!) is from `ipywidgets`; we'll conventionally import the module as `import ipywidgets as widgets` and we'll also often use `display` from `Ipython.display`.
 
-# In[ ]:
+# In[1]:
 
 
 import numpy as np
@@ -520,7 +520,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 # The simplest form is to use `interact`, which we pass a function name and the variables with ranges.  By default this makes a *slider*, which takes on integer or floating point values depending on whether you put decimal points in the range. **Try it! Then modify the function and try again.**
 
-# In[ ]:
+# In[2]:
 
 
 # We can do this to any function
@@ -532,7 +532,7 @@ def test_f(x=5.):
 widgets.interact(test_f, x=(0.,10.));
 
 
-# In[ ]:
+# In[3]:
 
 
 # Explicit declaration of the widget (here FloatSlider) and details
@@ -547,7 +547,7 @@ widgets.interact(test_f,
 
 # Here's an example with some bells and whistles for a plot.  **Try making changes!**
 
-# In[ ]:
+# In[4]:
 
 
 def plot_it(freq=1., color='blue', lw=2, grid=True, xlabel='x', 
