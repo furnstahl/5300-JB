@@ -76,7 +76,7 @@ y = 3.*x**2 - 2.*x + 7.
 print('y = ', y)           # Strings delimited by ' 's
 
 
-# There are several ways to print strings that includes variables from your code. We recommend using `fstring`. See, e.g., this [blog](https://cito.github.io/blog/f-strings/) for examples. Can you deduce what `.0f` and `.2f` mean in the following examples? 
+# There are several ways to print strings that includes variables from your code. We recommend using `fstring`. See, e.g., this [blog](https://miguendes.me/73-examples-to-help-you-master-pythons-f-strings) for examples. Can you deduce what `.0f` and `.2f` mean in the following examples? 
 
 # In[ ]:
 
