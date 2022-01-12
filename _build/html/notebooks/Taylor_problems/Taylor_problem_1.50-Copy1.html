@@ -1,0 +1,716 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taylor problem 1.50 &#8212; Theoretical and computational mechanics</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "avec": ["\\boldsymbol{a}"], "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/5300_icon.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Theoretical and computational mechanics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about.html">
+   About Physics 5300: Theoretical and Computational Mechanics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/Course/overview.html">
+   Objectives
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/Reference/installing_anaconda.html">
+   Using Anaconda
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../content/Reference/python_jupyter.html">
+   Python and Jupyter notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Reference/Jupyter_Python_intro_01.html">
+     Python and Jupyter notebooks: part 01
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../content/Reference/advanced.html">
+   Advanced topics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../content/Reference/using_github.html">
+     Using GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Reference/Jupyter_Python_intro_02.html">
+     Python and Jupyter notebooks: part 02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Reference/Simple_widgets_v1.html">
+     Widgets in Jupyter
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Taylor chapters 1-4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Taylor_problem_1.39.html">
+   Taylor problem 1.39
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Taylor_problem_1.50.html">
+   Taylor problem 1.50
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Taylor_problem_1.50_supplement1.html">
+   Taylor problem 1.50 supplement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Taylor_problem_2.20_template.html">
+   Taylor problem 2.20 Template
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Taylor_problem_2.40_template.html">
+   Taylor problem 2.40
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Taylor_problem_2.43_template.html">
+   Taylor problem 2.43
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Taylor_problem_3.23.html">
+   Taylor problem 3.23
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Taylor_problem_4.29_template.html">
+   Taylor problem 4.29 template
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Taylor_problem_4.37_template.html">
+   Taylor problem 4.37 template
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Sandboxes/Pendulum_widget_visualization_v02.html">
+   Pendulum visualization using ipywidgets
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference material
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../content/zbibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/Taylor_problems/Taylor_problem_1.50-Copy1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/furnstahl/5300-JB"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/furnstahl/5300-JB/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Taylor_problems/Taylor_problem_1.50-Copy1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/furnstahl/5300-JB/main?urlpath=tree/./notebooks/Taylor_problems/Taylor_problem_1.50-Copy1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ok-now-for-some-more-systematic-plotting">
+   Ok, now for some more systematic plotting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-repeat-with-widgets">
+   Bonus: repeat with widgets!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="taylor-problem-1-50">
+<h1>Taylor problem 1.50<a class="headerlink" href="#taylor-problem-1-50" title="Permalink to this headline">¶</a></h1>
+<p>This problem attacks the “oscillating skateboard” problem described in Example 1.2 of Taylor.  A Newton’s 2nd law analysis leads to the differential equation for the angle <span class="math notranslate nohighlight">\(\phi\)</span> in radians:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+  \ddot\phi = -\frac{g}{R}\sin\phi
+  \;.
+\end{align}
+\]</div>
+<p>This is a 2nd order, <em>nonlinear</em> differential equation.  We note it is the same equation describing the motion of a simple (undamped, not driven) pendulum.</p>
+<p>Problem 1.50 has us solving this equation numerically for particular initial conditions and comparing the plots to the approximate solution based on the small angle approximation for <span class="math notranslate nohighlight">\(\sin\phi\)</span>.  We’ll build up code to find this solution and plot it in steps to illustrate how a notebook evolves.  We don’t create the polished version at once!</p>
+<p><strong>Your goal for problem 1.51: Modify the relevant part of this notebook to produce the required figure, print it out, and turn it in with your homework.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1">#plt.rcParams.update({&#39;font.size&#39;: 18})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll define the right-hand side (rhs) of the ordinary differential equations (ODE) using the standard form from the Python basics notebook:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+   \frac{d}{dt}\left(\begin{array}{c}
+                          \phi \\
+                          \dot\phi
+                      \end{array}\right)
+               = \left(\begin{array}{c}
+                          \dot\phi \\
+                          -g \sin(\phi)
+                       \end{array}\right)
+\end{align}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ode_rhs_exact</span><span class="p">(</span><span class="n">u_vec</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Right-hand side (rhs) of the differential equation, with </span>
+<span class="sd">    u_vec = [\phi, \dot\phi] and params = [g, R].  Returns the list of</span>
+<span class="sd">    d(u_vec)/dt, as prescribed by the differential equation.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">phi</span><span class="p">,</span> <span class="n">phidot</span> <span class="o">=</span> <span class="n">u_vec</span>  <span class="c1"># extract phi and phidot from the passed vector</span>
+    <span class="n">g</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">params</span>  <span class="c1"># extract g and R from the passed parameters</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">phidot</span><span class="p">,</span> <span class="o">-</span><span class="n">g</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">/</span><span class="n">R</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># parameters</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>  <span class="c1"># in mks units</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mi">5</span>    <span class="c1"># radius in meters</span>
+
+<span class="c1"># absolute and relative tolerances for ode solver</span>
+<span class="n">abserr</span> <span class="o">=</span> <span class="mf">1.0e-8</span>
+<span class="n">relerr</span> <span class="o">=</span> <span class="mf">1.0e-6</span>
+
+<span class="c1"># initial conditions for [phi, phidot]</span>
+<span class="n">phi0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span> <span class="o">*</span> <span class="mf">20.</span>  <span class="c1"># convert initial phi to radians</span>
+<span class="n">u0_vec</span> <span class="o">=</span> <span class="p">[</span><span class="n">phi0</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]</span>
+
+<span class="n">t_max</span> <span class="o">=</span> <span class="mf">15.</span>  <span class="c1"># integration time</span>
+<span class="n">t_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_max</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>  <span class="c1"># array of time points, spaced 0.01</span>
+
+<span class="c1"># Integrate the differential equation and read off phi, phidot (note T!)</span>
+<span class="n">phi</span><span class="p">,</span> <span class="n">phidot</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">ode_rhs_exact</span><span class="p">,</span> <span class="n">u0_vec</span><span class="p">,</span> <span class="n">t_pts</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">R</span><span class="p">),</span> 
+                     <span class="n">atol</span><span class="o">=</span><span class="n">abserr</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">relerr</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">180.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">phi</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>  <span class="c1"># make the spacing of subplots nicer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Does the plot make sense for <span class="math notranslate nohighlight">\(\phi\)</span>?  E.g., does it start at the correct angle? Does it have the behavior you expect (e.g., periodic with constant amplitude)?</strong></p>
+<p>Now let’s put this into a function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solve_for_phi</span><span class="p">(</span><span class="n">phi0</span><span class="p">,</span> <span class="n">phidot0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_min</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">t_max</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.8</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mf">5.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Solve the differential equation for the skateboard Example 1.2 in Taylor.</span>
+<span class="sd">    The result for t, \phi(t) and \dot\phi(t) are returned for a grid with</span>
+<span class="sd">    t_min &lt; t &lt; t_max and a hardwired (for now) spacing of 0.01 seconds.</span>
+<span class="sd">    The ODE solver is odeint from scipy, with specified tolerances. </span>
+<span class="sd">    Units are mks and angles are in radians.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># absolute and relative tolerances for ode solver</span>
+    <span class="n">abserr</span> <span class="o">=</span> <span class="mf">1.0e-8</span>
+    <span class="n">relerr</span> <span class="o">=</span> <span class="mf">1.0e-6</span>
+
+    <span class="c1"># initial conditions for [phi, phidot]</span>
+    <span class="n">u0_vec</span> <span class="o">=</span> <span class="p">[</span><span class="n">phi0</span><span class="p">,</span> <span class="n">phidot0</span><span class="p">]</span>
+
+    <span class="n">t_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t_min</span><span class="p">,</span> <span class="n">t_max</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+
+    <span class="c1"># Integrate the differential equation</span>
+    <span class="n">phi</span><span class="p">,</span> <span class="n">phidot</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">ode_rhs_exact</span><span class="p">,</span> <span class="n">u0_vec</span><span class="p">,</span> <span class="n">t_pts</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">R</span><span class="p">),</span> 
+                     <span class="n">atol</span><span class="o">=</span><span class="n">abserr</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">relerr</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+    
+    <span class="k">return</span> <span class="n">t_pts</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phidot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check that it works (gives the previous result).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span> <span class="o">*</span> <span class="mf">20.</span>  <span class="c1"># convert initial phi to radians</span>
+<span class="n">t_pts</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phidot</span> <span class="o">=</span> <span class="n">solve_for_phi</span><span class="p">(</span><span class="n">phi0</span><span class="p">,</span> <span class="n">t_max</span><span class="o">=</span><span class="mf">15.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">180.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">phi</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>  <span class="c1"># make the spacing of subplots nicer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ok, now we need an ode function for the small angle approximation.  It’s very easy now to copy and modify our other function!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ode_rhs_small_angle</span><span class="p">(</span><span class="n">u_vec</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Right-hand side (rhs) of the differential equation, with </span>
+<span class="sd">    u_vec = [\phi, \dot\phi] and params = [g, R].  Returns the list of</span>
+<span class="sd">    d(u_vec)/dt, as prescribed by the differential equation.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">phi</span><span class="p">,</span> <span class="n">phidot</span> <span class="o">=</span> <span class="n">u_vec</span>  <span class="c1"># We don&#39;t actually use x or y here, but could!</span>
+    <span class="n">g</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">params</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">phidot</span><span class="p">,</span> <span class="o">-</span><span class="n">g</span><span class="o">*</span><span class="n">phi</span><span class="o">/</span><span class="n">R</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we can put them together into one solver function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solve_for_phi_all</span><span class="p">(</span><span class="n">phi0</span><span class="p">,</span> <span class="n">phidot0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_min</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">t_max</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.8</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mf">5.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Solve the differential equation for the skateboard Example 1.2 in Taylor</span>
+<span class="sd">    using the exact equation and the small angle approximation.</span>
+<span class="sd">    The result for t, \phi(t) and \dot\phi(t) are returned for a grid with</span>
+<span class="sd">    t_min &lt; t &lt; t_max and a hardwired (for now) spacing of 0.01 seconds.</span>
+<span class="sd">    The ODE solver is odeint from scipy, with specified tolerances. </span>
+<span class="sd">    Units are mks and angles are in radians.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># absolute and relative tolerances for ode solver</span>
+    <span class="n">abserr</span> <span class="o">=</span> <span class="mf">1.0e-8</span>
+    <span class="n">relerr</span> <span class="o">=</span> <span class="mf">1.0e-6</span>
+
+    <span class="c1"># initial conditions for [phi, phidot]</span>
+    <span class="n">u0_vec</span> <span class="o">=</span> <span class="p">[</span><span class="n">phi0</span><span class="p">,</span> <span class="n">phidot0</span><span class="p">]</span>
+
+    <span class="n">t_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t_min</span><span class="p">,</span> <span class="n">t_max</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+
+    <span class="c1"># Integrate the differential equations</span>
+    <span class="n">phi</span><span class="p">,</span> <span class="n">phidot</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">ode_rhs_exact</span><span class="p">,</span> <span class="n">u0_vec</span><span class="p">,</span> <span class="n">t_pts</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">R</span><span class="p">),</span> 
+                     <span class="n">atol</span><span class="o">=</span><span class="n">abserr</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">relerr</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">phi_sa</span><span class="p">,</span> <span class="n">phidot_sa</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">ode_rhs_small_angle</span><span class="p">,</span> <span class="n">u0_vec</span><span class="p">,</span> <span class="n">t_pts</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">R</span><span class="p">),</span> 
+                     <span class="n">atol</span><span class="o">=</span><span class="n">abserr</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">relerr</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+    
+    <span class="k">return</span> <span class="n">t_pts</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phidot</span><span class="p">,</span> <span class="n">phi_sa</span><span class="p">,</span> <span class="n">phidot_sa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Always try it out!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span> <span class="o">*</span> <span class="mf">90.</span>
+<span class="n">t_pts</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phidot</span><span class="p">,</span> <span class="n">phi_sa</span><span class="p">,</span> <span class="n">phidot_sa</span> <span class="o">=</span> <span class="n">solve_for_phi_all</span><span class="p">(</span><span class="n">phi0</span><span class="p">,</span> <span class="n">t_max</span><span class="o">=</span><span class="mf">15.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">180.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">phi</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">180.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">phi_sa</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>  <span class="c1"># make the spacing of subplots nicer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is actually the plot that is requested, so we could analyze it at this stage, but instead let’s improve the plot and see how to save it.</p>
+<div class="section" id="ok-now-for-some-more-systematic-plotting">
+<h2>Ok, now for some more systematic plotting<a class="headerlink" href="#ok-now-for-some-more-systematic-plotting" title="Permalink to this headline">¶</a></h2>
+<p>Here we see examples of applying limits to the x and y axes as well as labels and a title.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="mf">15.</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">25.</span><span class="p">,</span><span class="mf">25.</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t (sec)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\phi$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\phi_0 = 20$ degrees&#39;</span><span class="p">)</span>
+<span class="n">line_exact</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">180.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">phi</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">line_sa</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">180.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">phi_sa</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;small angle&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># save the figure</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Taylor_prob_1.50.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bonus-repeat-with-widgets">
+<h2>Bonus: repeat with widgets!<a class="headerlink" href="#bonus-repeat-with-widgets" title="Permalink to this headline">¶</a></h2>
+<p>This actually generalizes problems 1.50 and 1.51 so that you can examine any angle in between.  Use it to check your figure for 1.51.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">fixed</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+
+<span class="k">def</span> <span class="nf">rad_to_deg</span><span class="p">(</span><span class="n">theta_rad</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Take as input an angle in radians and return it in degrees.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">180.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">theta_rad</span>
+
+<span class="k">def</span> <span class="nf">deg_to_rad</span><span class="p">(</span><span class="n">theta_deg</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Take as input an angle in degrees and return it in radians.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span> <span class="o">*</span> <span class="n">theta_deg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_exact_and_small_angle</span><span class="p">(</span><span class="n">phi0_deg</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">phi0_rad</span> <span class="o">=</span> <span class="n">deg_to_rad</span><span class="p">(</span><span class="n">phi0_deg</span><span class="p">)</span>
+    <span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_rad</span><span class="p">,</span> <span class="n">phidot</span><span class="p">,</span> <span class="n">phi_sa_rad</span><span class="p">,</span> <span class="n">phidot_sa</span> <span class="o">=</span> \
+         <span class="n">solve_for_phi_all</span><span class="p">(</span><span class="n">phi0_rad</span><span class="p">,</span> <span class="n">t_max</span><span class="o">=</span><span class="mf">15.</span><span class="p">)</span>
+    <span class="n">phi_deg</span> <span class="o">=</span> <span class="n">rad_to_deg</span><span class="p">(</span><span class="n">phi_rad</span><span class="p">)</span>
+    <span class="n">phi_sa_deg</span> <span class="o">=</span> <span class="n">rad_to_deg</span><span class="p">(</span><span class="n">phi_sa_rad</span><span class="p">)</span>
+    
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">line_exact</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_deg</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+    <span class="n">line_sa</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_sa_deg</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;small angle&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="mf">15.</span><span class="p">)</span>
+    <span class="c1">#ax.set_ylim(-90.,90.)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t (sec)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\phi$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">fr</span><span class="s1">&#39;$\phi_0 = </span><span class="si">{</span><span class="n">phi0_deg</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">plot_exact_and_small_angle</span><span class="p">,</span> <span class="n">phi0_deg</span><span class="o">=</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="mf">90.</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to avoid the jiggling and do some formatting</span>
+<span class="n">phi0_deg_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">120.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span>
+                                     <span class="n">description</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\phi_0$ (degrees)&#39;</span><span class="p">,</span>
+                                     <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;.0f&#39;</span><span class="p">,</span>
+                                     <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span>
+                                    <span class="p">)</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">plot_exact_and_small_angle</span><span class="p">,</span> <span class="n">phi0_deg</span><span class="o">=</span><span class="n">phi0_deg_widget</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "furnstahl/5300-JB",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/Taylor_problems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Dick Furnstahl<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
