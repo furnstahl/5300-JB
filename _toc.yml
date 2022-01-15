@@ -22,18 +22,31 @@ parts:
       - title: "Widgets in Jupyter"
         file: notebooks/Reference/Simple_widgets_v1.ipynb
 
-  - caption: Taylor chapters 1-4
+  - caption: Taylor problem notebooks
     chapters:
-    - file: notebooks/Taylor_problems/Taylor_problem_1.39.ipynb
-    - file: notebooks/Taylor_problems/Taylor_problem_1.50.ipynb
-    - file: notebooks/Taylor_problems/Taylor_problem_1.50_supplement1.ipynb
-    - file: notebooks/Taylor_problems/Taylor_problem_2.20_template.ipynb
-    - file: notebooks/Taylor_problems/Taylor_problem_2.40_template.ipynb
-    - file: notebooks/Taylor_problems/Taylor_problem_2.43_template.ipynb
-    - file: notebooks/Taylor_problems/Taylor_problem_3.23.ipynb
-    - file: notebooks/Taylor_problems/Taylor_problem_4.29_template.ipynb
-    - file: notebooks/Taylor_problems/Taylor_problem_4.37_template.ipynb
-    - file: notebooks/Sandboxes/Pendulum_widget_visualization_v02.ipynb
+    - file: content/Taylor/Taylor_chapters_1to4.md
+      sections:
+      - file: notebooks/Taylor_problems/Taylor_problem_1.39.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_1.50.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_1.50_supplement1.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_2.20_template.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_2.40_template.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_2.43_template.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_3.23.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_4.29_template.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_4.37_template.ipynb
+      - file: notebooks/Sandboxes/Pendulum_widget_visualization_v02.ipynb
+    - file: content/Taylor/Taylor_chapter_5.md
+      sections:
+      - file: notebooks/Taylor_problems/Taylor_problem_5.2.ipynb 
+      - file: notebooks/Taylor_problems/Taylor_problem_5.13.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_5.32.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_5.36.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_5.36_atan2.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_5.50.ipynb
+      - file: notebooks/Sandboxes/Fourier_coefficient_intuition_v1.ipynb
+      - file: notebooks/Sandboxes/Harmonic_oscillator_visualization_v03.ipynb
+      - file: notebooks/Sandboxes/Linear_operator_games.ipynb
 
   - caption: Reference material
     #numbered: True
