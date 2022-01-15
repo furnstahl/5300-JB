@@ -5,3 +5,5 @@ In this section there are notebooks that cover selected problems from Taylor, ch
 * Chapter 2: Projectiles and Charged Particles
 * Chapter 3: Momentum and Angular Momentum
 * Chapter 4: Energy
+
+There is also a widgetized pendulum simulation/visualization.
