@@ -44,9 +44,9 @@ parts:
       - file: notebooks/Taylor_problems/Taylor_problem_5.36.ipynb
       - file: notebooks/Taylor_problems/Taylor_problem_5.36_atan2.ipynb
       - file: notebooks/Taylor_problems/Taylor_problem_5.50.ipynb
-      - file: notebooks/Sandboxes/Fourier_coefficient_intuition_v1.ipynb
       - file: notebooks/Sandboxes/Harmonic_oscillator_visualization_v03.ipynb
       - file: notebooks/Sandboxes/Linear_operator_games.ipynb
+      - file: notebooks/Sandboxes/Fourier_coefficient_intuition_v1.ipynb
 
   - caption: Reference material
     #numbered: True
