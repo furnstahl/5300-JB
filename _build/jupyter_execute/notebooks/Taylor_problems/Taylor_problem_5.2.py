@@ -38,7 +38,7 @@
 
 # ## Make a plot to check $r_0$
 
-# In[ ]:
+# In[1]:
 
 
 get_ipython().run_line_magic('matplotlib', 'notebook')
@@ -46,7 +46,7 @@ get_ipython().run_line_magic('matplotlib', 'notebook')
 #  cells and so we can zoom in.
 
 
-# In[ ]:
+# In[2]:
 
 
 import numpy as np
@@ -54,7 +54,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# In[ ]:
+# In[3]:
 
 
 def U_pot(r, S=0.1, big_R=1, A=1):
@@ -67,7 +67,7 @@ def U_pot_min(S=0.1, big_R=1, A=1):
     return big_R,  -A
 
 
-# In[ ]:
+# In[4]:
 
 
 def U_pot_sa(r, S=0.1, big_R=1, A=1):
@@ -76,7 +76,7 @@ def U_pot_sa(r, S=0.1, big_R=1, A=1):
     return  -A + A * (r - r0)**2 / S**2 
 
 
-# In[ ]:
+# In[5]:
 
 
 r_pts = np.arange(0.01, 6., .001)

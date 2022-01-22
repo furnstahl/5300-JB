@@ -20,7 +20,7 @@
 # to the interval from $x'=0$ to $x'=x_{max}$, which is one-fourth of the period $\tau$:
 # 
 # $$\begin{align}
-#   \tau = \sqrt{2m} \int_{0}^{x_{max}} \frac{dx'}{\sqrt{E - U(x')}}
+#   \tau = \sqrt{8m} \int_{0}^{x_{max}} \frac{dx'}{\sqrt{E - U(x')}}
 # \end{align}$$
 # 
 # Because we'll be evaluating integrals, we import a numerical integration function called `quad` as well as our standard numpy and matplotlib imports.

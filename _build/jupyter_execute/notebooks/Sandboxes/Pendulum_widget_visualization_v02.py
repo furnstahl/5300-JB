@@ -8,13 +8,13 @@
 # * Created 12-Dec-2018 by Dick Furnstahl (furnstahl.1@osu.edu)
 # * Last revised 19-Jan-2019 by Dick Furnstahl (furnstahl.1@osu.edu).
 
-# In[1]:
+# In[ ]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[2]:
+# In[ ]:
 
 
 import numpy as np
@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 
 # ## Pendulum code
 
-# In[3]:
+# In[ ]:
 
 
 class Pendulum():   
@@ -92,7 +92,7 @@ class Pendulum():
         return self.gamma_ext * self.omega_0**2                               * np.cos(self.omega_ext*t + self.phi_ext)   
 
 
-# In[4]:
+# In[ ]:
 
 
 def plot_y_vs_x(x, y, axis_labels=None, label=None, title=None, 
@@ -118,7 +118,7 @@ def plot_y_vs_x(x, y, axis_labels=None, label=None, title=None,
 
 # ## Interface using ipywidgets with interactive_output
 
-# In[5]:
+# In[ ]:
 
 
 # Import the widgets we will use (add more as needed!) 
@@ -130,7 +130,7 @@ from IPython.display import display
 from time import sleep
 
 
-# In[6]:
+# In[ ]:
 
 
 # This function generates the main output, which is a grid of plots
@@ -239,7 +239,7 @@ def pendulum_plots(phi_vs_time_plot=True, phi_dot_vs_time_plot=True,
     return fig
 
 
-# In[7]:
+# In[ ]:
 
 
 # Widgets for the various inputs.

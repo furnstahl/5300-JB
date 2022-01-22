@@ -34,14 +34,14 @@
 # 
 # We are given expressions for $R$ and $R_\textrm{max}$, so we'll first turn them into functions.  Then make some plots.
 
-# In[ ]:
+# In[1]:
 
 
 import numpy as np
 from numpy import pi
 
 
-# In[ ]:
+# In[2]:
 
 
 def Range_R(theta, phi, g=9.8, v0=1.0):
@@ -52,7 +52,7 @@ def Range_R(theta, phi, g=9.8, v0=1.0):
     return (2.*v0**2 * np.sin(theta) * np.cos(theta+phi))/(g*np.cos(phi)**2)
 
 
-# In[ ]:
+# In[3]:
 
 
 def Rmax(phi, g=9.8, v0=1.0):
@@ -63,7 +63,7 @@ def Rmax(phi, g=9.8, v0=1.0):
     return v0**2/(g*(1. + np.sin(phi)))
 
 
-# In[ ]:
+# In[4]:
 
 
 # set up for plotting but now using the notebook backend
@@ -75,7 +75,7 @@ import matplotlib as mpl
 plt.rcParams.update({'font.size': 10})
 
 
-# In[ ]:
+# In[5]:
 
 
 # Make a plot of range R versus theta for several phi values
@@ -100,7 +100,7 @@ fig_R.tight_layout()  # make the spacing of subplots nicer
 # 
 # It's awkward to work in radians when our intuition (mine, at least) is better in degrees.  Let's define some functions to convert (no doubt there are built-in functions, but these are easy and good practice for us).
 
-# In[ ]:
+# In[6]:
 
 
 def rad_to_deg(theta_rad):
@@ -114,7 +114,7 @@ def deg_to_rad(theta_deg):
 
 # Now make a plot with $\theta$ in degrees with a list of $\phi$ values, specified in radians but converted to degrees for the plot legend.
 
-# In[ ]:
+# In[7]:
 
 
 # Now make a plot of range R versus theta for several phi values
@@ -141,7 +141,7 @@ fig_R.tight_layout()  # make the spacing of subplots nicer
 
 # Hmmm, it would be nice to have a picture of the incline next to this.  How would we do that?
 
-# In[ ]:
+# In[8]:
 
 
 # make a plot of range R versus theta for several phi values
@@ -184,7 +184,7 @@ fig_R.tight_layout()  # make the spacing of subplots nicer
 
 # Now plot the $R_{max}$ formula. **Evaluate whether it is consistent with the plots of R.**
 
-# In[ ]:
+# In[9]:
 
 
 # make a plot of R_max versus phi
@@ -206,7 +206,7 @@ fig_Rmax.tight_layout()  # make the spacing of subplots nicer
 # 
 # The widgets don't seem to play well with the notebook back end, so we'll switch to `%matplotlib inline`.  You may need to restart the kernel.
 
-# In[ ]:
+# In[10]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -218,7 +218,7 @@ import ipywidgets as widgets
 interact(Range_R, theta=np.pi/4., phi=(0,np.pi/2), g=fixed(9.8));
 
 
-# In[ ]:
+# In[11]:
 
 
 def plot_range_R_versus_theta(phi_deg=0):
@@ -256,7 +256,7 @@ def plot_range_R_versus_theta(phi_deg=0):
 interact(plot_range_R_versus_theta, phi_deg=(0.,90.));
 
 
-# In[ ]:
+# In[12]:
 
 
 # to avoid the jiggling and do some formatting
@@ -272,7 +272,7 @@ interact(plot_range_R_versus_theta, phi_deg=phi_deg_widget);
 # 
 # See if we can reproduce the algebra of solving for final t, x, and y.
 
-# In[ ]:
+# In[13]:
 
 
 import sympy as sy
@@ -281,14 +281,14 @@ x, y, t = sy.symbols('x y t')
 half = sy.Rational(1,2)
 
 
-# In[ ]:
+# In[14]:
 
 
 tf = sy.solve(v0*sy.sin(theta)*t - half*g*sy.cos(phi)*t**2, t)
 tf
 
 
-# In[ ]:
+# In[15]:
 
 
 x = v0*sy.cos(theta)*t - half*g*sy.sin(phi)*t**2
@@ -297,14 +297,14 @@ R = sy.trigsimp(xf)
 R
 
 
-# In[ ]:
+# In[16]:
 
 
 thetamax = sy.solve(sy.trigsimp(sy.diff(R,theta)),theta)
 thetamax
 
 
-# In[ ]:
+# In[17]:
 
 
 Rmax = R.subs(theta,thetamax[0])
@@ -341,7 +341,7 @@ sy.simplify(Rmax)
 # \end{align}
 # $$
 
-# In[ ]:
+# In[18]:
 
 
 import numpy as np
@@ -349,7 +349,7 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
 
-# In[ ]:
+# In[19]:
 
 
 def ode_rhs(u_vec, t, *params):
@@ -362,7 +362,7 @@ def ode_rhs(u_vec, t, *params):
     return [v_x, v_y, -g*np.sin(phi), -g*np.cos(phi)]
 
 
-# In[ ]:
+# In[20]:
 
 
 g = 9.8
@@ -390,7 +390,7 @@ x, y, v_x, v_y = odeint(ode_rhs, u0_vec, t_pts, args=(g, phi),
 
 # We'll just check one case here, but you can do more!
 
-# In[ ]:
+# In[21]:
 
 
 fig = plt.figure(figsize=(4,4))
