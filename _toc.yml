@@ -59,6 +59,14 @@ parts:
       - file: notebooks/Sandboxes/two_pendulum_animation_v1.ipynb
       - file: notebooks/Sandboxes/Logistic_map_explorations.ipynb
       - file: notebooks/Sandboxes/sine_map_explorations_v2.ipynb
+    - file: content/Taylor/Taylor_chapter_6.md
+      sections:
+      - file: notebooks/Sandboxes/pendulum_animation_notebook_v3.ipynb
+      - file: notebooks/Sandboxes/visualizing_stationary_functional_v1.ipynb
+      - file: notebooks/Sandboxes/Brachistochrone_static_homework.ipynb
+      - file: notebooks/Reference/ODEs_with_solve_ivp.ipynb
+      - file: notebooks/Reference/Plotting_every_period_and_making_tables.ipynb
+      - file: notebooks/Reference/test_of_GridSpec.ipynb
 
   - caption: Reference material
     #numbered: True
