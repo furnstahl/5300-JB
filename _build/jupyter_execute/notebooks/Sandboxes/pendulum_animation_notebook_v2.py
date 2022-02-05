@@ -341,7 +341,7 @@ class AnimationPendulumPlot():
 
 # ## Plots to animate
 
-# In[8]:
+# In[16]:
 
 
 # Create a pendulum animation instance. 
@@ -356,7 +356,7 @@ delta_t = 0.01
 pendulum_anim.t_pts_init(t_start, t_end, delta_t)
 
 # Pendulum parameters
-gamma_ext = 1.503
+gamma_ext = 1.2
 omega_ext = 2.*np.pi
 phi_ext = 0.
 omega_0 = 1.5*omega_ext
@@ -375,7 +375,7 @@ phi_dot_0 = 0.0
 pendulum_anim.add_pendulum(p1, phi_0, phi_dot_0)
 
 
-# In[10]:
+# In[17]:
 
 
 plot_start = 0.   # time to begin plotting
