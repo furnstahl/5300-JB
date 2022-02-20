@@ -71,6 +71,13 @@ parts:
       - file: notebooks/Taylor_problems/problem_6.12_constants.ipynb
 #    - file: content/Taylor/Taylor_chapter_7.md
 #      sections:
+    - file: content/Taylor/Taylor_chapter_8.md
+      sections:
+      - file: notebooks/Reference/Demo_of_subclasses_nonphysics.ipynb
+      - file: notebooks/Reference/MyVector_class_and_MyPolarVector_subclass.ipynb
+      - file: notebooks/Taylor_problems/Energy_diagrams_Taylor_examples_8p1_8p2.ipynb 
+      - file: notebooks/Sandboxes/Orbit_games.ipynb
+      - file: notebooks/Reference/Orbital_eqs_with_different_algorithms.ipynb
   - caption: Reference material
     #numbered: True
     chapters:
