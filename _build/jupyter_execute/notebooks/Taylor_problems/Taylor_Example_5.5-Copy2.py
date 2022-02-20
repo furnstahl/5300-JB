@@ -36,7 +36,7 @@
 
 # ## Define the functions we'll need
 
-# In[1]:
+# In[22]:
 
 
 import numpy as np
@@ -46,10 +46,10 @@ from scipy.integrate import quad
 
 # We start by defining a function for the rectangular pulse at any $t$.  The definition here is for a scalar function.  That is, it won't work to call it with $t$ and array of time points, unlike other functions we have defined.  It is possible to make it work, but then the function will be much less clear.  When we need to evaluate it for all elements of an array `t_pts`, we will use the construction: <br/> `np.array([rectangular(t) for t in t_pts])`.
 
-# In[2]:
+# In[23]:
 
 
-def rectangular(t, tau=1., Delta_tau=0.25, f_max=1.):
+def rectangular(t, tau=1., Delta_tau=0.5, f_max=1.):
     """Returns the triangular wave of amplitude f_max and even about the 
         origin at time t.  The period is tau.  It is defined as a scalar 
         function (i.e., only one value of t can be passed at a time). 
@@ -65,7 +65,7 @@ def rectangular(t, tau=1., Delta_tau=0.25, f_max=1.):
 
 # Now a function that creates an array of Fourier coefficients for the triangular wave up to order N_max.
 
-# In[3]:
+# In[24]:
 
 
 def rectangular_coeffs_by_hand(N_max, tau=1., Delta_tau=0.25, f_max=1):
@@ -84,7 +84,7 @@ def rectangular_coeffs_by_hand(N_max, tau=1., Delta_tau=0.25, f_max=1):
 
 # We would like a general way to construct the array of Fourier coefficients given any periodic function.  Our first pass at that uses a class definition and the scipy integration function quad. 
 
-# In[4]:
+# In[25]:
 
 
 class FourierSeries():
@@ -147,7 +147,7 @@ class FourierSeries():
 
 # Finally, we need a function that can take as input an array of t values and an array of Fourier coefficients and return the function at those t values with terms up to order N_max. 
 
-# In[5]:
+# In[26]:
 
 
 
@@ -165,13 +165,13 @@ def Fourier_reconstruct(t_pts, coeffs_array, tau, N_max):
 # 
 # Ok, now we can do Example 5.4.  Calculate the coefficients both ways.
 
-# In[6]:
+# In[37]:
 
 
-N_max = 20
+N_max = 80
 tau = 1.
 f_max = 1.
-Delta_tau = 0.25
+Delta_tau = 0.5
 coeffs_by_hand = rectangular_coeffs_by_hand(N_max, tau, Delta_tau, f_max)
 
 fs = FourierSeries(rectangular, tau, N_max)
@@ -182,7 +182,7 @@ coeffs_by_quad = fs.coeffs_upto_Nmax()
 # 
 # (Note the space in the formats below, e.g., `{a1: .6f}`.  This means to leave an extra space for a positive number so that it aligns at the decimal point with negative numbers.)
 
-# In[7]:
+# In[38]:
 
 
 print(' n   a_exact     a_quad      b_exact     b_quad')
@@ -192,12 +192,15 @@ for n, ((a1,b1), (a2,b2)) in enumerate(zip(coeffs_by_hand, coeffs_by_quad)):
 
 # Make the comparison plot requested: N_max = 2 vs. N_max = 6.
 
-# In[8]:
+# In[39]:
 
 
-t_pts = np.arange(-2., 4., .01)
+t_pts = np.arange(-2., 2., .001)
 f_pts_2 = Fourier_reconstruct(t_pts, coeffs_by_hand, tau, 2)
 f_pts_6 = Fourier_reconstruct(t_pts, coeffs_by_hand, tau, 6)
+f_pts_20 = Fourier_reconstruct(t_pts, coeffs_by_hand, tau, 20)
+f_pts_40 = Fourier_reconstruct(t_pts, coeffs_by_hand, tau, 40)
+f_pts_80 = Fourier_reconstruct(t_pts, coeffs_by_hand, tau, 80)
 
 # Python way to evaluate the rectangular function at an array of points:
 #   * np.array creates a numpy array;
@@ -210,33 +213,78 @@ f_pts_6 = Fourier_reconstruct(t_pts, coeffs_by_hand, tau, 6)
 rectangular_t_pts = np.array([rectangular(t, tau, Delta_tau, f_max)                               for t in t_pts])
 
 
-# In[9]:
+# In[42]:
 
 
 # It looks like we should define a function for the axis!
 
 fig_1 = plt.figure(figsize=(10,5))
 
-ax_1 = fig_1.add_subplot(1,2,1)
-ax_1.plot(t_pts, f_pts_2, label='N = 2', color='blue')
-ax_1.plot(t_pts, rectangular_t_pts, label='exact', color='red')
-ax_1.set_xlim(-1.1,4.1)
-ax_1.set_xlabel('t')
-ax_1.set_ylabel('f(t)')
-ax_1.set_title('N = 2')
-ax_1.legend()
+# ax_1 = fig_1.add_subplot(1,2,1)
+# ax_1.plot(t_pts, f_pts_2, label='N = 2', color='blue')
+# ax_1.plot(t_pts, rectangular_t_pts, label='exact', color='red')
+# ax_1.set_xlim(-1.1,4.1)
+# ax_1.set_xlabel('t')
+# ax_1.set_ylabel('f(t)')
+# ax_1.set_title('N = 2')
+# ax_1.legend()
 
-ax_2 = fig_1.add_subplot(1,2,2)
-ax_2.plot(t_pts, f_pts_6, label='N = 6', color='blue')
+ax_2 = fig_1.add_subplot(1,1,1)
+ax_2.plot(t_pts, f_pts_20, label='N = 20', color='blue')
 ax_2.plot(t_pts, rectangular_t_pts, label='exact', color='red')
-ax_2.set_xlim(-1.1,4.1)
+ax_2.set_xlim(-1.1,2.1)
 ax_2.set_xlabel('t')
 ax_2.set_ylabel('f(t)')
-ax_2.set_title('N = 6')
+ax_2.set_title('N = 20')
 ax_2.legend();
 
 fig_1.tight_layout()
-fig_1.savefig('example_5.4.png')
+fig_1.savefig('test_squarewave.png')
+
+fig_1 = plt.figure(figsize=(10,5))
+
+# ax_1 = fig_1.add_subplot(1,2,1)
+# ax_1.plot(t_pts, f_pts_2, label='N = 2', color='blue')
+# ax_1.plot(t_pts, rectangular_t_pts, label='exact', color='red')
+# ax_1.set_xlim(-1.1,4.1)
+# ax_1.set_xlabel('t')
+# ax_1.set_ylabel('f(t)')
+# ax_1.set_title('N = 2')
+# ax_1.legend()
+
+ax_2 = fig_1.add_subplot(1,1,1)
+ax_2.plot(t_pts, f_pts_40, label='N = 40', color='blue')
+ax_2.plot(t_pts, rectangular_t_pts, label='exact', color='red')
+ax_2.set_xlim(-1.1,2.1)
+ax_2.set_xlabel('t')
+ax_2.set_ylabel('f(t)')
+ax_2.set_title('N = 40')
+ax_2.legend();
+
+fig_1.tight_layout()
+
+
+fig_1 = plt.figure(figsize=(10,5))
+
+# ax_1 = fig_1.add_subplot(1,2,1)
+# ax_1.plot(t_pts, f_pts_2, label='N = 2', color='blue')
+# ax_1.plot(t_pts, rectangular_t_pts, label='exact', color='red')
+# ax_1.set_xlim(-1.1,4.1)
+# ax_1.set_xlabel('t')
+# ax_1.set_ylabel('f(t)')
+# ax_1.set_title('N = 2')
+# ax_1.legend()
+
+ax_2 = fig_1.add_subplot(1,1,1)
+ax_2.plot(t_pts, f_pts_80, label='N = 80', color='blue')
+ax_2.plot(t_pts, rectangular_t_pts, label='exact', color='red')
+ax_2.set_xlim(-1.1,2.1)
+ax_2.set_xlabel('t')
+ax_2.set_ylabel('f(t)')
+ax_2.set_title('N = 80')
+ax_2.legend();
+
+fig_1.tight_layout()
 
 
 # ## Example 5.5

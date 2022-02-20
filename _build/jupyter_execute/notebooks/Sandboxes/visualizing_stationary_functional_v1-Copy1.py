@@ -55,7 +55,7 @@ def y_star(x):
     return np.sinh(x) / np.sinh(1.)
 
 
-# In[6]:
+# In[5]:
 
 
 delta_x = 0.001
@@ -91,7 +91,7 @@ def evaluate_functional(x_pts, y_pts):
     f = y_deriv_pts**2 + y_pts * y_deriv_pts + y_pts**2
     
     # Use the numpy trapezoid rule (trapz) to do the integral over f.
-    return np.simps(f, x_pts)
+    return np.trapz(f, x_pts)
 
 def make_path(alpha, ax1_passed, ax2_passed,
               base_function='exact', eta_function='sine'):

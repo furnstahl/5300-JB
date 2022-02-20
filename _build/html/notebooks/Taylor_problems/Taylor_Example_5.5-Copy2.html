@@ -583,7 +583,7 @@
 <p>We start by defining a function for the rectangular pulse at any <span class="math notranslate nohighlight">\(t\)</span>.  The definition here is for a scalar function.  That is, it won’t work to call it with <span class="math notranslate nohighlight">\(t\)</span> and array of time points, unlike other functions we have defined.  It is possible to make it work, but then the function will be much less clear.  When we need to evaluate it for all elements of an array <code class="docutils literal notranslate"><span class="pre">t_pts</span></code>, we will use the construction: <br/> <code class="docutils literal notranslate"><span class="pre">np.array([rectangular(t)</span> <span class="pre">for</span> <span class="pre">t</span> <span class="pre">in</span> <span class="pre">t_pts])</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rectangular</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">Delta_tau</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">f_max</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rectangular</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">Delta_tau</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">f_max</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns the triangular wave of amplitude f_max and even about the </span>
 <span class="sd">        origin at time t.  The period is tau.  It is defined as a scalar </span>
 <span class="sd">        function (i.e., only one value of t can be passed at a time). </span>
@@ -703,10 +703,10 @@
 <p>Ok, now we can do Example 5.4.  Calculate the coefficients both ways.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_max</span> <span class="o">=</span> <span class="mi">20</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_max</span> <span class="o">=</span> <span class="mi">80</span>
 <span class="n">tau</span> <span class="o">=</span> <span class="mf">1.</span>
 <span class="n">f_max</span> <span class="o">=</span> <span class="mf">1.</span>
-<span class="n">Delta_tau</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">Delta_tau</span> <span class="o">=</span> <span class="mf">0.5</span>
 <span class="n">coeffs_by_hand</span> <span class="o">=</span> <span class="n">rectangular_coeffs_by_hand</span><span class="p">(</span><span class="n">N_max</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">Delta_tau</span><span class="p">,</span> <span class="n">f_max</span><span class="p">)</span>
 
 <span class="n">fs</span> <span class="o">=</span> <span class="n">FourierSeries</span><span class="p">(</span><span class="n">rectangular</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">N_max</span><span class="p">)</span>
@@ -727,26 +727,86 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> n   a_exact     a_quad      b_exact     b_quad
- 0   0.250000   0.250000     0.000000   0.000000
- 1   0.450158   0.450158     0.000000   0.000000
- 2   0.318310   0.318310     0.000000   0.000000
- 3   0.150053   0.150053     0.000000   0.000000
- 4   0.000000   0.000000     0.000000   0.000000
- 5  -0.090032  -0.090032     0.000000   0.000000
- 6  -0.106103  -0.106103     0.000000   0.000000
- 7  -0.064308  -0.064308     0.000000   0.000000
+ 0   0.500000   0.500000     0.000000   0.000000
+ 1   0.636620   0.636620     0.000000   0.000000
+ 2   0.000000   0.000000     0.000000   0.000000
+ 3  -0.212207  -0.212207     0.000000   0.000000
+ 4  -0.000000   0.000000     0.000000   0.000000
+ 5   0.127324   0.127324     0.000000   0.000000
+ 6   0.000000   0.000000     0.000000   0.000000
+ 7  -0.090946  -0.090946     0.000000   0.000000
  8  -0.000000   0.000000     0.000000   0.000000
- 9   0.050018   0.050018     0.000000   0.000000
-10   0.063662   0.063662     0.000000   0.000000
-11   0.040923   0.040923     0.000000   0.000000
-12   0.000000   0.000000     0.000000   0.000000
-13  -0.034628  -0.034628     0.000000   0.000000
-14  -0.045473  -0.045473     0.000000   0.000000
-15  -0.030011  -0.030011     0.000000   0.000000
-16  -0.000000   0.000000     0.000000   0.000000
-17   0.026480   0.026480     0.000000   0.000000
-18   0.035368   0.035368     0.000000   0.000000
-19   0.023693   0.023693     0.000000   0.000000
+ 9   0.070736   0.070736     0.000000   0.000000
+10   0.000000  -0.000000     0.000000   0.000000
+11  -0.057875  -0.057875     0.000000   0.000000
+12  -0.000000  -0.000000     0.000000   0.000000
+13   0.048971   0.048971     0.000000   0.000000
+14   0.000000   0.000000     0.000000   0.000000
+15  -0.042441  -0.042441     0.000000   0.000000
+16  -0.000000  -0.000000     0.000000   0.000000
+17   0.037448   0.037448     0.000000   0.000000
+18   0.000000   0.000000     0.000000   0.000000
+19  -0.033506  -0.033506     0.000000   0.000000
+20  -0.000000  -0.000000     0.000000   0.000000
+21   0.030315   0.030315     0.000000   0.000000
+22   0.000000   0.000000     0.000000   0.000000
+23  -0.027679  -0.027679     0.000000   0.000000
+24  -0.000000  -0.000000     0.000000   0.000000
+25   0.025465   0.025465     0.000000   0.000000
+26  -0.000000  -0.000000     0.000000   0.000000
+27  -0.023579  -0.023579     0.000000   0.000000
+28  -0.000000  -0.000000     0.000000   0.000000
+29   0.021952   0.021952     0.000000   0.000000
+30   0.000000  -0.000000     0.000000   0.000000
+31  -0.020536  -0.020536     0.000000   0.000000
+32  -0.000000  -0.000000     0.000000   0.000000
+33   0.019292   0.019292     0.000000   0.000000
+34  -0.000000   0.000000     0.000000   0.000000
+35  -0.018189  -0.018189     0.000000   0.000000
+36  -0.000000   0.000000     0.000000   0.000000
+37   0.017206   0.017206     0.000000   0.000000
+38   0.000000   0.000000     0.000000   0.000000
+39  -0.016324  -0.016324     0.000000   0.000000
+40  -0.000000  -0.000000     0.000000   0.000000
+41   0.015527   0.015527     0.000000   0.000000
+42  -0.000000   0.000000     0.000000   0.000000
+43  -0.014805  -0.014805     0.000000   0.000000
+44  -0.000000  -0.000000     0.000000   0.000000
+45   0.014147   0.014147     0.000000   0.000000
+46   0.000000  -0.000000     0.000000   0.000000
+47  -0.013545  -0.013545     0.000000   0.000000
+48  -0.000000  -0.000000     0.000000   0.000000
+49   0.012992   0.012992     0.000000   0.000000
+50  -0.000000   0.000000     0.000000   0.000000
+51  -0.012483  -0.012483     0.000000   0.000000
+52   0.000000   0.000000     0.000000   0.000000
+53   0.012012   0.012012     0.000000   0.000000
+54   0.000000  -0.000000     0.000000   0.000000
+55  -0.011575  -0.011575     0.000000   0.000000
+56  -0.000000  -0.000000     0.000000   0.000000
+57   0.011169   0.011169     0.000000   0.000000
+58  -0.000000   0.000000     0.000000   0.000000
+59  -0.010790  -0.010790     0.000000   0.000000
+60  -0.000000   0.000000     0.000000   0.000000
+61   0.010436   0.010436     0.000000   0.000000
+62   0.000000  -0.000000     0.000000   0.000000
+63  -0.010105  -0.010105     0.000000   0.000000
+64  -0.000000   0.000000     0.000000   0.000000
+65   0.009794   0.009794     0.000000   0.000000
+66   0.000000  -0.000000     0.000000   0.000000
+67  -0.009502  -0.009502     0.000000   0.000000
+68   0.000000   0.000000     0.000000   0.000000
+69   0.009226   0.009226     0.000000   0.000000
+70   0.000000  -0.000000     0.000000   0.000000
+71  -0.008966  -0.008966     0.000000   0.000000
+72  -0.000000  -0.000000     0.000000   0.000000
+73   0.008721   0.008721     0.000000   0.000000
+74   0.000000   0.000000     0.000000   0.000000
+75  -0.008488  -0.008488     0.000000   0.000000
+76  -0.000000   0.000000     0.000000   0.000000
+77   0.008268   0.008268     0.000000   0.000000
+78   0.000000   0.000000     0.000000   0.000000
+79  -0.008058  -0.008058     0.000000   0.000000
 </pre></div>
 </div>
 </div>
@@ -754,9 +814,12 @@
 <p>Make the comparison plot requested: N_max = 2 vs. N_max = 6.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">.01</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">.001</span><span class="p">)</span>
 <span class="n">f_pts_2</span> <span class="o">=</span> <span class="n">Fourier_reconstruct</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">coeffs_by_hand</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">f_pts_6</span> <span class="o">=</span> <span class="n">Fourier_reconstruct</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">coeffs_by_hand</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">f_pts_20</span> <span class="o">=</span> <span class="n">Fourier_reconstruct</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">coeffs_by_hand</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">f_pts_40</span> <span class="o">=</span> <span class="n">Fourier_reconstruct</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">coeffs_by_hand</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">f_pts_80</span> <span class="o">=</span> <span class="n">Fourier_reconstruct</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">coeffs_by_hand</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
 
 <span class="c1"># Python way to evaluate the rectangular function at an array of points:</span>
 <span class="c1">#   * np.array creates a numpy array;</span>
@@ -778,31 +841,78 @@
 
 <span class="n">fig_1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 
-<span class="n">ax_1</span> <span class="o">=</span> <span class="n">fig_1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax_1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">f_pts_2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;N = 2&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">ax_1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">rectangular_t_pts</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">ax_1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">4.1</span><span class="p">)</span>
-<span class="n">ax_1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="n">ax_1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;f(t)&#39;</span><span class="p">)</span>
-<span class="n">ax_1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;N = 2&#39;</span><span class="p">)</span>
-<span class="n">ax_1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1"># ax_1 = fig_1.add_subplot(1,2,1)</span>
+<span class="c1"># ax_1.plot(t_pts, f_pts_2, label=&#39;N = 2&#39;, color=&#39;blue&#39;)</span>
+<span class="c1"># ax_1.plot(t_pts, rectangular_t_pts, label=&#39;exact&#39;, color=&#39;red&#39;)</span>
+<span class="c1"># ax_1.set_xlim(-1.1,4.1)</span>
+<span class="c1"># ax_1.set_xlabel(&#39;t&#39;)</span>
+<span class="c1"># ax_1.set_ylabel(&#39;f(t)&#39;)</span>
+<span class="c1"># ax_1.set_title(&#39;N = 2&#39;)</span>
+<span class="c1"># ax_1.legend()</span>
 
-<span class="n">ax_2</span> <span class="o">=</span> <span class="n">fig_1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax_2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">f_pts_6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;N = 6&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span> <span class="o">=</span> <span class="n">fig_1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">f_pts_20</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;N = 20&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
 <span class="n">ax_2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">rectangular_t_pts</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">ax_2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">4.1</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">2.1</span><span class="p">)</span>
 <span class="n">ax_2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
 <span class="n">ax_2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;f(t)&#39;</span><span class="p">)</span>
-<span class="n">ax_2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;N = 6&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;N = 20&#39;</span><span class="p">)</span>
 <span class="n">ax_2</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 
 <span class="n">fig_1</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">fig_1</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;example_5.4.png&#39;</span><span class="p">)</span>
+<span class="n">fig_1</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;test_squarewave.png&#39;</span><span class="p">)</span>
+
+<span class="n">fig_1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># ax_1 = fig_1.add_subplot(1,2,1)</span>
+<span class="c1"># ax_1.plot(t_pts, f_pts_2, label=&#39;N = 2&#39;, color=&#39;blue&#39;)</span>
+<span class="c1"># ax_1.plot(t_pts, rectangular_t_pts, label=&#39;exact&#39;, color=&#39;red&#39;)</span>
+<span class="c1"># ax_1.set_xlim(-1.1,4.1)</span>
+<span class="c1"># ax_1.set_xlabel(&#39;t&#39;)</span>
+<span class="c1"># ax_1.set_ylabel(&#39;f(t)&#39;)</span>
+<span class="c1"># ax_1.set_title(&#39;N = 2&#39;)</span>
+<span class="c1"># ax_1.legend()</span>
+
+<span class="n">ax_2</span> <span class="o">=</span> <span class="n">fig_1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">f_pts_40</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;N = 40&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">rectangular_t_pts</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">2.1</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;f(t)&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;N = 40&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+
+<span class="n">fig_1</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+
+<span class="n">fig_1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># ax_1 = fig_1.add_subplot(1,2,1)</span>
+<span class="c1"># ax_1.plot(t_pts, f_pts_2, label=&#39;N = 2&#39;, color=&#39;blue&#39;)</span>
+<span class="c1"># ax_1.plot(t_pts, rectangular_t_pts, label=&#39;exact&#39;, color=&#39;red&#39;)</span>
+<span class="c1"># ax_1.set_xlim(-1.1,4.1)</span>
+<span class="c1"># ax_1.set_xlabel(&#39;t&#39;)</span>
+<span class="c1"># ax_1.set_ylabel(&#39;f(t)&#39;)</span>
+<span class="c1"># ax_1.set_title(&#39;N = 2&#39;)</span>
+<span class="c1"># ax_1.legend()</span>
+
+<span class="n">ax_2</span> <span class="o">=</span> <span class="n">fig_1</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">f_pts_80</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;N = 80&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">rectangular_t_pts</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">2.1</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;f(t)&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;N = 80&#39;</span><span class="p">)</span>
+<span class="n">ax_2</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+
+<span class="n">fig_1</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/Taylor_Example_5.5-Copy2_18_0.png" src="../../_images/Taylor_Example_5.5-Copy2_18_0.png" />
+<img alt="../../_images/Taylor_Example_5.5-Copy2_18_1.png" src="../../_images/Taylor_Example_5.5-Copy2_18_1.png" />
+<img alt="../../_images/Taylor_Example_5.5-Copy2_18_2.png" src="../../_images/Taylor_Example_5.5-Copy2_18_2.png" />
 </div>
 </div>
 </div>

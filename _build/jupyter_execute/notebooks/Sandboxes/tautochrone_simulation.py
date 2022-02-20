@@ -10,13 +10,13 @@
 # * v1: Last revised 12-Feb-2019 by Dick Furnstahl (furnstahl.1@osu.edu).
 # 
 
-# In[1]:
+# In[12]:
 
 
 get_ipython().run_line_magic('matplotlib', 'notebook')
 
 
-# In[2]:
+# In[13]:
 
 
 import numpy as np
@@ -27,7 +27,7 @@ from matplotlib import animation
 import matplotlib.patches as patches  
 
 
-# In[3]:
+# In[14]:
 
 
 def cycloid(phi):
@@ -39,7 +39,7 @@ def cycloid(phi):
     return np.array([x, y])
 
 
-# In[4]:
+# In[15]:
 
 
 
@@ -87,7 +87,7 @@ def animate(nframe, empty=False):
                             facecolor=b['color'], edgecolor='black'))
 
 
-# In[5]:
+# In[16]:
 
 
 # Settings
