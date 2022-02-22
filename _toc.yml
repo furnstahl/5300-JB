@@ -69,8 +69,9 @@ parts:
       - file: notebooks/Reference/Plotting_every_period_and_making_tables.ipynb
       - file: notebooks/Reference/test_of_GridSpec.ipynb
       - file: notebooks/Taylor_problems/problem_6.12_constants.ipynb
-#    - file: content/Taylor/Taylor_chapter_7.md
-#      sections:
+    - file: content/Taylor/Taylor_chapter_7.md
+      sections:
+      - file: notebooks/Taylor_problems/Multiple_pendulum_plots_solutions_new_solver.ipynb
     - file: content/Taylor/Taylor_chapter_8.md
       sections:
       - file: notebooks/Reference/Demo_of_subclasses_nonphysics.ipynb
