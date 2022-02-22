@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Multiple pendulum plots: Section 12.3 &#8212; Theoretical and computational mechanics</title>
+    <title>Multiple pendulum plots solutions to problems &#8212; Theoretical and computational mechanics</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Multiple pendulum plots. Section 12.4: Approach to Chaos" href="Multiple_pendulum_plots_Section_12.4.html" />
-    <link rel="prev" title="Taylor Chapter 12" href="../../content/Taylor/Taylor_chapter_12.html" />
+    <link rel="next" title="Taylor Chapter 8" href="../../content/Taylor/Taylor_chapter_8.html" />
+    <link rel="prev" title="Taylor Chapter 7" href="../../content/Taylor/Taylor_chapter_7.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -298,18 +298,18 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../content/Taylor/Taylor_chapter_12.html">
    Taylor Chapter 12
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Multiple_pendulum_plots_Section_12.3.html">
      Multiple pendulum plots: Section 12.3
     </a>
    </li>
@@ -402,18 +402,18 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../content/Taylor/Taylor_chapter_7.html">
    Taylor Chapter 7
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Multiple_pendulum_plots_solutions_new_solver.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Multiple pendulum plots solutions to problems
     </a>
    </li>
@@ -509,7 +509,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/notebooks/Taylor_problems/Multiple_pendulum_plots_Section_12.3.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/notebooks/Taylor_problems/Multiple_pendulum_plots_solutions_new_solver.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -529,7 +529,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/furnstahl/5300-JB/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Taylor_problems/Multiple_pendulum_plots_Section_12.3.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/furnstahl/5300-JB/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Taylor_problems/Multiple_pendulum_plots_solutions_new_solver.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -550,7 +550,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/furnstahl/5300-JB/main?urlpath=tree/./notebooks/Taylor_problems/Multiple_pendulum_plots_Section_12.3.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/furnstahl/5300-JB/main?urlpath=tree/./notebooks/Taylor_problems/Multiple_pendulum_plots_solutions_new_solver.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -581,22 +581,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-plots-for-taylor-figure-12-2">
-   Make plots for Taylor Figure 12.2
+  <a class="reference internal nav-link" href="#make-plots-for-taylor-problem-12-8">
+   Make plots for Taylor problem 12.8
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sections-12-1-12-3-q1-pick-conditions-and-then-analyze">
-   Sections 12.1
-   <span class="math notranslate nohighlight">
-    \(--\)
-   </span>
-   12.3 Q1: Pick conditions and then analyze
+  <a class="reference internal nav-link" href="#make-plots-for-taylor-problem-12-10">
+   Make plots for Taylor problem 12.10
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-plots-for-taylor-figure-12-3">
-   Make plots for Taylor Figure 12.3
+  <a class="reference internal nav-link" href="#make-plots-for-taylor-problem-12-14">
+   Make plots for Taylor problem 12.14
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-plots-for-taylor-problem-12-15">
+   Make plots for Taylor problem 12.15
   </a>
  </li>
 </ul>
@@ -610,11 +611,12 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="multiple-pendulum-plots-section-12-3">
-<h1>Multiple pendulum plots: Section 12.3<a class="headerlink" href="#multiple-pendulum-plots-section-12-3" title="Permalink to this headline">¶</a></h1>
-<p>Use Pendulum class to generate basic pendulum plots.  Applied here to examples from Taylor Section 12.3.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="multiple-pendulum-plots-solutions-to-problems">
+<h1>Multiple pendulum plots solutions to problems<a class="headerlink" href="#multiple-pendulum-plots-solutions-to-problems" title="Permalink to this headline">¶</a></h1>
+<p>Use Pendulum class to generate basic pendulum plots, applied to problems from Taylor.</p>
+<p>Now uses a new ODE solver.</p>
 <ul class="simple">
-<li><p>Last revised 21-Jan-2019 by Dick Furnstahl (<a class="reference external" href="mailto:furnstahl&#46;1&#37;&#52;&#48;osu&#46;edu">furnstahl<span>&#46;</span>1<span>&#64;</span>osu<span>&#46;</span>edu</a>).</p></li>
+<li><p>Last revised 29-Jan-2019 by Dick Furnstahl (<a class="reference external" href="mailto:furnstahl&#46;1&#37;&#52;&#48;osu&#46;edu">furnstahl<span>&#46;</span>1<span>&#64;</span>osu<span>&#46;</span>edu</a>).</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -626,9 +628,23 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span><span class="p">,</span> <span class="n">solve_ivp</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The dpi (dots-per-inch) setting will affect the resolution and how large</span>
+<span class="c1">#  the plots appear on screen and printed.  So you may want/need to adjust </span>
+<span class="c1">#  the figsize when creating the figure.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">100.</span>    <span class="c1"># this is the default for notebook</span>
+
+<span class="c1"># Change the common font size (smaller when higher dpi)</span>
+<span class="n">font_size</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="n">font_size</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -658,7 +674,7 @@
 
 <span class="sd">    Methods</span>
 <span class="sd">    -------</span>
-<span class="sd">    dy_dt(y, t)</span>
+<span class="sd">    dy_dt(t, y)</span>
 <span class="sd">        Returns the right side of the differential equation in vector y, </span>
 <span class="sd">        given time t and the corresponding value of y.</span>
 <span class="sd">    driving_force(t) </span>
@@ -673,17 +689,17 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">omega_ext</span> <span class="o">=</span> <span class="n">omega_ext</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">phi_ext</span> <span class="o">=</span> <span class="n">phi_ext</span>
     
-    <span class="k">def</span> <span class="nf">dy_dt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dy_dt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This function returns the right-hand side of the diffeq: </span>
 <span class="sd">        [dphi/dt d^2phi/dt^2]</span>
 <span class="sd">        </span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        y : float</span>
-<span class="sd">            A 2-component vector with y[0] = phi(t) and y[1] = dphi/dt</span>
 <span class="sd">        t : float</span>
 <span class="sd">            time </span>
+<span class="sd">        y : float</span>
+<span class="sd">            A 2-component vector with y[0] = phi(t) and y[1] = dphi/dt</span>
 <span class="sd">            </span>
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -700,15 +716,19 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">gamma_ext</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">omega_0</span><span class="o">**</span><span class="mi">2</span> \
                               <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">omega_ext</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_ext</span><span class="p">)</span>  
     
-    <span class="k">def</span> <span class="nf">solve_ode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phi_0</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">,</span> <span class="n">abserr</span><span class="o">=</span><span class="mf">1.0e-8</span><span class="p">,</span> <span class="n">relerr</span><span class="o">=</span><span class="mf">1.0e-6</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">solve_ode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_0</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">,</span> 
+                  <span class="n">abserr</span><span class="o">=</span><span class="mf">1.0e-8</span><span class="p">,</span> <span class="n">relerr</span><span class="o">=</span><span class="mf">1.0e-6</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Solve the ODE given initial conditions.</span>
 <span class="sd">        For now use odeint, but we have the option to switch.</span>
 <span class="sd">        Specify smaller abserr and relerr to get more precision.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">phi_0</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">]</span>  
-        <span class="n">phi</span><span class="p">,</span> <span class="n">phi_dot</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dy_dt</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t_pts</span><span class="p">,</span> 
-                              <span class="n">atol</span><span class="o">=</span><span class="n">abserr</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">relerr</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">phi_0</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">]</span> 
+        <span class="n">solution</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dy_dt</span><span class="p">,</span> <span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t_pts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> 
+                             <span class="n">y</span><span class="p">,</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t_pts</span><span class="p">,</span> 
+                             <span class="n">atol</span><span class="o">=</span><span class="n">abserr</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">relerr</span><span class="p">)</span>
+        <span class="n">phi</span><span class="p">,</span> <span class="n">phi_dot</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">y</span>
+
         <span class="k">return</span> <span class="n">phi</span><span class="p">,</span> <span class="n">phi_dot</span>
 </pre></div>
 </div>
@@ -760,9 +780,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="make-plots-for-taylor-figure-12-2">
-<h2>Make plots for Taylor Figure 12.2<a class="headerlink" href="#make-plots-for-taylor-figure-12-2" title="Permalink to this headline">¶</a></h2>
-<p>We’ll set it up with the specified parameters.</p>
+<div class="section" id="make-plots-for-taylor-problem-12-8">
+<h2>Make plots for Taylor problem 12.8<a class="headerlink" href="#make-plots-for-taylor-problem-12-8" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Labels for individual plot axes</span>
@@ -772,13 +791,13 @@
 
 <span class="c1"># Common plotting time (generate the full time then use slices)</span>
 <span class="n">t_start</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="n">t_end</span> <span class="o">=</span> <span class="mf">100.</span>
+<span class="n">t_end</span> <span class="o">=</span> <span class="mf">50.</span>
 <span class="n">delta_t</span> <span class="o">=</span> <span class="mf">0.01</span>
 
 <span class="n">t_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t_start</span><span class="p">,</span> <span class="n">t_end</span><span class="o">+</span><span class="n">delta_t</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">)</span>  
 
 <span class="c1"># Common pendulum parameters</span>
-<span class="n">gamma_ext</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">gamma_ext</span> <span class="o">=</span> <span class="mf">1.073</span>
 <span class="n">omega_ext</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">phi_ext</span> <span class="o">=</span> <span class="mf">0.</span>
 
@@ -797,271 +816,15 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initial conditions specified</span>
-<span class="n">phi_0</span> <span class="o">=</span> <span class="mf">0.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># both plots: same initial conditions</span>
+<span class="n">phi_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
 <span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">phi</span><span class="p">,</span> <span class="n">phi_dot</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">phi_0</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">)</span>
+<span class="n">phi</span><span class="p">,</span> <span class="n">phi_dot</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_0</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">)</span>
 
-<span class="c1"># Change the common font size</span>
-<span class="n">font_size</span> <span class="o">=</span> <span class="mi">14</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="n">font_size</span><span class="p">})</span>
 
 <span class="c1"># start the plot!</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">overall_title</span> <span class="o">=</span> <span class="s1">&#39;Taylor Figure 12.2:  &#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39; $\omega = </span><span class="si">{</span><span class="n">omega_ext</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39; $\gamma = </span><span class="si">{</span><span class="n">gamma_ext</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39; $\omega_0 = </span><span class="si">{</span><span class="n">omega_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39; $\beta = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39;  $\phi_0 = </span><span class="si">{</span><span class="n">phi_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39; $\dot\phi_0 = </span><span class="si">{</span><span class="n">phi_dot_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span> <span class="o">+</span> \
-                <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>     <span class="c1"># \n means a new line (adds some space here)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">overall_title</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;baseline&#39;</span><span class="p">)</span>
-    
-<span class="c1"># first plot: plot from t=0 to t=10   </span>
-<span class="n">ax_a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>                  
-
-<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">)</span>    
-<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
-            <span class="n">axis_labels</span><span class="o">=</span><span class="n">phi_vs_time_labels</span><span class="p">,</span> 
-            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Figure 12.2&#39;</span><span class="p">,</span> 
-            <span class="n">ax</span><span class="o">=</span><span class="n">ax_a</span><span class="p">)</span>    
-                              
-<span class="c1"># second plot: state space plot from t=0 to t=10   </span>
-<span class="n">ax_b</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>                  
-
-<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">)</span>    
-<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi_dot</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
-            <span class="n">axis_labels</span><span class="o">=</span><span class="n">state_space_labels</span><span class="p">,</span> 
-            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-            <span class="n">title</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$0 \leq t \leq 10$&#39;</span><span class="p">,</span> 
-            <span class="n">ax</span><span class="o">=</span><span class="n">ax_b</span><span class="p">)</span>    
-
-<span class="c1"># third plot: state space plot from t=5 to t=12   </span>
-<span class="n">ax_c</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>                  
-
-<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">)</span>    
-<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi_dot</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
-            <span class="n">axis_labels</span><span class="o">=</span><span class="n">state_space_labels</span><span class="p">,</span> 
-            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-            <span class="n">title</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$5 \leq t \leq 12$&#39;</span><span class="p">,</span> 
-            <span class="n">ax</span><span class="o">=</span><span class="n">ax_c</span><span class="p">)</span>    
-
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Figure_12.2.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>  <span class="c1"># always bbox_inches=&#39;tight&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Multiple_pendulum_plots_Section_12.3_9_0.png" src="../../_images/Multiple_pendulum_plots_Section_12.3_9_0.png" />
-</div>
-</div>
-<p>Now trying the power spectrum in steady state, plotting only positive frequencies and cutting off any lower peaks from noise.  We multiply the frequencies by <span class="math notranslate nohighlight">\(2\pi\)</span> to get the angular frequency.  <strong>What do you observe?</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="n">t_end</span><span class="p">)</span>    
-<span class="n">signal</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>
-<span class="n">power_spectrum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">signal</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">freqs</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">)</span>
-<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">freqs</span><span class="p">)</span>
-
-<span class="n">fig_ps</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">ax_ps</span> <span class="o">=</span> <span class="n">fig_ps</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freqs</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">power_spectrum</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">30.</span><span class="p">)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1.e4</span><span class="p">,</span> <span class="mf">1.e8</span><span class="p">)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;frequency (Hz)&#39;</span><span class="p">)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Power Spectrum for Figure 12.2&#39;</span><span class="p">)</span>
-
-<span class="n">fig_ps</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Multiple_pendulum_plots_Section_12.3_12_0.png" src="../../_images/Multiple_pendulum_plots_Section_12.3_12_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="sections-12-1-12-3-q1-pick-conditions-and-then-analyze">
-<h2>Sections 12.1 <span class="math notranslate nohighlight">\(--\)</span> 12.3 Q1: Pick conditions and then analyze<a class="headerlink" href="#sections-12-1-12-3-q1-pick-conditions-and-then-analyze" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Labels for individual plot axes</span>
-<span class="n">phi_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\phi(t)$&#39;</span><span class="p">)</span>
-<span class="n">phi_dot_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$d\phi/dt(t)$&#39;</span><span class="p">)</span>
-<span class="n">state_space_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\phi$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$d\phi/dt$&#39;</span><span class="p">)</span>
-
-<span class="c1"># Common plotting time (generate the full time then use slices)</span>
-<span class="n">t_start</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="n">t_end</span> <span class="o">=</span> <span class="mf">100.</span>
-<span class="n">delta_t</span> <span class="o">=</span> <span class="mf">0.01</span>
-
-<span class="n">t_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t_start</span><span class="p">,</span> <span class="n">t_end</span><span class="o">+</span><span class="n">delta_t</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">)</span>  
-
-<span class="c1"># Common pendulum parameters</span>
-<span class="n">gamma_ext</span> <span class="o">=</span> <span class="mf">0.01</span>   <span class="c1"># weak driving</span>
-<span class="n">omega_ext</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-<span class="n">phi_ext</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span>  <span class="c1"># come back to this later!</span>
-
-<span class="n">omega_0</span> <span class="o">=</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">omega_ext</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="n">omega_0</span><span class="o">/</span><span class="mf">10.</span>  <span class="c1"># weak damping</span>
-
-<span class="c1"># Instantiate a pendulum </span>
-<span class="n">p1</span> <span class="o">=</span> <span class="n">Pendulum</span><span class="p">(</span><span class="n">omega_0</span><span class="o">=</span><span class="n">omega_0</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> 
-              <span class="n">gamma_ext</span><span class="o">=</span><span class="n">gamma_ext</span><span class="p">,</span> <span class="n">omega_ext</span><span class="o">=</span><span class="n">omega_ext</span><span class="p">,</span> <span class="n">phi_ext</span><span class="o">=</span><span class="n">phi_ext</span><span class="p">)</span>
-
-<span class="c1"># calculate the driving force for t_pts</span>
-<span class="n">driving</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">driving_force</span><span class="p">(</span><span class="n">t_pts</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initial conditions specified</span>
-<span class="n">phi_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>    <span class="c1"># at the top</span>
-<span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># motionless</span>
-<span class="n">phi</span><span class="p">,</span> <span class="n">phi_dot</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">phi_0</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">)</span>
-
-<span class="c1"># Change the common font size</span>
-<span class="n">font_size</span> <span class="o">=</span> <span class="mi">14</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="n">font_size</span><span class="p">})</span>
-
-<span class="c1"># start the plot!</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">overall_title</span> <span class="o">=</span> <span class="s1">&#39;Taylor Figure 12.2:  &#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39; $\omega = </span><span class="si">{</span><span class="n">omega_ext</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39; $\gamma = </span><span class="si">{</span><span class="n">gamma_ext</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39; $\omega_0 = </span><span class="si">{</span><span class="n">omega_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39; $\beta = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39;  $\phi_0 = </span><span class="si">{</span><span class="n">phi_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
-                <span class="sa">rf</span><span class="s1">&#39; $\dot\phi_0 = </span><span class="si">{</span><span class="n">phi_dot_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span> <span class="o">+</span> \
-                <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>     <span class="c1"># \n means a new line (adds some space here)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">overall_title</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;baseline&#39;</span><span class="p">)</span>
-    
-<span class="c1"># first plot: plot from t=0 to t=20   </span>
-<span class="n">ax_a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>                  
-
-<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">)</span>    
-<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
-            <span class="n">axis_labels</span><span class="o">=</span><span class="n">phi_vs_time_labels</span><span class="p">,</span> 
-            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Q1&#39;</span><span class="p">,</span> 
-            <span class="n">ax</span><span class="o">=</span><span class="n">ax_a</span><span class="p">)</span>    
-                              
-<span class="c1"># second plot: same as first but scaled up</span>
-<span class="n">ax_b</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>                  
-
-<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">)</span>    
-<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
-            <span class="n">axis_labels</span><span class="o">=</span><span class="n">phi_vs_time_labels</span><span class="p">,</span> 
-            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Q1&#39;</span><span class="p">,</span> 
-            <span class="n">ax</span><span class="o">=</span><span class="n">ax_b</span><span class="p">)</span>    
-<span class="n">ax_b</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">)</span>
-
-<span class="c1"># third plot: state space plot from t=0 to t=7  </span>
-<span class="n">ax_c</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>                  
-
-<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">)</span>    
-<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi_dot</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
-            <span class="n">axis_labels</span><span class="o">=</span><span class="n">state_space_labels</span><span class="p">,</span> 
-            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-            <span class="n">title</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$0 \leq t \leq 7$&#39;</span><span class="p">,</span> 
-            <span class="n">ax</span><span class="o">=</span><span class="n">ax_c</span><span class="p">)</span>    
-
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Section_12.3_Q1.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>  <span class="c1"># always bbox_inches=&#39;tight&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Multiple_pendulum_plots_Section_12.3_15_0.png" src="../../_images/Multiple_pendulum_plots_Section_12.3_15_0.png" />
-</div>
-</div>
-<p><strong>Now go back and predict what the state space plot will look like if we skip the transient region.</strong></p>
-<p>Now trying the power spectrum in steady state, plotting only positive frequencies and cutting off any lower peaks from noise.  We multiply the frequencies by <span class="math notranslate nohighlight">\(2\pi\)</span> to get the angular frequency.  <strong>What do you observe?</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="n">t_end</span><span class="p">)</span>    
-<span class="n">signal</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>
-<span class="n">power_spectrum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">signal</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">freqs</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">)</span>
-<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">freqs</span><span class="p">)</span>
-
-<span class="n">fig_ps</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">ax_ps</span> <span class="o">=</span> <span class="n">fig_ps</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freqs</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">power_spectrum</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">100.</span><span class="p">)</span>
-<span class="c1">#ax_ps.set_ylim(1.e4, 1.e8)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;frequency (Hz)&#39;</span><span class="p">)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Power Spectrum for Q1&#39;</span><span class="p">)</span>
-
-<span class="n">fig_ps</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Multiple_pendulum_plots_Section_12.3_18_0.png" src="../../_images/Multiple_pendulum_plots_Section_12.3_18_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="make-plots-for-taylor-figure-12-3">
-<h2>Make plots for Taylor Figure 12.3<a class="headerlink" href="#make-plots-for-taylor-figure-12-3" title="Permalink to this headline">¶</a></h2>
-<p>Just change <span class="math notranslate nohighlight">\(\gamma\)</span> from 0.2 to 0.9 compared to Figure 12.2.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Labels for individual plot axes</span>
-<span class="n">phi_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\phi(t)$&#39;</span><span class="p">)</span>
-<span class="n">phi_dot_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$d\phi/dt(t)$&#39;</span><span class="p">)</span>
-<span class="n">state_space_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\phi$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$d\phi/dt$&#39;</span><span class="p">)</span>
-
-<span class="c1"># Common plotting time (generate the full time then use slices)</span>
-<span class="n">t_start</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="n">t_end</span> <span class="o">=</span> <span class="mf">100.</span>
-<span class="n">delta_t</span> <span class="o">=</span> <span class="mf">0.01</span>
-
-<span class="n">t_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t_start</span><span class="p">,</span> <span class="n">t_end</span><span class="o">+</span><span class="n">delta_t</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">)</span>  
-
-<span class="c1"># Common pendulum parameters</span>
-<span class="n">gamma_ext</span> <span class="o">=</span> <span class="mf">0.9</span>
-<span class="n">omega_ext</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-<span class="n">phi_ext</span> <span class="o">=</span> <span class="mf">0.</span>
-
-<span class="n">omega_0</span> <span class="o">=</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">omega_ext</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="n">omega_0</span><span class="o">/</span><span class="mf">4.</span>
-
-<span class="c1"># Instantiate a pendulum </span>
-<span class="n">p1</span> <span class="o">=</span> <span class="n">Pendulum</span><span class="p">(</span><span class="n">omega_0</span><span class="o">=</span><span class="n">omega_0</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> 
-              <span class="n">gamma_ext</span><span class="o">=</span><span class="n">gamma_ext</span><span class="p">,</span> <span class="n">omega_ext</span><span class="o">=</span><span class="n">omega_ext</span><span class="p">,</span> <span class="n">phi_ext</span><span class="o">=</span><span class="n">phi_ext</span><span class="p">)</span>
-
-<span class="c1"># calculate the driving force for t_pts</span>
-<span class="n">driving</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">driving_force</span><span class="p">(</span><span class="n">t_pts</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initial conditions specified</span>
-<span class="n">phi_0</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">phi</span><span class="p">,</span> <span class="n">phi_dot</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">phi_0</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">)</span>
-
-<span class="c1"># Change the common font size</span>
-<span class="n">font_size</span> <span class="o">=</span> <span class="mi">14</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="n">font_size</span><span class="p">})</span>
-
-<span class="c1"># start the plot!</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">overall_title</span> <span class="o">=</span> <span class="s1">&#39;Taylor Figure 12.3:  &#39;</span> <span class="o">+</span> \
+<span class="n">overall_title</span> <span class="o">=</span> <span class="s1">&#39;Taylor problem 12.8:  &#39;</span> <span class="o">+</span> \
                 <span class="sa">rf</span><span class="s1">&#39; $\omega = </span><span class="si">{</span><span class="n">omega_ext</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
                 <span class="sa">rf</span><span class="s1">&#39; $\gamma = </span><span class="si">{</span><span class="n">gamma_ext</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
                 <span class="sa">rf</span><span class="s1">&#39; $\omega_0 = </span><span class="si">{</span><span class="n">omega_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
@@ -1082,60 +845,431 @@
             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span> 
             <span class="n">ax</span><span class="o">=</span><span class="n">ax_a</span><span class="p">)</span>    
                               
-<span class="c1"># second plot: state space plot from t=0 to t=10   </span>
+<span class="c1"># second plot: plot from t=40 to t=50   </span>
 <span class="n">ax_b</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>                  
 
-<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">)</span>    
-<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi_dot</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
-            <span class="n">axis_labels</span><span class="o">=</span><span class="n">state_space_labels</span><span class="p">,</span> 
+<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">40.</span><span class="p">,</span> <span class="mf">50.</span><span class="p">)</span>    
+<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">axis_labels</span><span class="o">=</span><span class="n">phi_vs_time_labels</span><span class="p">,</span> 
             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
             <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-            <span class="n">title</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$0 \leq t \leq 10$&#39;</span><span class="p">,</span> 
+            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;(b)&#39;</span><span class="p">,</span> 
             <span class="n">ax</span><span class="o">=</span><span class="n">ax_b</span><span class="p">)</span>    
 
-<span class="c1"># third plot: state space plot from t=5 to t=12   </span>
+<span class="c1"># third plot: state space plot from t=30 to t=50   </span>
 <span class="n">ax_c</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>                  
 
-<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">)</span>    
+<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">30.</span><span class="p">,</span> <span class="mf">50.</span><span class="p">)</span>    
 <span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi_dot</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
             <span class="n">axis_labels</span><span class="o">=</span><span class="n">state_space_labels</span><span class="p">,</span> 
             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
             <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-            <span class="n">title</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$5 \leq t \leq 12$&#39;</span><span class="p">,</span> 
+            <span class="n">title</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$30 \leq t \leq 50$&#39;</span><span class="p">,</span> 
             <span class="n">ax</span><span class="o">=</span><span class="n">ax_c</span><span class="p">)</span>    
 
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Figure_12.3.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>  <span class="c1"># always bbox_inches=&#39;tight&#39;</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;problem_12.8.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>  <span class="c1"># always bbox_inches=&#39;tight&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Multiple_pendulum_plots_Section_12.3_21_0.png" src="../../_images/Multiple_pendulum_plots_Section_12.3_21_0.png" />
+<img alt="../../_images/Multiple_pendulum_plots_solutions_new_solver_11_0.png" src="../../_images/Multiple_pendulum_plots_solutions_new_solver_11_0.png" />
 </div>
 </div>
-<p>Now trying the power spectrum in steady state, plotting only positive frequencies and cutting off any lower peaks from noise.  We multiply the frequencies by <span class="math notranslate nohighlight">\(2\pi\)</span> to get the angular frequency.  <strong>What do you observe?</strong></p>
+<p>Now trying the power spectrum, plotting only positive frequencies and cutting off the lower peaks:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="n">t_end</span><span class="p">)</span>    
-<span class="n">signal</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">t_end</span><span class="p">)</span>    
+<span class="n">signal</span> <span class="o">=</span> <span class="n">phi</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>
 <span class="n">power_spectrum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">signal</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
-<span class="n">freqs</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">)</span>
+<span class="n">freqs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">)</span>
 <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">freqs</span><span class="p">)</span>
 
 <span class="n">fig_ps</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">ax_ps</span> <span class="o">=</span> <span class="n">fig_ps</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax_ps</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freqs</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">power_spectrum</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">30.</span><span class="p">)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1.e2</span><span class="p">,</span> <span class="mf">1.e10</span><span class="p">)</span>
-<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">5.</span><span class="p">)</span>
+<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1.e3</span><span class="p">,</span> <span class="mf">1.e8</span><span class="p">)</span>
+<span class="n">ax_ps</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;frequency&#39;</span><span class="p">)</span>
 <span class="n">ax_ps</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Power Spectrum&#39;</span><span class="p">)</span>
-
-<span class="n">fig_ps</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Multiple_pendulum_plots_Section_12.3_24_0.png" src="../../_images/Multiple_pendulum_plots_Section_12.3_24_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Power Spectrum&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Multiple_pendulum_plots_solutions_new_solver_13_1.png" src="../../_images/Multiple_pendulum_plots_solutions_new_solver_13_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="make-plots-for-taylor-problem-12-10">
+<h2>Make plots for Taylor problem 12.10<a class="headerlink" href="#make-plots-for-taylor-problem-12-10" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Labels for individual plot axes</span>
+<span class="n">phi_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\phi(t)$&#39;</span><span class="p">)</span>
+<span class="n">phi_dot_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$d\phi/dt(t)$&#39;</span><span class="p">)</span>
+<span class="n">state_space_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\phi$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$d\phi/dt$&#39;</span><span class="p">)</span>
+<span class="n">delta_phi_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$|\Delta\phi(t)|$&#39;</span><span class="p">)</span>
+
+<span class="c1"># Common plotting time (generate the full time then use slices)</span>
+<span class="n">t_start</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">t_end</span> <span class="o">=</span> <span class="mf">50.</span>
+<span class="n">delta_t</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="n">t_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t_start</span><span class="p">,</span> <span class="n">t_end</span><span class="o">+</span><span class="n">delta_t</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">)</span>  
+
+<span class="c1"># Common pendulum parameters</span>
+<span class="n">gamma_ext</span> <span class="o">=</span> <span class="mf">1.073</span>
+<span class="n">omega_ext</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">phi_ext</span> <span class="o">=</span> <span class="mf">0.</span>
+
+<span class="n">omega_0</span> <span class="o">=</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">omega_ext</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">omega_0</span><span class="o">/</span><span class="mf">4.</span>
+
+<span class="c1"># Instantiate a pendulum </span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Pendulum</span><span class="p">(</span><span class="n">omega_0</span><span class="o">=</span><span class="n">omega_0</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> 
+              <span class="n">gamma_ext</span><span class="o">=</span><span class="n">gamma_ext</span><span class="p">,</span> <span class="n">omega_ext</span><span class="o">=</span><span class="n">omega_ext</span><span class="p">,</span> <span class="n">phi_ext</span><span class="o">=</span><span class="n">phi_ext</span><span class="p">)</span>
+
+<span class="c1"># calculate the driving force for t_pts</span>
+<span class="n">driving</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">driving_force</span><span class="p">(</span><span class="n">t_pts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># one plot with multiple initial conditions</span>
+<span class="n">phi_0_a</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_a</span><span class="p">,</span> <span class="n">phi_dot_a</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_0_a</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">,</span>
+                                <span class="n">abserr</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="n">relerr</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">)</span>
+
+<span class="n">phi_0_b</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_b</span><span class="p">,</span> <span class="n">phi_dot_b</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_0_b</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">,</span>
+                                <span class="n">abserr</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="n">relerr</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">)</span>
+
+<span class="n">phi_0_c</span> <span class="o">=</span> <span class="mf">3.</span>
+<span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_c</span><span class="p">,</span> <span class="n">phi_dot_c</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_0_c</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">,</span>
+                                <span class="n">abserr</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="n">relerr</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">)</span>
+
+
+<span class="c1"># start the plot!</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">overall_title</span> <span class="o">=</span> <span class="s1">&#39;Taylor problem 12.10:  &#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\omega = </span><span class="si">{</span><span class="n">omega_ext</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\gamma = </span><span class="si">{</span><span class="n">gamma_ext</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\omega_0 = </span><span class="si">{</span><span class="n">omega_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\beta = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span> <span class="o">+</span> \
+                <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>     <span class="c1"># \n means a new line (adds some space here)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">overall_title</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;baseline&#39;</span><span class="p">)</span>
+    
+<span class="c1"># one plot: plot from t=0 to t=25  </span>
+<span class="n">ax_a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>                  
+
+<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>    
+<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi_a</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">axis_labels</span><span class="o">=</span><span class="n">phi_vs_time_labels</span><span class="p">,</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$\phi(0) = </span><span class="si">{</span><span class="n">phi_0_a</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> 
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax_a</span><span class="p">)</span>    
+<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi_b</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">axis_labels</span><span class="o">=</span><span class="n">phi_vs_time_labels</span><span class="p">,</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$\phi(0) = </span><span class="si">{</span><span class="n">phi_0_b</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> 
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax_a</span><span class="p">)</span>    
+<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi_c</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">axis_labels</span><span class="o">=</span><span class="n">phi_vs_time_labels</span><span class="p">,</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$\phi(0) = </span><span class="si">{</span><span class="n">phi_0_c</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> 
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax_a</span><span class="p">)</span>    
+                              
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;problem_12.10.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>  <span class="c1"># always bbox_inches=&#39;tight&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Multiple_pendulum_plots_solutions_new_solver_16_0.png" src="../../_images/Multiple_pendulum_plots_solutions_new_solver_16_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start the plot!</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">overall_title</span> <span class="o">=</span> <span class="s1">&#39;Taylor problem 12.10:  &#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\omega = </span><span class="si">{</span><span class="n">omega_ext</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\gamma = </span><span class="si">{</span><span class="n">gamma_ext</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\omega_0 = </span><span class="si">{</span><span class="n">omega_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\beta = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span> <span class="o">+</span> \
+                <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>     <span class="c1"># \n means a new line (adds some space here)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">overall_title</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;baseline&#39;</span><span class="p">)</span>
+    
+<span class="c1"># one plot: plot from t=0 to t=25  </span>
+<span class="n">ax_a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>                  
+
+<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">30.</span><span class="p">,</span> <span class="mf">50.</span><span class="p">)</span>    
+<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">phi_a</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi_dot_a</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">axis_labels</span><span class="o">=</span><span class="n">phi_vs_time_labels</span><span class="p">,</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$\phi(0) = </span><span class="si">{</span><span class="n">phi_0_a</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> 
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax_a</span><span class="p">)</span>    
+<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">phi_b</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi_dot_b</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">axis_labels</span><span class="o">=</span><span class="n">phi_vs_time_labels</span><span class="p">,</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$\phi(0) = </span><span class="si">{</span><span class="n">phi_0_b</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> 
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax_a</span><span class="p">)</span>    
+<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">phi_c</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">phi_dot_c</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">axis_labels</span><span class="o">=</span><span class="n">phi_vs_time_labels</span><span class="p">,</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s1">&#39;$\phi(0) = </span><span class="si">{</span><span class="n">phi_0_c</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> 
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax_a</span><span class="p">)</span>    
+                              
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;problem_12.10_alt.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Multiple_pendulum_plots_solutions_new_solver_17_0.png" src="../../_images/Multiple_pendulum_plots_solutions_new_solver_17_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="make-plots-for-taylor-problem-12-14">
+<h2>Make plots for Taylor problem 12.14<a class="headerlink" href="#make-plots-for-taylor-problem-12-14" title="Permalink to this headline">¶</a></h2>
+<p>This time we plot <span class="math notranslate nohighlight">\(\Delta \phi\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Labels for individual plot axes</span>
+<span class="n">phi_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\phi(t)$&#39;</span><span class="p">)</span>
+<span class="n">Delta_phi_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\Delta\phi(t)$&#39;</span><span class="p">)</span>
+<span class="n">phi_dot_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$d\phi/dt(t)$&#39;</span><span class="p">)</span>
+<span class="n">state_space_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\phi$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$d\phi/dt$&#39;</span><span class="p">)</span>
+
+<span class="c1"># Common plotting time (generate the full time then use slices)</span>
+<span class="n">t_start</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">t_end</span> <span class="o">=</span> <span class="mf">100.</span>
+<span class="n">delta_t</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="n">t_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t_start</span><span class="p">,</span> <span class="n">t_end</span><span class="o">+</span><span class="n">delta_t</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">)</span>  
+
+<span class="c1"># Common pendulum parameters</span>
+<span class="n">gamma_ext</span> <span class="o">=</span> <span class="mf">1.084</span>
+<span class="n">omega_ext</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">phi_ext</span> <span class="o">=</span> <span class="mf">0.</span>
+
+<span class="n">omega_0</span> <span class="o">=</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">omega_ext</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">omega_0</span><span class="o">/</span><span class="mf">4.</span>
+
+<span class="c1"># Instantiate a pendulum </span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Pendulum</span><span class="p">(</span><span class="n">omega_0</span><span class="o">=</span><span class="n">omega_0</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> 
+              <span class="n">gamma_ext</span><span class="o">=</span><span class="n">gamma_ext</span><span class="p">,</span> <span class="n">omega_ext</span><span class="o">=</span><span class="n">omega_ext</span><span class="p">,</span> <span class="n">phi_ext</span><span class="o">=</span><span class="n">phi_ext</span><span class="p">)</span>
+
+<span class="c1"># calculate the driving force for t_pts</span>
+<span class="n">driving</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">driving_force</span><span class="p">(</span><span class="n">t_pts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># one plot with multiple initial conditions</span>
+<span class="n">phi_0_1</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_1</span><span class="p">,</span> <span class="n">phi_dot_1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_0_1</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">)</span>
+
+<span class="n">phi_0_2</span> <span class="o">=</span> <span class="mf">0.00001</span>
+<span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_2</span><span class="p">,</span> <span class="n">phi_dot_2</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_0_2</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">)</span>
+
+<span class="c1"># Calculate the absolute value of \phi_2 - \phi_1</span>
+<span class="n">Delta_phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">phi_2</span> <span class="o">-</span> <span class="n">phi_1</span><span class="p">)</span>
+
+
+<span class="c1"># start the plot!</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">overall_title</span> <span class="o">=</span> <span class="s1">&#39;Taylor problem 12.14:  &#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\omega = </span><span class="si">{</span><span class="n">omega_ext</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\gamma = </span><span class="si">{</span><span class="n">gamma_ext</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\omega_0 = </span><span class="si">{</span><span class="n">omega_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\beta = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span> <span class="o">+</span> \
+                <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>     <span class="c1"># \n means a new line (adds some space here)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">overall_title</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;baseline&#39;</span><span class="p">)</span>
+    
+<span class="c1"># two plot: plot from t=0 to t=8 and another from t=0 to t=100 </span>
+<span class="n">ax_a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>                  
+
+<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">)</span>
+<span class="n">ax_a</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">Delta_phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> 
+<span class="n">ax_a</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax_a</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$|\Delta\phi|$&#39;</span><span class="p">)</span>
+
+<span class="n">ax_b</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>                  
+
+<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">100.</span><span class="p">)</span>
+<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">Delta_phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">semilogy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>    
+<span class="n">ax_b</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax_b</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$|\Delta\phi|$&#39;</span><span class="p">)</span>
+                              
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="c1"># always bbox_inches=&#39;tight&#39; for best results.  Further adjustments also.</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;problem_12.14.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Multiple_pendulum_plots_solutions_new_solver_21_0.png" src="../../_images/Multiple_pendulum_plots_solutions_new_solver_21_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="make-plots-for-taylor-problem-12-15">
+<h2>Make plots for Taylor problem 12.15<a class="headerlink" href="#make-plots-for-taylor-problem-12-15" title="Permalink to this headline">¶</a></h2>
+<p>This time we plot <span class="math notranslate nohighlight">\(\Delta \phi\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Labels for individual plot axes</span>
+<span class="n">phi_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\phi(t)$&#39;</span><span class="p">)</span>
+<span class="n">Delta_phi_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\Delta\phi(t)$&#39;</span><span class="p">)</span>
+<span class="n">phi_dot_vs_time_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$d\phi/dt(t)$&#39;</span><span class="p">)</span>
+<span class="n">state_space_labels</span> <span class="o">=</span> <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\phi$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$d\phi/dt$&#39;</span><span class="p">)</span>
+
+<span class="c1"># Common plotting time (generate the full time then use slices)</span>
+<span class="n">t_start</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">t_end</span> <span class="o">=</span> <span class="mf">100.</span>
+<span class="n">delta_t</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="n">t_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t_start</span><span class="p">,</span> <span class="n">t_end</span><span class="o">+</span><span class="n">delta_t</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">)</span>  
+
+<span class="c1"># Common pendulum parameters</span>
+<span class="n">gamma_ext</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">omega_ext</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">phi_ext</span> <span class="o">=</span> <span class="mf">0.</span>
+
+<span class="n">omega_0</span> <span class="o">=</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">omega_ext</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">omega_0</span><span class="o">/</span><span class="mf">4.</span>
+
+<span class="c1"># Instantiate a pendulum </span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Pendulum</span><span class="p">(</span><span class="n">omega_0</span><span class="o">=</span><span class="n">omega_0</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> 
+              <span class="n">gamma_ext</span><span class="o">=</span><span class="n">gamma_ext</span><span class="p">,</span> <span class="n">omega_ext</span><span class="o">=</span><span class="n">omega_ext</span><span class="p">,</span> <span class="n">phi_ext</span><span class="o">=</span><span class="n">phi_ext</span><span class="p">)</span>
+
+<span class="c1"># calculate the driving force for t_pts</span>
+<span class="n">driving</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">driving_force</span><span class="p">(</span><span class="n">t_pts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># one plot with multiple initial conditions</span>
+<span class="n">phi_0_1</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_1</span><span class="p">,</span> <span class="n">phi_dot_1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_0_1</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">)</span>
+
+<span class="n">phi_0_2</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_2</span><span class="p">,</span> <span class="n">phi_dot_2</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_0_2</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">)</span>
+
+<span class="c1"># Calculate the absolute value of \phi_2 - \phi_1</span>
+<span class="n">Delta_phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">phi_2</span> <span class="o">-</span> <span class="n">phi_1</span><span class="p">)</span>
+
+
+<span class="c1"># start the plot!</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">overall_title</span> <span class="o">=</span> <span class="s1">&#39;Taylor problem 12.15:  &#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\omega = </span><span class="si">{</span><span class="n">omega_ext</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\gamma = </span><span class="si">{</span><span class="n">gamma_ext</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\omega_0 = </span><span class="si">{</span><span class="n">omega_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\beta = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span> <span class="o">+</span> \
+                <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>     <span class="c1"># \n means a new line (adds some space here)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">overall_title</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;baseline&#39;</span><span class="p">)</span>
+    
+<span class="c1"># two plot: plot from t=0 to t=8 and another from t=0 to t=100 </span>
+<span class="n">ax_a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>                  
+
+<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">)</span>
+<span class="n">ax_a</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">Delta_phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>    
+<span class="n">ax_a</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax_a</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$|\Delta\phi|$&#39;</span><span class="p">)</span>
+
+<span class="n">ax_b</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>                  
+
+<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">100.</span><span class="p">)</span>
+<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">Delta_phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">semilogy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>    
+<span class="n">ax_b</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax_b</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$|\Delta\phi|$&#39;</span><span class="p">)</span>
+                              
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="c1"># always bbox_inches=&#39;tight&#39; for best results.  Further adjustments also.</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;problem_12.15.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Multiple_pendulum_plots_solutions_new_solver_25_0.png" src="../../_images/Multiple_pendulum_plots_solutions_new_solver_25_0.png" />
+</div>
+</div>
+<p>Now repeat with smaller abserr and relerr for the ode solver:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># one plot with multiple initial conditions</span>
+<span class="n">phi_0_1</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_1</span><span class="p">,</span> <span class="n">phi_dot_1</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_0_1</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">,</span> 
+                                <span class="n">abserr</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="n">relerr</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">)</span>
+
+<span class="n">phi_0_2</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">phi_dot_0</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">phi_2</span><span class="p">,</span> <span class="n">phi_dot_2</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">solve_ode</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="n">phi_0_2</span><span class="p">,</span> <span class="n">phi_dot_0</span><span class="p">,</span> 
+                                <span class="n">abserr</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">,</span> <span class="n">relerr</span><span class="o">=</span><span class="mf">1.e-10</span><span class="p">)</span>
+
+<span class="c1"># Calculate the absolute value of \phi_2 - \phi_1</span>
+<span class="n">Delta_phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">phi_2</span> <span class="o">-</span> <span class="n">phi_1</span><span class="p">)</span>
+
+
+<span class="c1"># start the plot!</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">overall_title</span> <span class="o">=</span> <span class="s1">&#39;Taylor problem 12.15:  &#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\omega = </span><span class="si">{</span><span class="n">omega_ext</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\gamma = </span><span class="si">{</span><span class="n">gamma_ext</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\omega_0 = </span><span class="si">{</span><span class="n">omega_0</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">,$&#39;</span> <span class="o">+</span> \
+                <span class="sa">rf</span><span class="s1">&#39; $\beta = </span><span class="si">{</span><span class="n">beta</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">$&#39;</span> <span class="o">+</span> \
+                <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>     <span class="c1"># \n means a new line (adds some space here)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">overall_title</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;baseline&#39;</span><span class="p">)</span>
+    
+<span class="c1"># two plot: plot from t=0 to t=8 and another from t=0 to t=100 </span>
+<span class="n">ax_a</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>                  
+
+<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">)</span>
+<span class="n">ax_a</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">Delta_phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>    
+<span class="n">ax_a</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax_a</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$|\Delta\phi|$&#39;</span><span class="p">)</span>
+
+<span class="n">ax_b</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>                  
+
+<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">start_stop_indices</span><span class="p">(</span><span class="n">t_pts</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">100.</span><span class="p">)</span>
+<span class="n">plot_y_vs_x</span><span class="p">(</span><span class="n">t_pts</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> <span class="n">Delta_phi</span><span class="p">[</span><span class="n">start</span> <span class="p">:</span> <span class="n">stop</span><span class="p">],</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">semilogy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>    
+<span class="n">ax_b</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax_b</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$|\Delta\phi|$&#39;</span><span class="p">)</span>
+                              
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="c1"># always bbox_inches=&#39;tight&#39; for best results.  Further adjustments also.</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;problem_12.15.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Multiple_pendulum_plots_solutions_new_solver_27_0.png" src="../../_images/Multiple_pendulum_plots_solutions_new_solver_27_0.png" />
 </div>
 </div>
 </div>
@@ -1166,17 +1300,17 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../content/Taylor/Taylor_chapter_12.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../../content/Taylor/Taylor_chapter_7.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Taylor Chapter 12</p>
+            <p class="prev-next-title">Taylor Chapter 7</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Multiple_pendulum_plots_Section_12.4.html" title="next page">
+    <a class='right-next' id="next-link" href="../../content/Taylor/Taylor_chapter_8.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Multiple pendulum plots. Section 12.4: Approach to Chaos</p>
+        <p class="prev-next-title">Taylor Chapter 8</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
