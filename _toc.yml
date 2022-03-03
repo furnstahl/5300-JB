@@ -79,6 +79,10 @@ parts:
       - file: notebooks/Taylor_problems/Energy_diagrams_Taylor_examples_8p1_8p2.ipynb 
       - file: notebooks/Sandboxes/Orbit_games.ipynb
       - file: notebooks/Reference/Orbital_eqs_with_different_algorithms.ipynb
+    - file: content/Taylor/Taylor_chapter_11.md
+      sections:
+      - file: notebooks/Sandboxes/CoupledOscillator_games.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_7.42_solution.ipynb
   - caption: Reference material
     #numbered: True
     chapters:
