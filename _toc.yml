@@ -81,7 +81,7 @@ parts:
       - file: notebooks/Reference/Orbital_eqs_with_different_algorithms.ipynb
     - file: content/Taylor/Taylor_chapter_11.md
       sections:
-      - file: notebooks/Sandboxes/CoupledOscillator_games_v4.ipynb
+      - file: notebooks/Sandboxes/CoupledOscillators_games_v4.ipynb
       - file: notebooks/Taylor_problems/Taylor_problem_7.42_solution.ipynb
   - caption: Reference material
     #numbered: True
