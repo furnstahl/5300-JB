@@ -85,7 +85,7 @@ parts:
       - file: notebooks/Taylor_problems/Taylor_problem_7.42_solution.ipynb
     - file: content/Taylor/Taylor_chapter_13.md
       sections:
-      - file: notebook/Sandboxes/Lagrangian_pendulum.ipynb
+      - file: notebooks/Sandboxes/Lagrangian_pendulum.ipynb
   - caption: Reference material
     #numbered: True
     chapters:
