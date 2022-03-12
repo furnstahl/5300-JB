@@ -83,6 +83,9 @@ parts:
       sections:
       - file: notebooks/Sandboxes/CoupledOscillators_games_v4.ipynb
       - file: notebooks/Taylor_problems/Taylor_problem_7.42_solution.ipynb
+    - file: content/Taylor/Taylor_chapter_13.md
+      sections:
+      - file: notebook/Sandboxes/Lagrangian_pendulum.ipynb
   - caption: Reference material
     #numbered: True
     chapters:
