@@ -86,6 +86,12 @@ parts:
     - file: content/Taylor/Taylor_chapter_13.md
       sections:
       - file: notebooks/Sandboxes/Lagrangian_pendulum.ipynb
+    - file: content/Taylor/Taylor_chapter_16.md
+      sections:
+      - file: notebooks/Reference/wave_animation_1.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_16p14_A.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_16p14_B.ipynb
+      - file: notebooks/Taylor_problems/Taylor_problem_16p14_finite_difference_template.ipynb
   - caption: Reference material
     #numbered: True
     chapters:
