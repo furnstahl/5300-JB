@@ -2,7 +2,7 @@
 
 ## Installing Anaconda
 
-**Last revised:** 24-Dec-2021 by Dick Furnstahl (furnstahl.1@osu.edu)
+**Last revised:** 26-Dec-2022 by Dick Furnstahl (furnstahl.1@osu.edu)
 
 **Overview of what you need: Anaconda Python**
 
@@ -17,7 +17,7 @@ Step-by-step instructions for downloading and installing Anaconda are available 
 3. Accept the license agreement.
 4. Install for All Users (this assumes you have admin privileges; it avoids later problems if you can do this). Allow the installation if your virus protection software asks you.
 5. It is suggested you accept the suggestion for the installation location (e.g., C:\ProgramData\Anaconda3 on Windows). [Note: steps 4 and 5 may be reversed for a Mac install.]
-6. For Windows, accept the checked Advanced Options as &quot;Register Anaconda as my default Python 3.8&quot; and click **Install**.
+6. For Windows, accept the checked Advanced Options as &quot;Register Anaconda as my default Python 3.9&quot; and click **Install**.
 7. It is recommended (for our purposes) that you &quot;Skip&quot; installing Microsoft VSCode, if you are given the option.
 8. While it is installing, you might want to click **Show Details** to see progress. It will take a while, depending on your hardware. Be patient!
 9. If it works, you&#39;ll get to a &quot;Thanks for installing Anaconda Individual Edition!&quot; page. There will be two already-checked boxes. You _ **do not** _ need to sign up for Anaconda Cloud, so uncheck that one. But you might want to read the &quot;Getting started with Anaconda&quot; information. Click **Finish** you are done.
