@@ -80,13 +80,15 @@ class Pendulum():
         
         """
         F_ext = self.driving_force(t)
-        return [y[1], -self.omega_0**2 * np.sin(y[0]) - 2.*self.beta * y[1]                        + F_ext]
+        return [y[1], -self.omega_0**2 * np.sin(y[0]) - 2.*self.beta * y[1] \
+                       + F_ext]
     
     def driving_force(self, t):
         """
         This function returns the value of the driving force at time t.
         """
-        return self.gamma_ext * self.omega_0**2                               * np.cos(self.omega_ext*t + self.phi_ext)  
+        return self.gamma_ext * self.omega_0**2 \
+                              * np.cos(self.omega_ext*t + self.phi_ext)  
     
     def solve_ode(self, phi_0, phi_dot_0, abserr=1.0e-8, relerr=1.0e-6):
         """
@@ -226,7 +228,6 @@ phi_5, phi_dot_5 = p5.solve_ode(phi_0, phi_dot_0,
 # In[7]:
 
 
-
 # Change the common font size
 font_size = 14
 plt.rcParams.update({'font.size': font_size})
@@ -234,7 +235,13 @@ box_props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
 
 # start the plot!
 fig = plt.figure(figsize=(12,12))
-overall_title = 'Taylor Figure 12.8:  ' +                 rf' $\omega = {omega_ext:.2f},$' +                 rf' $\omega_0 = {omega_0:.2f},$' +                 rf' $\beta = {beta:.2f},$' +                 rf'  $\phi_0 = {phi_0:.2f},$' +                 rf' $\dot\phi_0 = {phi_dot_0:.2f}$' +                 '\n'     # \n means a new line (adds some space here)
+overall_title = 'Taylor Figure 12.8:  ' + \
+                rf' $\omega = {omega_ext:.2f},$' + \
+                rf' $\omega_0 = {omega_0:.2f},$' + \
+                rf' $\beta = {beta:.2f},$' + \
+                rf'  $\phi_0 = {phi_0:.2f},$' + \
+                rf' $\dot\phi_0 = {phi_dot_0:.2f}$' + \
+                '\n'     # \n means a new line (adds some space here)
 fig.suptitle(overall_title, va='baseline')
     
 # plot 1a: plot from t=0 to t=10   
@@ -361,7 +368,6 @@ fig.savefig('Figure_12.8.png', bbox_inches='tight')  # always bbox_inches='tight
 # In[8]:
 
 
-
 # Change the common font size
 font_size = 14
 plt.rcParams.update({'font.size': font_size})
@@ -378,7 +384,12 @@ x_max_ps = 0.0
 
 # start the plot!
 fig_ss = plt.figure(figsize=(12,12))
-overall_title = 'State space and Poincare sections:  ' +                 rf' $\omega = {omega_ext:.2f},$' +                 rf' $\omega_0 = {omega_0:.2f},$' +                 rf' $\beta = {beta:.2f},$' +                 rf'  $\phi_0 = {phi_0:.2f},$' +                 rf' $\dot\phi_0 = {phi_dot_0:.2f}$'
+overall_title = 'State space and Poincare sections:  ' + \
+                rf' $\omega = {omega_ext:.2f},$' + \
+                rf' $\omega_0 = {omega_0:.2f},$' + \
+                rf' $\beta = {beta:.2f},$' + \
+                rf'  $\phi_0 = {phi_0:.2f},$' + \
+                rf' $\dot\phi_0 = {phi_dot_0:.2f}$'
                 #'\n'     # \n means a new line (adds some space here)
 fig_ss.suptitle(overall_title)
     

@@ -137,7 +137,8 @@ class HamiltonianPendulum():
         -------
         
         """
-        return [y[1]/(self.mass * self.L**2),                 -self.mass * self.g * self.L * np.sin(y[0]) ]
+        return [y[1]/(self.mass * self.L**2), \
+                -self.mass * self.g * self.L * np.sin(y[0]) ]
     
     def solve_ode(self, t_pts, phi_0, p_phi_0, 
                   abserr=1.0e-9, relerr=1.0e-9):
@@ -239,7 +240,11 @@ phi, phi_dot = p1.solve_ode(t_pts, phi_0, phi_dot_0)
 
 # start the plot!
 fig = plt.figure(figsize=(15,5))
-overall_title = 'Simple pendulum from Lagrangian:  ' +                 rf' $\omega_0 = {p1.omega_0:.2f},$' +                 rf'  $\phi_0 = {phi_0:.2f},$' +                 rf' $\dot\phi_0 = {phi_dot_0:.2f}$' +                 '\n'     # \n means a new line (adds some space here)
+overall_title = 'Simple pendulum from Lagrangian:  ' + \
+                rf' $\omega_0 = {p1.omega_0:.2f},$' + \
+                rf'  $\phi_0 = {phi_0:.2f},$' + \
+                rf' $\dot\phi_0 = {phi_dot_0:.2f}$' + \
+                '\n'     # \n means a new line (adds some space here)
 fig.suptitle(overall_title, va='baseline')
     
 # first plot: phi plot 

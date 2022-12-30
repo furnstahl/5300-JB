@@ -103,7 +103,9 @@ class CoupledOscillators:
         dy_dt_vec[:self.q_len] = y[self.q_len:]  
         # Set the lower half [self.q_len:] of dy_dt to the vector that
         #  results from M^{-1} K y where @ is matrix multiplication
-        dy_dt_vec[self.q_len:] = -1.* LA.inv(self.M_matrix) @                     ( self.K_matrix @ y[:self.q_len] +                       self.b_matrix @ y[self.q_len:] )
+        dy_dt_vec[self.q_len:] = -1.* LA.inv(self.M_matrix) @ \
+                    ( self.K_matrix @ y[:self.q_len] + \
+                      self.b_matrix @ y[self.q_len:] )
         return dy_dt_vec
     
     
@@ -153,7 +155,8 @@ class CoupledOscillators:
                axes[j].set_ylabel(fr'$q_{j+1:d}$')
                axes[j].axvline(2.*np.pi/np.sqrt(eig_vals[i]), 
                                color='black', linestyle=':')
-            overall_title = fr'Normal mode {i+1:d}, ' +                             fr'$\omega = {self.frequencies[i]:.2f}$' 
+            overall_title = fr'Normal mode {i+1:d}, ' + \
+                            fr'$\omega = {self.frequencies[i]:.2f}$' 
             fig.suptitle(overall_title, va='center')
             fig.tight_layout()
             if output_file:
@@ -247,8 +250,10 @@ delta_2 = np.pi/2.
 omega_1 = co1.frequencies[0]
 omega_2 = co1.frequencies[1]
 
-q_vec_0 = A_1 * eig_vecs[:,0] * np.cos(-delta_1) +           A_2 * eig_vecs[:,1] * np.cos(-delta_2)
-q_vec_dot_0 = omega_1 * A_1 * eig_vecs[:,0] * np.sin(delta_1) +               omega_2 * A_2 * eig_vecs[:,1] * np.sin(delta_2)
+q_vec_0 = A_1 * eig_vecs[:,0] * np.cos(-delta_1) + \
+          A_2 * eig_vecs[:,1] * np.cos(-delta_2)
+q_vec_dot_0 = omega_1 * A_1 * eig_vecs[:,0] * np.sin(delta_1) + \
+              omega_2 * A_2 * eig_vecs[:,1] * np.sin(delta_2)
 q_vec_11p6, q_vec_dot_11p6 = co1.solve_ode(t_pts, q_vec_0, q_vec_dot_0)
 
 fig, axes = plt.subplots(co1.q_len, 1, figsize=(10, 2.*co1.q_len))
@@ -258,7 +263,10 @@ for j in np.arange(co1.q_len):
     axes[j].set_ylabel(fr'$q_{j+1:d}$')
     axes[j].set_xlim(t_pts[0], t_pts[-1])
     axes[j].axhline(0., color='black', alpha=0.3)
-overall_title = 'General solution: ' + fr'$A_1 = {A_1:.2f}$, ' +                                        fr'$\delta_1 = {delta_1:.2f}$, ' +                                        fr'$A_2 = {A_2:.2f}$, ' +                                        fr'$\delta_2 = {delta_2:.2f}$'  
+overall_title = 'General solution: ' + fr'$A_1 = {A_1:.2f}$, ' + \
+                                       fr'$\delta_1 = {delta_1:.2f}$, ' + \
+                                       fr'$A_2 = {A_2:.2f}$, ' + \
+                                       fr'$\delta_2 = {delta_2:.2f}$'  
 fig.suptitle(overall_title, va='center')
 fig.tight_layout()
 
@@ -363,8 +371,10 @@ C_2 = 0.
 omega_1 = co1.frequencies[0]
 omega_2 = co1.frequencies[1]
 
-q_vec_0 = B_1 * eig_vecs[:,0] +           B_2 * eig_vecs[:,1] 
-q_vec_dot_0 = omega_1 * C_1 * eig_vecs[:,0] +               omega_2 * C_2 * eig_vecs[:,1]
+q_vec_0 = B_1 * eig_vecs[:,0] + \
+          B_2 * eig_vecs[:,1] 
+q_vec_dot_0 = omega_1 * C_1 * eig_vecs[:,0] + \
+              omega_2 * C_2 * eig_vecs[:,1]
 q_vec_11p7a, q_vec_dot_11p7a = co1.solve_ode(t_pts, q_vec_0, q_vec_dot_0)
 
 fig, axes = plt.subplots(co1.q_len, 1, figsize=(10, 2.*co1.q_len))
@@ -374,7 +384,10 @@ for j in np.arange(co1.q_len):
     axes[j].set_ylabel(fr'$q_{j+1:d}$')
     axes[j].set_xlim(t_pts[0], t_pts[-1])
     axes[j].axhline(0., color='black', alpha=0.3)
-overall_title = 'Specific solution 1: ' + fr'$B_1 = {B_1:.2f}$, ' +                                           fr'$C_1 = {C_1:.2f}$, ' +                                           fr'$B_2 = {B_2:.2f}$, ' +                                           fr'$C_2 = {C_2:.2f}$'  
+overall_title = 'Specific solution 1: ' + fr'$B_1 = {B_1:.2f}$, ' + \
+                                          fr'$C_1 = {C_1:.2f}$, ' + \
+                                          fr'$B_2 = {B_2:.2f}$, ' + \
+                                          fr'$C_2 = {C_2:.2f}$'  
 fig.suptitle(overall_title, va='center')
 fig.tight_layout()
 
@@ -397,8 +410,10 @@ C_2 = 0.
 omega_1 = co1.frequencies[0]
 omega_2 = co1.frequencies[1]
 
-q_vec_0 = B_1 * eig_vecs[:,0] +           B_2 * eig_vecs[:,1] 
-q_vec_dot_0 = omega_1 * C_1 * eig_vecs[:,0] +               omega_2 * C_2 * eig_vecs[:,1]
+q_vec_0 = B_1 * eig_vecs[:,0] + \
+          B_2 * eig_vecs[:,1] 
+q_vec_dot_0 = omega_1 * C_1 * eig_vecs[:,0] + \
+              omega_2 * C_2 * eig_vecs[:,1]
 q_vec_11p7a, q_vec_dot_11p7a = co1.solve_ode(t_pts, q_vec_0, q_vec_dot_0)
 
 fig, axes = plt.subplots(co1.q_len, 1, figsize=(10, 2.*co1.q_len))
@@ -408,7 +423,10 @@ for j in np.arange(co1.q_len):
     axes[j].set_ylabel(fr'$q_{j+1:d}$')
     axes[j].set_xlim(t_pts[0], t_pts[-1])
     axes[j].axhline(0., color='black', alpha=0.3)
-overall_title = 'Specific solution 1: ' + fr'$B_1 = {B_1:.2f}$, ' +                                           fr'$C_1 = {C_1:.2f}$, ' +                                           fr'$B_2 = {B_2:.2f}$, ' +                                           fr'$C_2 = {C_2:.2f}$'  
+overall_title = 'Specific solution 1: ' + fr'$B_1 = {B_1:.2f}$, ' + \
+                                          fr'$C_1 = {C_1:.2f}$, ' + \
+                                          fr'$B_2 = {B_2:.2f}$, ' + \
+                                          fr'$C_2 = {C_2:.2f}$'  
 fig.suptitle(overall_title, va='center')
 fig.tight_layout()
 
@@ -532,8 +550,10 @@ C_2 = 0.
 omega_1 = co1.frequencies[0]
 omega_2 = co1.frequencies[1]
 
-q_vec_0 = B_1 * eig_vecs[:,0] +           B_2 * eig_vecs[:,1] 
-q_vec_dot_0 = omega_1 * C_1 * eig_vecs[:,0] +               omega_2 * C_2 * eig_vecs[:,1]
+q_vec_0 = B_1 * eig_vecs[:,0] + \
+          B_2 * eig_vecs[:,1] 
+q_vec_dot_0 = omega_1 * C_1 * eig_vecs[:,0] + \
+              omega_2 * C_2 * eig_vecs[:,1]
 q_vec_11p7a, q_vec_dot_11p7a = co1.solve_ode(t_pts, q_vec_0, q_vec_dot_0)
 
 fig, axes = plt.subplots(co1.q_len, 1, figsize=(10, 2.*co1.q_len))
@@ -543,7 +563,10 @@ for j in np.arange(co1.q_len):
     axes[j].set_ylabel(fr'$q_{j+1:d}$')
     axes[j].set_xlim(t_pts[0], t_pts[-1])
     axes[j].axhline(0., color='black', alpha=0.3)
-overall_title = 'Specific solution 1: ' + fr'$B_1 = {B_1:.2f}$, ' +                                           fr'$C_1 = {C_1:.2f}$, ' +                                           fr'$B_2 = {B_2:.2f}$, ' +                                           fr'$C_2 = {C_2:.2f}$'  
+overall_title = 'Specific solution 1: ' + fr'$B_1 = {B_1:.2f}$, ' + \
+                                          fr'$C_1 = {C_1:.2f}$, ' + \
+                                          fr'$B_2 = {B_2:.2f}$, ' + \
+                                          fr'$C_2 = {C_2:.2f}$'  
 fig.suptitle(overall_title, va='center')
 fig.tight_layout()
 

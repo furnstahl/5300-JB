@@ -284,8 +284,10 @@ r_0 = 1.  #  1.
 r_dot_0 = 0.
 phi_0 = 0.0
 r_pts, r_dot_pts, phi_pts = o1.solve_ode(t_pts, r_0, r_dot_0, phi_0)
-r_pts_Euler, r_dot_pts_Euler, phi_pts_Euler                               = o1.solve_ode_Euler(t_pts, r_0, r_dot_0, phi_0)
-r_pts_LF, r_dot_pts_LF, phi_pts_LF                            = o1.solve_ode_Leapfrog(t_pts, r_0, r_dot_0, phi_0)
+r_pts_Euler, r_dot_pts_Euler, phi_pts_Euler \
+                              = o1.solve_ode_Euler(t_pts, r_0, r_dot_0, phi_0)
+r_pts_LF, r_dot_pts_LF, phi_pts_LF \
+                           = o1.solve_ode_Leapfrog(t_pts, r_0, r_dot_0, phi_0)
 
 c = o1.ang_mom**2 / (np.abs(o1.k) * o1.mu)
 epsilon = c / r_0 - 1.
@@ -299,7 +301,14 @@ print(f'eccentricity = {epsilon:.2f}')
 
 fig_4 = plt.figure(figsize=(8,8))
 
-overall_title = 'Orbit:  ' +                 rf' $n = {o1.n},$' +                 rf' $k = {o1.k:.1f},$' +                 rf' $l = {o1.ang_mom:.1f},$' +                 rf' $r_0 = {r_0:.1f},$' +                 rf' $\dot r_0 = {r_dot_0:.1f},$' +                 rf' $\phi_0 = {phi_0:.1f}$' +                 '\n'     # \n means a new line (adds some space here)
+overall_title = 'Orbit:  ' + \
+                rf' $n = {o1.n},$' + \
+                rf' $k = {o1.k:.1f},$' + \
+                rf' $l = {o1.ang_mom:.1f},$' + \
+                rf' $r_0 = {r_0:.1f},$' + \
+                rf' $\dot r_0 = {r_dot_0:.1f},$' + \
+                rf' $\phi_0 = {phi_0:.1f}$' + \
+                '\n'     # \n means a new line (adds some space here)
 fig_4.suptitle(overall_title, va='baseline')
 
 ax_4a = fig_4.add_subplot(2,2,1)
@@ -347,6 +356,7 @@ fig_4.tight_layout()
 fig_4.savefig('Leapfrog_orbit_1.png', dpi=200, bbox_inches='tight')
 
 
+
 # In[12]:
 
 
@@ -368,7 +378,14 @@ E_tot_rel_pts_LF = np.abs((E_tot_pts_LF - E_tot_0_LF)/E_tot_0_LF)
 
 fig_5 = plt.figure(figsize=(6,6))
 
-overall_title = 'Orbit:  ' +                 rf' $n = {o1.n},$' +                 rf' $k = {o1.k:.1f},$' +                 rf' $l = {o1.ang_mom:.1f},$' +                 rf' $r_0 = {r_0:.1f},$' +                 rf' $\dot r_0 = {r_dot_0:.1f},$' +                 rf' $\phi_0 = {phi_0:.1f}$' +                 '\n'     # \n means a new line (adds some space here)
+overall_title = 'Orbit:  ' + \
+                rf' $n = {o1.n},$' + \
+                rf' $k = {o1.k:.1f},$' + \
+                rf' $l = {o1.ang_mom:.1f},$' + \
+                rf' $r_0 = {r_0:.1f},$' + \
+                rf' $\dot r_0 = {r_dot_0:.1f},$' + \
+                rf' $\phi_0 = {phi_0:.1f}$' + \
+                '\n'     # \n means a new line (adds some space here)
 fig_5.suptitle(overall_title, va='baseline')
 
 ax_5a = fig_5.add_subplot(1,1,1)

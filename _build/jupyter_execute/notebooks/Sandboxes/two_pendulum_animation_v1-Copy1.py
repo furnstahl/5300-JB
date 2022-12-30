@@ -98,13 +98,15 @@ class Pendulum():
         
         """
         F_ext = self.driving_force(t)
-        return [y[1], -self.omega_0**2 * np.sin(y[0]) - 2.*self.beta * y[1]                        + F_ext]
+        return [y[1], -self.omega_0**2 * np.sin(y[0]) - 2.*self.beta * y[1] \
+                       + F_ext]
     
     def driving_force(self, t):
         """
         This function returns the value of the driving force at time t.
         """
-        return self.gamma_ext * self.omega_0**2                               * np.cos(self.omega_ext*t + self.phi_ext)  
+        return self.gamma_ext * self.omega_0**2 \
+                              * np.cos(self.omega_ext*t + self.phi_ext)  
     
     def solve_ode(self, t_pts, phi_0, phi_dot_0, 
                   abserr=1.0e-8, relerr=1.0e-6):
@@ -328,7 +330,8 @@ class AnimationPendulumPlot():
 
     def animate_pendulum(self, i, t_pts_skip, phi_skip_list,
                          phi_dot_skip_list):
-        for index, (phi_skip, phi_dot_skip) in                      enumerate(zip(phi_skip_list, phi_dot_skip_list)):
+        for index, (phi_skip, phi_dot_skip) in \
+                     enumerate(zip(phi_skip_list, phi_dot_skip_list)):
             self.pt_1[index].set_data(t_pts_skip[i], phi_skip[i])
 
             self.line_2[index].set_data([phi_skip[i], phi_skip[i]], 

@@ -52,7 +52,8 @@ def damped_driven(t, omega0, f0, omega, beta, B1, B2):
     omega1 = np.sqrt(omega0**2 - beta**2)
     A = A_eval(omega0, f0, omega, beta)
     delta = delta_eval(omega0, omega, beta)
-    return A * np.cos(omega*t - delta) + np.exp(-beta*t) *            (B1 * np.cos(omega1 * t)  +  B2 * np.sin(omega1 * t))
+    return A * np.cos(omega*t - delta) + np.exp(-beta*t) * \
+           (B1 * np.cos(omega1 * t)  +  B2 * np.sin(omega1 * t))
 
 
 def driving_force(t, f0, omega):

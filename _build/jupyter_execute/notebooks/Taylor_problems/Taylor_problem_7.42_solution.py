@@ -78,7 +78,8 @@ class Oscillator():
         -------
         
         """
-        return [y[1], (self.omega**2 * np.cos(y[0]) - self.g/self.R)                        * np.sin(y[0]) ]
+        return [y[1], (self.omega**2 * np.cos(y[0]) - self.g/self.R) \
+                       * np.sin(y[0]) ]
     
     
     def solve_ode(self, t_pts, theta_0, theta_dot_0, 
@@ -163,6 +164,7 @@ t_pts = np.arange(t_start, t_end+delta_t, delta_t)
 o1 = Oscillator(omega=omega, g=g, R=R) 
 
 
+
 # In[8]:
 
 
@@ -177,7 +179,13 @@ theta_dot_0 = 0.0
 theta_vs_time_labels = (r'$t$', r'$\theta(t)$')
 
 fig = plt.figure(figsize=(12,4))
-overall_title = 'Taylor problem 7.42:  ' +                 rf' $\omega^2 = {omega**2:.2f},$' +                 rf' $g = {g:.1f},$' +                 rf' $R = {R:.1f},$' +                 rf' $\theta_{{eq}} = {o1.theta_equil * rad_to_deg:.1f},$' +                 rf' $\dot\theta_0 = {theta_dot_0:.2f}$' +                 '\n'     # \n means a new line (adds some space here)
+overall_title = 'Taylor problem 7.42:  ' + \
+                rf' $\omega^2 = {omega**2:.2f},$' + \
+                rf' $g = {g:.1f},$' + \
+                rf' $R = {R:.1f},$' + \
+                rf' $\theta_{{eq}} = {o1.theta_equil * rad_to_deg:.1f},$' + \
+                rf' $\dot\theta_0 = {theta_dot_0:.2f}$' + \
+                '\n'     # \n means a new line (adds some space here)
 fig.suptitle(overall_title, va='baseline')
     
 # plot 1

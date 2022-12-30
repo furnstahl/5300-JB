@@ -65,7 +65,8 @@ def u_triangular(x_pts, t, m_max=20, c_wave=1., L=1.):
     """
     y_pts = np.zeros(len(x_pts))  # define y_pts as the same size as x_pts
     for m in np.arange(m_max):
-        y_pts += B_coeff(m) * np.sin(k(m, L) * x_pts)                   * np.cos(k(m, L) * c_wave * t) 
+        y_pts += B_coeff(m) * np.sin(k(m, L) * x_pts) \
+                  * np.cos(k(m, L) * c_wave * t) 
     return y_pts
 
 
@@ -150,7 +151,7 @@ t_pts = np.arange(t_min, t_max + delta_t, delta_t)
 # In[9]:
 
 
-get_ipython().run_cell_magic('capture', '', "\nfig_anim = plt.figure(figsize=(6,3), num='Triangular wave')\nax_anim = fig_anim.add_subplot(1,1,1)\nax_anim.set_xlim(x_min, x_max)\ngap = 0.1\nax_anim.set_ylim(-1. - gap, 1. + gap)\n\n# By assigning the first return from plot to line_anim, we can later change\n#  the values in the line.\nline_anim, = ax_anim.plot(x_pts, \n                          u_triangular(x_pts, t_min, m_max, c_wave, L), \n                          color='blue', lw=2)\n\nfig_anim.tight_layout()")
+get_ipython().run_cell_magic('capture', '', "\nfig_anim = plt.figure(figsize=(6,3), num='Triangular wave')\nax_anim = fig_anim.add_subplot(1,1,1)\nax_anim.set_xlim(x_min, x_max)\ngap = 0.1\nax_anim.set_ylim(-1. - gap, 1. + gap)\n\n# By assigning the first return from plot to line_anim, we can later change\n#  the values in the line.\nline_anim, = ax_anim.plot(x_pts, \n                          u_triangular(x_pts, t_min, m_max, c_wave, L), \n                          color='blue', lw=2)\n\nfig_anim.tight_layout()\n")
 
 
 # In[10]:

@@ -83,13 +83,15 @@ class Pendulum():
         
         """
         F_ext = self.driving_force(t)
-        return [y[1], -self.omega_0**2 * np.sin(y[0]) - 2.*self.beta * y[1]                        + F_ext]
+        return [y[1], -self.omega_0**2 * np.sin(y[0]) - 2.*self.beta * y[1] \
+                       + F_ext]
     
     def driving_force(self, t):
         """
         This function returns the value of the driving force at time t.
         """
-        return self.gamma_ext * self.omega_0**2                               * np.cos(self.omega_ext*t + self.phi_ext)   
+        return self.gamma_ext * self.omega_0**2 \
+                              * np.cos(self.omega_ext*t + self.phi_ext)   
 
 
 # In[4]:
@@ -237,6 +239,7 @@ def pendulum_plots(phi_vs_time_plot=True, phi_dot_vs_time_plot=True,
     fig.tight_layout()
     
     return fig
+
 
 
 # In[7]:

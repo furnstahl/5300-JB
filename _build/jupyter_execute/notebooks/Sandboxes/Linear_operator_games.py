@@ -150,7 +150,6 @@ print(Diff_op @ t**2, '\n', 2*t)
 # In[19]:
 
 
-
 Diff_sym_op = (1 * np.diag(np.ones(num_t-1), 1) + (-1) * np.diag(np.ones(num_t-1), -1)) / (2*delta_t)
 print(Diff_sym_op)
 

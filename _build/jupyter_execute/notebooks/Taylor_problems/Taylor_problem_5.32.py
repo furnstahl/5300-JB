@@ -40,7 +40,8 @@ def underdamped(t, beta, omega_0=1, x_0=1):
     omega_1 = np.sqrt(omega_0**2 - beta**2)
     B_1 = ### fill in the blank
     B_2 = ### fill in the blank
-    return np.exp(-beta*t)              * ( B_1 * np.cos(omega_1*t) + B_2 * np.sin(omega_1*t) )
+    return np.exp(-beta*t) \
+             * ( B_1 * np.cos(omega_1*t) + B_2 * np.sin(omega_1*t) )
 
 
 # In[ ]:
@@ -111,7 +112,8 @@ def all_beta(t, beta, omega_0=1, x_0=1):
         as well as underdamped solution.
     """
     omega_1 = smath.sqrt(omega_0**2 - beta**2)
-    return np.real( x_0 * np.exp(-beta*t)                * (np.cos(omega_1*t) + (beta/omega_1)*np.sin(omega_1*t)) )
+    return np.real( x_0 * np.exp(-beta*t) \
+               * (np.cos(omega_1*t) + (beta/omega_1)*np.sin(omega_1*t)) )
 
 
 # In[ ]:

@@ -279,7 +279,7 @@ fig_array.savefig('Taylor_Problem_16p14_finite_difference.png',
 # In[ ]:
 
 
-get_ipython().run_cell_magic('capture', '', "\nfig_anim = plt.figure(figsize=(6,3), num='Triangular wave')\nax_anim = fig_anim.add_subplot(1,1,1)\nax_anim.set_xlim(x_min, x_max)\ngap = 0.1\nax_anim.set_ylim(-1. - gap, 1. + gap)\n\n# By assigning the first return from plot to line_anim, we can later change\n#  the values in the line.\nu_triangular_1.u_start()\nline_anim, = ax_anim.plot(x_pts, \n                          u_triangular_1.u_wave_at_t(t_min), \n                          color='blue', lw=2)\n\nfig_anim.tight_layout()")
+get_ipython().run_cell_magic('capture', '', "\nfig_anim = plt.figure(figsize=(6,3), num='Triangular wave')\nax_anim = fig_anim.add_subplot(1,1,1)\nax_anim.set_xlim(x_min, x_max)\ngap = 0.1\nax_anim.set_ylim(-1. - gap, 1. + gap)\n\n# By assigning the first return from plot to line_anim, we can later change\n#  the values in the line.\nu_triangular_1.u_start()\nline_anim, = ax_anim.plot(x_pts, \n                          u_triangular_1.u_wave_at_t(t_min), \n                          color='blue', lw=2)\n\nfig_anim.tight_layout()\n")
 
 
 # In[ ]:

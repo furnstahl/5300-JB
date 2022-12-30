@@ -261,6 +261,7 @@ def ho_plots(q_vs_time_plot=True, q_dot_vs_time_plot=True,
     return fig
 
 
+
 # In[7]:
 
 

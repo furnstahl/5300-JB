@@ -178,7 +178,14 @@ print(f'eccentricity = {epsilon:.2f}')
 
 fig_4 = plt.figure(figsize=(8,8))
 
-overall_title = 'Gravitational orbit:  ' +                 rf' $n = {o1.n},$' +                 rf' $k = {o1.k:.1f},$' +                 rf' $l = {o1.ang_mom:.1f},$' +                 rf' $r_0 = {r_0:.1f},$' +                 rf' $\dot r_0 = {r_dot_0:.2f},$' +                 rf' $\phi_0 = {phi_0:.2f}$' +                 '\n'     # \n means a new line (adds some space here)
+overall_title = 'Gravitational orbit:  ' + \
+                rf' $n = {o1.n},$' + \
+                rf' $k = {o1.k:.1f},$' + \
+                rf' $l = {o1.ang_mom:.1f},$' + \
+                rf' $r_0 = {r_0:.1f},$' + \
+                rf' $\dot r_0 = {r_dot_0:.2f},$' + \
+                rf' $\phi_0 = {phi_0:.2f}$' + \
+                '\n'     # \n means a new line (adds some space here)
 fig_4.suptitle(overall_title, va='baseline')
 
 ax_4a = fig_4.add_subplot(2,2,1)
@@ -209,6 +216,7 @@ ax_4d.set_title('Polar plot', pad=20.)
 fig_4.tight_layout()
 
 
+
 # ## Energy versus time
 
 # In[8]:
@@ -228,7 +236,14 @@ for t, E_tot, E_tot_rel in zip(t_pts, E_tot_pts, E_tot_rel_pts):
 
 fig_5 = plt.figure(figsize=(6,6))
 
-overall_title = 'Gravitational orbit:  ' +                 rf' $n = {o1.n},$' +                 rf' $k = {o1.k:.1f},$' +                 rf' $l = {o1.ang_mom:.1f},$' +                 rf' $r_0 = {r_0:.1f},$' +                 rf' $\dot r_0 = {r_dot_0:.2f},$' +                 rf' $\phi_0 = {phi_0:.2f}$' +                 '\n'     # \n means a new line (adds some space here)
+overall_title = 'Gravitational orbit:  ' + \
+                rf' $n = {o1.n},$' + \
+                rf' $k = {o1.k:.1f},$' + \
+                rf' $l = {o1.ang_mom:.1f},$' + \
+                rf' $r_0 = {r_0:.1f},$' + \
+                rf' $\dot r_0 = {r_dot_0:.2f},$' + \
+                rf' $\phi_0 = {phi_0:.2f}$' + \
+                '\n'     # \n means a new line (adds some space here)
 fig_5.suptitle(overall_title, va='baseline')
 
 ax_5a = fig_5.add_subplot(1,1,1)

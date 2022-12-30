@@ -150,14 +150,14 @@ class FourierSeries():
 # In[26]:
 
 
-
 def Fourier_reconstruct(t_pts, coeffs_array, tau, N_max):
     """Sum up the Fourier series up to n = N_max terms."""
     omega = 2. * np.pi / tau   # definition of omega
     result = 0.
     # iterate over coefficients but only up to N_max
     for n, (a,b) in enumerate(coeffs_array[:N_max+1]):  
-        result = result + a * np.cos(n * omega * t_pts)                         + b * np.sin(n * omega * t_pts)
+        result = result + a * np.cos(n * omega * t_pts) \
+                        + b * np.sin(n * omega * t_pts)
     return result    
 
 
@@ -210,7 +210,8 @@ f_pts_80 = Fourier_reconstruct(t_pts, coeffs_by_hand, tau, 80)
 #       evaluate rectangular at that t.
 #   * This is called a list comprehension.  There are more compact ways,
 #      but this is clear and easy to debug.
-rectangular_t_pts = np.array([rectangular(t, tau, Delta_tau, f_max)                               for t in t_pts])
+rectangular_t_pts = np.array([rectangular(t, tau, Delta_tau, f_max) \
+                              for t in t_pts])
 
 
 # In[42]:

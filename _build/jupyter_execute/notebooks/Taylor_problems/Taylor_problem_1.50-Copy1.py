@@ -261,7 +261,8 @@ def deg_to_rad(theta_deg):
 
 def plot_exact_and_small_angle(phi0_deg=0):
     phi0_rad = deg_to_rad(phi0_deg)
-    t_pts, phi_rad, phidot, phi_sa_rad, phidot_sa =          solve_for_phi_all(phi0_rad, t_max=15.)
+    t_pts, phi_rad, phidot, phi_sa_rad, phidot_sa = \
+         solve_for_phi_all(phi0_rad, t_max=15.)
     phi_deg = rad_to_deg(phi_rad)
     phi_sa_deg = rad_to_deg(phi_sa_rad)
     

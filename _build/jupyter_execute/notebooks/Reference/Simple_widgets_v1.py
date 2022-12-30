@@ -192,6 +192,7 @@ num_t_w = IntSlider(value=200, min=50, max=500, step=10,
                     description=r'num $t$ :', layout=slider_border)
 
 
+
 # ### 4.  Make any explicit callback functions and add .observe methods.
 
 # In[11]:
@@ -334,13 +335,15 @@ num_t_w = IntSlider(value=200, min=50, max=500, step=10,
                     description=r'num $t$ :', layout=slider_border)
 
 ################### begin: text ##################
-initial_text =     r"""
+initial_text = \
+    r"""
     The graph shows a sine wave specified by an amplitude, frequency,
     and phase.  All are adjustable.
     """
 initial_text_w = HTMLMath(value=initial_text)
 
-times_overview_text =     r"""
+times_overview_text = \
+    r"""
     Adjust the sliders to set the range in time $t$ that is plotted
     and the number of points plotted.
     """
@@ -355,7 +358,8 @@ font_size_w = Dropdown(options=['12', '16', '18', '20', '24'], value='18',
 
 ################### begin: text for help tabs ##################
 # In HTML (could move this to an external file!)
-overview_text =    r"""<p>Here we give an example of how to display a function with 
+overview_text = \
+   r"""<p>Here we give an example of how to display a function with 
            controls.</p>  
           <ul>
             <li>Parameters tab: find out how to specify the function.
@@ -364,18 +368,21 @@ overview_text =    r"""<p>Here we give an example of how to display a function w
           </ul>      
     """ 
 
-parameters_text =     r"""
+parameters_text = \
+    r"""
     We are plotting this function:
     $$
     A \sin(\omega t + \phi)
     $$
     """
 
-times_text =     r"""
+times_text = \
+    r"""
     You get to decide the range of time $t$!
     """
 
-setup_text =     r"""
+setup_text = \
+    r"""
     For now, just an adjustment to the font size used for the plot.
     """
 ################### end: text for help tabs ##################
@@ -422,7 +429,6 @@ plot_out = widgets.interactive_output(update_plot,
 # ### 6. Make the layout of the widgets.
 
 # In[20]:
-
 
 
 # Organize the help as Tabs (which will itself be under the Help Tab)

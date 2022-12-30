@@ -158,14 +158,14 @@ class FourierSeries():
 # In[5]:
 
 
-
 def Fourier_reconstruct(t_pts, coeffs_array, tau, N_max):
     """Sum up the Fourier series up to n = N_max terms."""
     omega = 2. * np.pi / tau
     result = 0.
     # iterate over coefficients but only up to N_max
     for n, (a,b) in enumerate(coeffs_array[:N_max+1]):  
-        result = result + a * np.cos(n * omega * t_pts)                         + b * np.sin(n * omega * t_pts)
+        result = result + a * np.cos(n * omega * t_pts) \
+                        + b * np.sin(n * omega * t_pts)
     return result    
 
 
@@ -219,7 +219,6 @@ sawtooth_t_pts = np.array([sawtooth(t, tau, f_max) for t in t_pts])
 
 
 # In[9]:
-
 
 
 fig_1 = plt.figure(figsize=(10,5))

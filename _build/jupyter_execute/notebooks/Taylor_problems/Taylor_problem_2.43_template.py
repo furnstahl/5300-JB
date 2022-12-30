@@ -138,7 +138,8 @@ def vacuum_trajectory(u0_vec, t_pts, g=9.8):
        exact solution.
     """
     x0, y0, v0_x, v0_y = u0_vec 
-    return v0_x * t_pts,            y0 + v0_y * t_pts - g * t_pts**2/2.
+    return v0_x * t_pts, \
+           y0 + v0_y * t_pts - g * t_pts**2/2.
 
 # create arrays for the vaccum trajectory (using default for g)    
 x_vac, y_vac = vacuum_trajectory(u0_vec, t_pts)

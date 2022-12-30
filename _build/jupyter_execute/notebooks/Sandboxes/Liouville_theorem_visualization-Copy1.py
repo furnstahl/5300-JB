@@ -246,7 +246,7 @@ ax.set_aspect(1)
 fig.tight_layout()
 
 
-# In[ ]:
+# In[11]:
 
 
 # Common plotting time (generate the full time then use slices)

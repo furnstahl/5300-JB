@@ -63,6 +63,7 @@ class MyVector:
         return MyVector(new_x, new_y, new_z)
 
 
+
 # In[ ]:
 
 
