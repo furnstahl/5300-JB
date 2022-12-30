@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Python and Jupyter notebooks: part 01 &#8212; Theoretical and computational mechanics</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +20,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "avec": ["\\boldsymbol{a}"], "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "avec": ["\\boldsymbol{a}"], "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -64,7 +65,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +88,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -93,14 +109,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../about.html">
-   About Physics 5300: Theoretical and Computational Mechanics
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../about.html">
+                    About Physics 5300: Theoretical and Computational Mechanics
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Course overview
  </span>
@@ -547,110 +564,227 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/notebooks/Reference/Jupyter_Python_intro_01.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/furnstahl/5300-JB"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/furnstahl/5300-JB/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Reference/Jupyter_Python_intro_01.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/furnstahl/5300-JB/main?urlpath=tree/./notebooks/Reference/Jupyter_Python_intro_01.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/furnstahl/5300-JB/main?urlpath=tree/./notebooks/Reference/Jupyter_Python_intro_01.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/furnstahl/5300-JB"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/furnstahl/5300-JB/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Reference/Jupyter_Python_intro_01.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/notebooks/Reference/Jupyter_Python_intro_01.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ok-time-to-try-out-python-expressions-and-numpy">
    Ok, time to try out Python expressions and numpy
@@ -728,17 +862,110 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Python and Jupyter notebooks: part 01</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ok-time-to-try-out-python-expressions-and-numpy">
+   Ok, time to try out Python expressions and numpy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#debugging-aside">
+     Debugging aside …
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy-arrays">
+     numpy arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-help">
+   Getting help
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Debugging aside …
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-with-matplotlib">
+   Plotting with Matplotlib
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#saving-a-figure">
+     Saving a figure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solving-ordinary-differential-equations-odes">
+   Solving ordinary differential equations (ODEs)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-order-ode">
+     First-order ODE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#second-order-ode">
+     Second-order ODE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#widgets">
+   Widgets!
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#further-examples-with-numpy">
+     Further examples with numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="python-and-jupyter-notebooks-part-01">
-<h1>Python and Jupyter notebooks: part 01<a class="headerlink" href="#python-and-jupyter-notebooks-part-01" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-and-jupyter-notebooks-part-01">
+<h1>Python and Jupyter notebooks: part 01<a class="headerlink" href="#python-and-jupyter-notebooks-part-01" title="Permalink to this headline">#</a></h1>
 <p>Last revised: 31-Dec-2021 by Dick Furnstahl [furnstahl.1&#64;osu.edu]</p>
 <p><strong>You can find valuable documentation under the Jupyter notebook Help menu. The “User Interface Tour” and “Keyboard Shortcuts” are useful places to start, but there are also many other links to documentation there.</strong></p>
 <p><em>Select “User Interface Tour” and use the arrow keys to step through the tour.</em></p>
@@ -757,8 +984,8 @@
 <p><strong>Now try turning the next (empty) cell to a Markdown cell and type:</strong> <code class="docutils literal notranslate"><span class="pre">Einstein</span> <span class="pre">says</span> <span class="pre">$E=mc^2$</span></code> <strong>and then evaluate it.</strong>  This is <span class="math notranslate nohighlight">\(\LaTeX\)</span>! (If you forget to convert to Markdown and get <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">invalid</span> <span class="pre">syntax</span></code>, just select the cell and convert to Markdown with the menu.)</p>
 <p>The notebook menus enable you to rename your notebook file (always ending in <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Checkpoint</span></code> to save the changes to your notebook.  You can insert and delete cells (use the up and down arrows in the toolbar to easily move cells).  You will often use the <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> menu to <code class="docutils literal notranslate"><span class="pre">Restart</span></code> the notebook (and possibly clear output).</p>
 <p>As you get more proficient working with notebooks, you will probably start using the shortcut keys from the command mode of cells. A cell that is marked in blue implies that you are in command mode. You can start editing the cell by hitting <code class="docutils literal notranslate"><span class="pre">Enter</span></code> (or by clicking inside it). You can exit from edit mode into command mode by hitting <code class="docutils literal notranslate"><span class="pre">Esc</span></code>. A list of shortcut keys can be seen when opening the command palette by clicking on the keyboard button.</p>
-<div class="section" id="ok-time-to-try-out-python-expressions-and-numpy">
-<h2>Ok, time to try out Python expressions and numpy<a class="headerlink" href="#ok-time-to-try-out-python-expressions-and-numpy" title="Permalink to this headline">¶</a></h2>
+<section id="ok-time-to-try-out-python-expressions-and-numpy">
+<h2>Ok, time to try out Python expressions and numpy<a class="headerlink" href="#ok-time-to-try-out-python-expressions-and-numpy" title="Permalink to this headline">#</a></h2>
 <p>We can use the Jupyter notebook as a super calculator much like Mathematica and Matlab.  <strong>Try some basic operations, modifying and evaluating the following cells, noting that exponentiation is with</strong> <code class="docutils literal notranslate"><span class="pre">**</span></code> <strong>and not</strong> <code class="docutils literal notranslate"><span class="pre">^</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -867,8 +1094,8 @@
 </div>
 </div>
 <p>Now functions and constants like <code class="docutils literal notranslate"><span class="pre">np.sqrt</span></code> and <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> will work.  <strong>Go back and fix the square root and sine.</strong></p>
-<div class="section" id="debugging-aside">
-<h3>Debugging aside …<a class="headerlink" href="#debugging-aside" title="Permalink to this headline">¶</a></h3>
+<section id="debugging-aside">
+<h3>Debugging aside …<a class="headerlink" href="#debugging-aside" title="Permalink to this headline">#</a></h3>
 <p>Suppose you try to import and it fails (<strong>go ahead and evaluate the cell</strong>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -879,9 +1106,9 @@
 </div>
 <p>When you get a <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code>, the first thing to check is whether you have misspelled the name. <strong>Try using Google, e.g., search for “python numpie”.</strong> In this case (and in most others), Google will suggest the correct name (here it is numpy).  If the name does exist, check whether it sounds like the package you wanted.</p>
 <p>If you have the correct spelling, check whether you have installed the relevant package.  If you installed Python with Anaconda (which we will assume you did – if not, do it!), then use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">numpy</span></code> in a Terminal window (on a Mac or Linux box) or in an Anaconda Prompt window (on a Windows PC).</p>
-</div>
-<div class="section" id="numpy-arrays">
-<h3>numpy arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="numpy-arrays">
+<h3>numpy arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">#</a></h3>
 <p>We will often use numpy arrays so we’ll start with those.  They are <em>like</em> lists delimited by square brackets, i.e., <code class="docutils literal notranslate"><span class="pre">[]</span></code>s. To construct an array from <code class="docutils literal notranslate"><span class="pre">min</span></code> to <code class="docutils literal notranslate"><span class="pre">max</span></code> in steps of <code class="docutils literal notranslate"><span class="pre">step</span></code> we can use <code class="docutils literal notranslate"><span class="pre">np.arange(min,</span> <span class="pre">max,</span> <span class="pre">step)</span></code>.  Examples (<strong>try your own</strong>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -922,14 +1149,14 @@
 </div>
 </div>
 <p><strong>Change the last statement for <code class="docutils literal notranslate"><span class="pre">u_pts</span></code> to get an array from 0 to 10 spaced by 1.</strong></p>
-</div>
-</div>
-<div class="section" id="getting-help">
-<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="getting-help">
+<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">#</a></h2>
 <p>You will often need help identifying the appropriate Python (or numpy or scipy or …) command or you will need an example of how to do something or you may get an error message you can’t figure out.  In all of these cases, Google (or equivalent) is your friend. Always include “python” in the search string (or “numpy” or “matplotlib” or …) to avoid getting results for a different language. You will usually get an online manual as one of the first responses if you ask about a function; these usually have examples if you scroll down. Otherwise, answers from <em>Stack Overflow</em> queries are your best bet to find a useful answer.</p>
-</div>
-<div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
 <p>There are many Python language features that we will use eventually, but in the short term what we need first are <em>functions</em>.  Here we first see the role of <em>indentation</em> in Python in place of {}s or ()s in other languages.  We’ll always indent four spaces (never tabs!).  We know a function definition is complete when the indentation stops.</p>
 <p>To find out about a Python function or one you define, put your cursor on the function name and hit <code class="docutils literal notranslate"><span class="pre">shift+Tab+Tab</span></code>. <strong>Go back and try it on <code class="docutils literal notranslate"><span class="pre">np.arange</span></code>.</strong></p>
 <div class="cell docutils container">
@@ -978,8 +1205,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="id1">
-<h3>Debugging aside …<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h3>Debugging aside …<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>There are <em>two</em> bugs in the following function.  <strong>Note the line where an error is first reported and fix the bugs sequentially (so you see the different error messages). You can turn on line numbers with “Toggle Line Numbers” under the View menu.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -991,10 +1218,10 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="plotting-with-matplotlib">
-<h2>Plotting with Matplotlib<a class="headerlink" href="#plotting-with-matplotlib" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="plotting-with-matplotlib">
+<h2>Plotting with Matplotlib<a class="headerlink" href="#plotting-with-matplotlib" title="Permalink to this headline">#</a></h2>
 <p>Matplotlib is the plotting library we’ll use, at least at first.  We’ll follow convention and abbreviate the module we need as <code class="docutils literal notranslate"><span class="pre">plt</span></code>.  The <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> line tells the Jupyter notebook to make inline plots (note: this is now loaded by default, so we don’t need to include that line; we’ll see other possibilities later).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1071,8 +1298,8 @@
 </div>
 </div>
 <p><strong>Use Google (or whatever) to find how to add x and y labels and try it.</strong></p>
-<div class="section" id="saving-a-figure">
-<h3>Saving a figure<a class="headerlink" href="#saving-a-figure" title="Permalink to this headline">¶</a></h3>
+<section id="saving-a-figure">
+<h3>Saving a figure<a class="headerlink" href="#saving-a-figure" title="Permalink to this headline">#</a></h3>
 <p>Saving a figure to disk is as simple as calling <a class="reference external" href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.savefig"><code class="docutils literal notranslate"><span class="pre">savefig</span></code></a> with the name of the file (or a file object). The available image formats depend on the graphics backend you use, but we can always use <code class="docutils literal notranslate"><span class="pre">png</span></code> (which is preferred).</p>
 <p>Let us save the figure (named ‘fig’) from the previous cell. <strong>Look at the files produced in your browser; if you are using Binder, use <code class="docutils literal notranslate"><span class="pre">Open...</span></code> under the Jupyter notebook <code class="docutils literal notranslate"><span class="pre">File</span></code> menu.</strong></p>
 <div class="cell docutils container">
@@ -1084,10 +1311,10 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="solving-ordinary-differential-equations-odes">
-<h2>Solving ordinary differential equations (ODEs)<a class="headerlink" href="#solving-ordinary-differential-equations-odes" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="solving-ordinary-differential-equations-odes">
+<h2>Solving ordinary differential equations (ODEs)<a class="headerlink" href="#solving-ordinary-differential-equations-odes" title="Permalink to this headline">#</a></h2>
 <p>Newton’s 2nd Law for one particle:</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
@@ -1095,8 +1322,8 @@
 \end{align}\]</div>
 <p>is a first-order differential equation in the velocity vector and a second-order differential equation in the position vector. Here we assume that <span class="math notranslate nohighlight">\(\mathbf{F} = \mathbf{F}(\mathbf{x}, \mathbf{v}, t)\)</span> does not have higher derivatives. So we need to know how to solve such differential equations, usually with initial conditions (as opposed to boundary conditions).</p>
 <p>Here is how to do it with the Scipy function <code class="docutils literal notranslate"><span class="pre">odeint</span></code>.  (Note that <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> is now preferred to <code class="docutils literal notranslate"><span class="pre">odeint</span></code>; we’ll switch to that later but it is easier to get started with <code class="docutils literal notranslate"><span class="pre">odeint</span></code>.)</p>
-<div class="section" id="first-order-ode">
-<h3>First-order ODE<a class="headerlink" href="#first-order-ode" title="Permalink to this headline">¶</a></h3>
+<section id="first-order-ode">
+<h3>First-order ODE<a class="headerlink" href="#first-order-ode" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the required modules</span>
@@ -1185,9 +1412,9 @@
 \frac{dx}{dt} = -x \quad \mbox{with} \quad x(0) = 1
 \end{align}\]</div>
 <p><strong>both analytically and numerically.</strong></p>
-</div>
-<div class="section" id="second-order-ode">
-<h3>Second-order ODE<a class="headerlink" href="#second-order-ode" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="second-order-ode">
+<h3>Second-order ODE<a class="headerlink" href="#second-order-ode" title="Permalink to this headline">#</a></h3>
 <p>Suppose we have a second-order ODE such as:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1265,10 +1492,10 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="widgets">
-<h2>Widgets!<a class="headerlink" href="#widgets" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="widgets">
+<h2>Widgets!<a class="headerlink" href="#widgets" title="Permalink to this headline">#</a></h2>
 <p>A widget is an object such as a slider or a check box or a pulldown menu.  We can use them to make it easy to explore different parameter values in a problem we’re solving, which is invaluable for building intuition.  They act on the argument of a function.  We’ll look at a simple case here but plan to explore this more as we proceed.</p>
 <p>The set of widgets we’ll use here (there are others!) is from <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code>; we’ll conventionally import the module as <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">ipywidgets</span> <span class="pre">as</span> <span class="pre">widgets</span></code> and we’ll also often use <code class="docutils literal notranslate"><span class="pre">display</span></code> from <code class="docutils literal notranslate"><span class="pre">Ipython.display</span></code>.</p>
 <div class="cell docutils container">
@@ -1343,16 +1570,16 @@
 </div>
 </div>
 </div>
-<div class="section" id="further-examples-with-numpy">
-<h3>Further examples with numpy<a class="headerlink" href="#further-examples-with-numpy" title="Permalink to this headline">¶</a></h3>
+<section id="further-examples-with-numpy">
+<h3>Further examples with numpy<a class="headerlink" href="#further-examples-with-numpy" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The <a class="reference external" href="https://www.numpy.org/devdocs/user/quickstart.html">NumPy tutorial</a> is a good resource.</p></li>
 <li><p>The <a class="reference external" href="https://www.datacamp.com/community/tutorials/python-numpy-tutorial">Datacamp NumPy tutorial</a> covers much of the material in this notebook with more detail and also other topics.</p></li>
 <li><p>Another tutorial is from <a class="reference external" href="https://www.geeksforgeeks.org/numpy-tutorial/">GeeksforGeeks</a></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1376,9 +1603,11 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../../content/Reference/python_jupyter.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1394,26 +1623,28 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Dick Furnstahl<br/>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dick Furnstahl<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
