@@ -21,7 +21,7 @@ import numpy as np
 
 def v_of_t(t, b, c, v0, m=1):
     A = v0/(b + c*v0)
-    return  b * A * np.exp(-b*t/m) / (    ) ### fill in the equation here
+    return   ### fill in the equation here
 
 
 # Next we make a plot in the standard way:

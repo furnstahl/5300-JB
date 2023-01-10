@@ -52,7 +52,7 @@ m_small = 0.5  ### different values
 U_of_phi_pts = U(phi_pts, M_big, m_small)
 ax_U.plot(phi_pts, U_of_phi_pts, 'b-', label=fr'$m/M = {m_small:0.1f}$', lw=2)
 
-m_small = 0.7  ### different values
+m_small = 0.6  ### different values
 U_of_phi_pts = U(phi_pts, M_big, m_small)
 ax_U.plot(phi_pts, U_of_phi_pts, 'g-', label=fr'$m/M = {m_small:0.1f}$', lw=2)
 
