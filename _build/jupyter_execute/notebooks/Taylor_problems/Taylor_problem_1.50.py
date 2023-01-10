@@ -199,7 +199,7 @@ def solve_for_phi_all(phi0, phidot0=0, t_min=0., t_max=1., g=9.8, R=5.):
 # In[11]:
 
 
-phi0 = np.pi/180 * 90.
+phi0 = np.pi/180 * 20.
 t_pts, phi, phidot, phi_sa, phidot_sa = solve_for_phi_all(phi0, t_max=15.)
 
 
