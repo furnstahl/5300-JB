@@ -27,10 +27,11 @@
 # 4. Make a plot of $y$ versus $x$ for each value of $\tau$, all on the same plot.
 # 5. Save the plot for printing.
 
-# In[ ]:
+# In[2]:
 
 
 ### What modules do we need to import? (Can always add more later!)
+import numpy as np
 
 
 # ### 1. Define functions for $x$ and $y$
@@ -54,13 +55,13 @@ def y_traj(t, tau, v_y0=1., g=1.):
 
 # ### 2. Set up an array of the time $t$
 
-# In[ ]:
+# In[3]:
 
 
 t_min = 0.
 t_max = 3.
-delta_t =     ### pick a reasonable delta_t
-t_pts = np.arange()  ### fill in the blanks
+delta_t = .1      ### pick a reasonable delta_t
+t_pts = np.arange(t_min, t_max, delta_t)  ### fill in the blanks
 t_pts  # check that we did what we thought!
 
 
@@ -70,6 +71,7 @@ t_pts  # check that we did what we thought!
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
+import matplotlib.pyplot as plt
 ### What module(s) should you import?
 
 
@@ -90,6 +92,8 @@ ax.plot(x_traj(t_pts, tau_2), y_traj(t_pts, tau_2), 'r:',
         label=r'$\tau = 1.0$')
 
 tau_3 = 3.0
+ax.plot(x_traj(t_pts, tau_3), y_traj(t_pts, tau_3), 'g--', 
+        label=r'$\tau = 1.0$')
 ### plot a line with tau_3 and line type 'g--' with a label
 
 tau_4 = 10000.

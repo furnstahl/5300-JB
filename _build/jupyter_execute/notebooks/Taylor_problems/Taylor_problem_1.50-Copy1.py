@@ -18,13 +18,13 @@
 # 
 # **Your goal for problem 1.51: Modify the relevant part of this notebook to produce the required figure, print it out, and turn it in with your homework.**
 
-# In[ ]:
+# In[1]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[ ]:
+# In[2]:
 
 
 import numpy as np
@@ -47,7 +47,7 @@ import matplotlib.pyplot as plt
 #                        \end{array}\right)
 # \end{align}$$
 
-# In[ ]:
+# In[3]:
 
 
 def ode_rhs_exact(u_vec, t, *params):
@@ -62,7 +62,7 @@ def ode_rhs_exact(u_vec, t, *params):
     return [phidot, -g*np.sin(phi)/R]
 
 
-# In[ ]:
+# In[4]:
 
 
 # parameters
@@ -85,7 +85,7 @@ phi, phidot = odeint(ode_rhs_exact, u0_vec, t_pts, args=(g, R),
                      atol=abserr, rtol=relerr).T
 
 
-# In[ ]:
+# In[5]:
 
 
 fig = plt.figure()
@@ -98,7 +98,7 @@ fig.tight_layout()  # make the spacing of subplots nicer
 
 # Now let's put this into a function:
 
-# In[ ]:
+# In[6]:
 
 
 def solve_for_phi(phi0, phidot0=0, t_min=0., t_max=1., g=9.8, R=5.):
@@ -128,14 +128,14 @@ def solve_for_phi(phi0, phidot0=0, t_min=0., t_max=1., g=9.8, R=5.):
 
 # Check that it works (gives the previous result).
 
-# In[ ]:
+# In[7]:
 
 
 phi0 = np.pi/180 * 20.  # convert initial phi to radians
 t_pts, phi, phidot = solve_for_phi(phi0, t_max=15.)
 
 
-# In[ ]:
+# In[8]:
 
 
 fig = plt.figure()
@@ -146,7 +146,7 @@ fig.tight_layout()  # make the spacing of subplots nicer
 
 # Ok, now we need an ode function for the small angle approximation.  It's very easy now to copy and modify our other function!
 
-# In[ ]:
+# In[9]:
 
 
 def ode_rhs_small_angle(u_vec, t, *params):
@@ -163,7 +163,7 @@ def ode_rhs_small_angle(u_vec, t, *params):
 
 # And we can put them together into one solver function:
 
-# In[ ]:
+# In[10]:
 
 
 def solve_for_phi_all(phi0, phidot0=0, t_min=0., t_max=1., g=9.8, R=5.):
@@ -196,14 +196,14 @@ def solve_for_phi_all(phi0, phidot0=0, t_min=0., t_max=1., g=9.8, R=5.):
 
 # Always try it out!
 
-# In[ ]:
+# In[11]:
 
 
 phi0 = np.pi/180 * 90.
 t_pts, phi, phidot, phi_sa, phidot_sa = solve_for_phi_all(phi0, t_max=15.)
 
 
-# In[ ]:
+# In[12]:
 
 
 fig = plt.figure()
@@ -219,7 +219,7 @@ fig.tight_layout()  # make the spacing of subplots nicer
 # 
 # Here we see examples of applying limits to the x and y axes as well as labels and a title.
 
-# In[ ]:
+# In[13]:
 
 
 fig = plt.figure(figsize=(8,6))
@@ -241,7 +241,7 @@ fig.savefig('Taylor_prob_1.50.png', bbox_inches='tight')
 # 
 # This actually generalizes problems 1.50 and 1.51 so that you can examine any angle in between.  Use it to check your figure for 1.51.
 
-# In[ ]:
+# In[14]:
 
 
 from ipywidgets import interact, fixed
@@ -256,7 +256,7 @@ def deg_to_rad(theta_deg):
     return np.pi/180. * theta_deg
 
 
-# In[ ]:
+# In[15]:
 
 
 def plot_exact_and_small_angle(phi0_deg=0):
@@ -279,13 +279,13 @@ def plot_exact_and_small_angle(phi0_deg=0):
     plt.show()
 
 
-# In[ ]:
+# In[16]:
 
 
 interact(plot_exact_and_small_angle, phi0_deg=(0.,90.));
 
 
-# In[ ]:
+# In[17]:
 
 
 # to avoid the jiggling and do some formatting

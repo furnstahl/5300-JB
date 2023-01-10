@@ -10,13 +10,13 @@
 # * v1: Last revised 12-Feb-2019 by Dick Furnstahl (furnstahl.1@osu.edu).
 # 
 
-# In[7]:
+# In[1]:
 
 
 get_ipython().run_line_magic('matplotlib', 'notebook')
 
 
-# In[8]:
+# In[2]:
 
 
 import numpy as np
@@ -27,7 +27,7 @@ from matplotlib import animation
 import matplotlib.patches as patches  
 
 
-# In[9]:
+# In[3]:
 
 
 def cycloid(phi):
@@ -39,7 +39,7 @@ def cycloid(phi):
     return np.array([x, y])
 
 
-# In[10]:
+# In[4]:
 
 
 def animate(nframe, empty=False):
@@ -87,11 +87,11 @@ def animate(nframe, empty=False):
 
 
 
-# In[11]:
+# In[5]:
 
 
 # Settings
-gif_filename = 'Tautochrone_balls_full_oscillation'  # filename for gif
+gif_filename = 'Tautochrone_balls_full_oscillation_2023'  # filename for gif
 width, height = 640, 224  # dimensions of each frame
 nframes = 50  # number of frames
 fps=20  # frames per second
@@ -112,11 +112,11 @@ print('Saving', gif_filename + '.gif')
 anim.save(gif_filename + '.gif', writer='imagemagick', fps=fps)
 
 
-# In[12]:
+# In[6]:
 
 
 # settings
-gif_filename2 = 'Tautochrone_curve'
+gif_filename2 = 'Tautochrone_curve_2023'
 width, height = 300, 200
 nframes = 80
 fps=25
