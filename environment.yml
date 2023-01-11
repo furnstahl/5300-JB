@@ -1,8 +1,8 @@
-name: 5300-env
+name: 5300-env-small
 channels:
 - conda-forge
 dependencies:
-- python<3.10
+- python
 - nb_conda_kernels
 - numpy
 - scipy
@@ -10,14 +10,8 @@ dependencies:
 - pandas
 - seaborn
 - jupyter
-- ipywidgets=7.6.5
+- ipywidgets
 - nbdime
-- emcee
-- zeus-mcmc
-- corner
 - mkl-service
 - jupyter_nbextensions_configurator
 - pydoe
-- jupyter-book
-- sphinx
-- ghp-import
